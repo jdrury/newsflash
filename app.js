@@ -20,7 +20,6 @@ app.use(require('stylus').middleware(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/components', express.static(path.join(__dirname, 'components')));
 
-
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
@@ -34,8 +33,7 @@ server.listen(app.get('port'), function(){
 });
 
 // =====================
-
-// curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js
+// NYTIMES
 
 var nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661'
 
@@ -44,7 +42,6 @@ var options = {
   path: "/svc/news/v3/content/all/all.json?api-key=" + nytimes_key
 };
 
-var findKeywords = function() {
 http.get(options, function(res) {
   var news = ""
     , keywords
@@ -56,8 +53,6 @@ http.get(options, function(res) {
 
   res.on('end', function() {
     if (res.statusCode == 200) {
-      // news is an object with four properties
-      // news.results is an array of objects
       var pretty_news = JSON.parse(news)
         , articles    = pretty_news.results;
     }
@@ -66,16 +61,20 @@ http.get(options, function(res) {
       // console.log(articles[i].title);
       articleCollection.push(articles[i].title.split(' '));
       keywords = articleCollection.concat.apply([], articleCollection);
+      // collection of words drawn from titles
       console.log(keywords)
     });
   });
 });
-}();
 
-// console.log(nyt.keywords);
-
-// input === NYT breaking news
+// ====================
+// TWITTER
 // var watchKeywords = ['Russia', 'U.S.', 'Obama', 'Putin', 'Ukraine', 'Puppies', 'Food', 'Monday', 'sleep', 'daylight', 'work', 'jobs', 'hungry', 'SXSW', 'HBO', 'True Detective', 'Malaysia', 'crash', 'Paris', 'New York'];
+
+var watchKeywords = [];
+_.each(keywords, function(keyword) {
+  watchKeywords.push(keyword);
+})
 
 // // Store total number of tweets received, store number of tweets received by keyword.
 // var watchList = {
