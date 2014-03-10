@@ -18,7 +18,9 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 
 #####v.0.0.3      [Dynamic Keywords]:                 7 hours
 + Connect NYT API to Twitter API.
-+ Items pulled from NYT API are plugged into Twitter stream.
++ Index all the words in all the articles of NYTimes Breaking Newswire API.
++ Each word will be indexed in watchList object.
++ Sift index through Twitter stream to get results.
 
 #####v.0.0.4      [Filter News Items]:                4 hours
 + Filter news items in a readable format for Twitter stream.
