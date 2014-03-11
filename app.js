@@ -6,7 +6,8 @@ var express = require('express')
   , twitter = require('ntwitter')
   , cronJob = require('cron').CronJob
   , _       = require('underscore')
-  , path    = require('path');
+  , path    = require('path')
+  , nytimes = require('./nytimes_firehose.js');
 
 
 app.set('port', process.env.PORT || 3000);
@@ -33,53 +34,14 @@ server.listen(app.get('port'), function(){
 });
 
 // =====================
-// NYTIMES
 
-// var nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661'
-
-// var options = {
-//   host: "api.nytimes.com",
-//   path: "/svc/news/v3/content/all/all.json?api-key=" + nytimes_key
-// };
-
-// http.get(options, function(res) {
-//   var news = ""
-//     , keywords
-//     , articleCollection = [];
-
-//   res.on('data', function(chunk) {
-//     news += chunk;
-//   });
-
-//   res.on('end', function() {
-//     if (res.statusCode == 200) {
-//       var pretty_news = JSON.parse(news)
-//         , articles    = pretty_news.results;
-//     }
-
-//     articles.forEach(function(e,i) {
-//       // console.log(articles[i].title);
-//       articleCollection.push(articles[i].title.split(' '));
-//       keywords = articleCollection.concat.apply([], articleCollection);
-//       // collection of words drawn from titles
-//       console.log(keywords)
-//     });
-//   });
-// });
-
-var nytimes = require('./nytimes_firehose.js');
-
-console.log(nytimes.feed);
-
-// ====================
-// TWITTER
-
-// var watchKeywords = ['Russia', 'U.S.', 'Obama', 'Putin', 'Ukraine', 'Puppies', 'Food', 'Monday', 'sleep', 'daylight', 'work', 'jobs', 'hungry', 'SXSW', 'HBO', 'True Detective', 'Malaysia', 'crash', 'Paris', 'New York'];
-
-// var watchKeywords = [];
-// _.each(nytimes.feed, function(keyword) {
-//   watchKeywords.push(keyword);
-// });
+nytimes.getKeywords().then(function(keywords) {
+  var watchKeywords = [];
+  _.each(keywords, function(keyword) {
+    watchKeywords.push(keyword);
+    console.log(watchKeywords)
+  });
+})
 
 // // Store total number of tweets received, store number of tweets received by keyword.
 // var watchList = {

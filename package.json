@@ -12,6 +12,7 @@
     "socket.io": "*",
     "underscore": "*",
     "cron": "*",
-    "ntwitter": "*"
+    "ntwitter": "*",
+    "bluebird": "~1.1.0"
   }
 }
