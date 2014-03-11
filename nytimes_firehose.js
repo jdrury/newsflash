@@ -23,9 +23,10 @@ exports.getKeywords = function() {
         , count = 0
         , title = ""
         , keywords = []
-        , titleCollection = []
+        , articles = []
+        , titles = []
         , filteredKeywords = []
-        , junkwords = ["", "a", "an", "and", "at", "of", "in", "on", "the", "was"];
+        , junkwords = ["", "a", "an", "and", "at", "of", "in", "is", "its", "it's", "his", "her", "on", "the", "was"];
 
       res.on('data', function(chunk) {
         news += chunk;
@@ -35,17 +36,20 @@ exports.getKeywords = function() {
         if (res.statusCode == 200) {
           var pretty_news = JSON.parse(news)
             , articles    = pretty_news.results;
-            console.log(articles)
+            // console.log(articles)
         }
 
         console.log("Pulling down " + articles.length + " NYTimes articles...")
 
-        articles.forEach(function(e,i) {
+        // !!! pushes keywords out one title at a time
+        articles.forEach(function(article) {
           // pluck the titles from each article
-          title = articles[i].title.trim().toLowerCase().split(' ')
-          titleCollection.push(articles[i].title.trim().toLowerCase().split(' '));
+          title = article.title.trim().toLowerCase().split(' ');
+          console.log(title)
+          titles.push(title);
           // remove duplicates
-          keywords = titleCollection.concat.apply([], titleCollection);
+          keywords = titles.concat.apply([], titles);
+          console.log(keywords)
           // remove junk words
           keywords.map(function(word) {
             junkwords.forEach(function(junk) {
@@ -56,11 +60,16 @@ exports.getKeywords = function() {
               };
             });
           });
+
           console.log("Deleted " + count + " junkword(s).")
           console.log("Pulled " + keywords.length + " keyword(s).")
-          resolve(keywords);
           console.log("++Keywords is " + keywords.length + " long in nytimes_firehose.js++")
+
+          // resolve(keywords);
+
         });
+        resolve(keywords);
+        console.log(keywords)
       });
     });
   });
