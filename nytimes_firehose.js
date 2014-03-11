@@ -12,7 +12,8 @@ exports.getKeywords = function() {
     http.get(options, function(res) {
       var news = ""
         , keywords
-        , articleCollection = [];
+        , articleCollection = []
+        , junkWords = ['a', 'an', 'and', 'at', 'by', 'for', 'i', 'in', 'of', 'the', 'to', 'our'];
 
       res.on('data', function(chunk) {
         news += chunk;
@@ -25,9 +26,10 @@ exports.getKeywords = function() {
         }
 
         articles.forEach(function(e,i) {
-          articleCollection.push(articles[i].title.split(' '));
+          articleCollection.push(articles[i].title.trim().toLowerCase().split(' '));
           keywords = articleCollection.concat.apply([], articleCollection);
         });
+
         resolve(keywords);
       });
     });

@@ -7,7 +7,7 @@ var express = require('express')
   , cronJob = require('cron').CronJob
   , _       = require('underscore')
   , path    = require('path')
-  , nytimes = require('./nytimes_firehose.js');
+  , twitter = require('./twitter_firehose.js');
 
 
 app.set('port', process.env.PORT || 3000);
@@ -33,55 +33,61 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+twitter.getNewsfeed().then(function(watchList) {
+  console.log(watchList);
+})
+// console.log(twitter.watchList);
 // =====================
+// console.log(twitter.newsfeed());
+// var watchKeywords = [];
 
-var watchKeywords = [];
+// var watchList     = {
+//       total: 0,
+//       keywords: {}
+//     };
 
-var watchList     = {
-      total: 0,
-      keywords: {}
-    };
+// var t = new twitter({
+//     consumer_key: 'djsET78GAcb6SemgYT6Xw'
+//   , consumer_secret: 'AWfNIZbUkcToO8ZVsKt5xeNFmKwjGmLHfLAqLiOqUg'
+//   , access_token_key: '322965911-17Rkt0lWekPQCQBiQYIpIS3SC63MqGZR2SSnXm3g'
+//   , access_token_secret: 'jvaf1cFPx1AFsmLdATVGl8zd7dTcsXVCR5mPuk4UoNR9u'
+// });
 
-var t = new twitter({
-    consumer_key: 'djsET78GAcb6SemgYT6Xw'
-  , consumer_secret: 'AWfNIZbUkcToO8ZVsKt5xeNFmKwjGmLHfLAqLiOqUg'
-  , access_token_key: '322965911-17Rkt0lWekPQCQBiQYIpIS3SC63MqGZR2SSnXm3g'
-  , access_token_secret: 'jvaf1cFPx1AFsmLdATVGl8zd7dTcsXVCR5mPuk4UoNR9u'
-});
+// nytimes.getKeywords().then(function(keywords) {
+//   _.each(keywords, function(keyword) {
+//     watchKeywords.push(keyword);
+//     console.log(watchKeywords.length)
+//   });
 
-nytimes.getKeywords().then(function(keywords) {
-  _.each(keywords, function(keyword) {
-    watchKeywords.push(keyword);
-  });
+//   _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
 
-  _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
+//   // io.sockets.on('connection', function(socket) {
+//   //   console.log("* * * Client connected... * * *");
+//   //   socket.emit('data', watchList);
 
-  io.sockets.on('connection', function(socket) {
-    console.log("* * * Client connected... * * *");
-    socket.emit('data', watchList);
+//     // Filter Twitter firehouse by watchList[keywords]
+//     t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
 
-    // Filter Twitter firehouse by watchList[keywords]
-    t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
+//       // watch the firehouse ('data') event for incoming tweets.
+//       stream.on('data', function(tweet) {
 
-      // watch the firehouse ('data') event for incoming tweets.
-      stream.on('data', function(tweet) {
+//         if (tweet.text !== undefined) {
+//           var text = tweet.text.toLowerCase();
+//           _.each(watchKeywords, function(e) {
 
-        if (tweet.text !== undefined) {
-          var text = tweet.text.toLowerCase();
-          _.each(watchKeywords, function(e) {
-
-            // if the tweet matches a keyword
-            if (text.indexOf(e.toLowerCase()) !== -1) {
-              io.sockets.emit('data', watchList);
-              watchList.keywords[e] += 1;
-              watchList.total += 1;
-            }
-          });
-        }
-      });
-    });
-  });
-});
+//             // if the tweet matches a keyword
+//             if (text.indexOf(e.toLowerCase()) !== -1) {
+//               // io.sockets.emit('data', watchList);
+//               watchList.keywords[e] += 1;
+//               watchList.total += 1;
+//             }
+//           });
+//           console.log(watchList);
+//         }
+//       // });
+//     });
+//   });
+// });
 
 // new cronJob('0 0 0 * * *', function(){
 //   watchList.total = 0;

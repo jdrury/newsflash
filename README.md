@@ -38,7 +38,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + Circles are updated by socket.io every 3 seconds.
 
 #####v.0.0.7      [View streams]:                     2 hours
-+ Each news item now has a show view that streams relevant content from Twitter.
++ Each news item now has a show view that streams respective tweets from Twitter.
 
 #####v.0.0.8      [Data persistence with Mongoose]:   1 hour
 + Data is now stored on MongoDB.
