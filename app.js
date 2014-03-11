@@ -35,17 +35,13 @@ server.listen(app.get('port'), function(){
 
 // =====================
 
-
-// Store total number of tweets received, store number of tweets received by keyword.
-var watchList = {
-    total: 0,
-    keywords: {}
-  };
 var watchKeywords = [];
-// Initialize keywords at zero.
-_.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
 
-// Initialize Twitter API.
+var watchList     = {
+      total: 0,
+      keywords: {}
+    };
+
 var t = new twitter({
     consumer_key: 'djsET78GAcb6SemgYT6Xw'
   , consumer_secret: 'AWfNIZbUkcToO8ZVsKt5xeNFmKwjGmLHfLAqLiOqUg'
@@ -54,12 +50,12 @@ var t = new twitter({
 });
 
 nytimes.getKeywords().then(function(keywords) {
-
   _.each(keywords, function(keyword) {
     watchKeywords.push(keyword);
   });
 
-  // Initialize socket.io
+  _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
+
   io.sockets.on('connection', function(socket) {
     console.log("* * * Client connected... * * *");
     socket.emit('data', watchList);
@@ -87,9 +83,9 @@ nytimes.getKeywords().then(function(keywords) {
   });
 });
 
-new cronJob('0 0 0 * * *', function(){
-  watchList.total = 0;
-  _.each(watchKeywords, function(v) { watchList.symbols[v] = 0; });
+// new cronJob('0 0 0 * * *', function(){
+//   watchList.total = 0;
+//   _.each(watchKeywords, function(e) { watchList.symbols[e] = 0; });
 
-  io.sockets.emit('data', watchList);
-}, null, true);
+//   io.sockets.emit('data', watchList);
+// }, null, true);

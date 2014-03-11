@@ -16,35 +16,40 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 #####v.0.0.2      [NYT Breaking News]:                ~~5 hours~
 + Wire up connection to NYT Breaking News API.
 
-#####v.0.0.3      [Dynamic Keywords]:                 7 hours
+#####v.0.0.3      [Dynamic Keywords]:                 ~~7 hours~~
 + Connect NYT API to Twitter API.
 + Index all the words in all the articles of NYTimes Breaking Newswire API.
 + Each word will be indexed in watchList object.
 + Sift index through Twitter stream to get results.
 
-#####v.0.0.4      [Filter News Items]:                4 hours
+#####v.0.0.4      [Refine Keywords]:                 5 hours
++ Trim keywords for whitespace and meaningless words such as 'in', 'of', 'the'.
++ Add logic to remove words that are not under a certain threshold.
++ Fix logic so that the browser does not lockdown due to volume.
+
+#####v.0.0.5      [Filter News Items]:                4 hours
 + Filter news items in a readable format for Twitter stream.
 + Create algorithm to sort through breaking news and determine most important.
 + Total news items capped at 20.
 
-#####v.0.0.5      [Visualization with D3]:            10 hours
+#####v.0.0.6      [Visualization with D3]:            10 hours
 + Squares and color scheme have been removed.
 + Keywords are visually represented by circles which grow and shrink.
 + Circles are updated by socket.io every 3 seconds.
 
-#####v.0.0.6      [View streams]:                     2 hours
+#####v.0.0.7      [View streams]:                     2 hours
 + Each news item now has a show view that streams relevant content from Twitter.
 
-#####v.0.0.7      [Data persistence with Mongoose]:   1 hour
+#####v.0.0.8      [Data persistence with Mongoose]:   1 hour
 + Data is now stored on MongoDB.
 + Mongoose wired up.
 + Schemas created for news items and tweets.
 + Database dropped every 72 hours.
 
-#####v.0.0.8      [User authentication]:              6 hours
+#####v.0.0.9      [User authentication]:              6 hours
 + Sessions can now persist through user authentication.
 + Basic user authentication via Passportjs.
 + Users are also able to authenticate using github, Twitter or Facebook.
 
-#####v.0.0.9      [CSS Styling]:                      4 hours
+#####v.0.1.0      [CSS Styling]:                      4 hours
 + Add improved CSS styling and fonts
