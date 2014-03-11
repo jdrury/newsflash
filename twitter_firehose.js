@@ -1,9 +1,11 @@
 var twitter = require('ntwitter')
   , nytimes = require('./nytimes_firehose.js')
   , Promise = require('bluebird')
-  , _       = require('underscore')
-  , watchKeywords = []
-  , watchList     = {
+  , _       = require('underscore');
+
+var watchKeywords = [];
+
+var watchList     = {
       total: 0,
       keywords: {}
     };
@@ -22,18 +24,13 @@ var initializeFeed = function() {
       _.each(keywords, function(keyword) {
         watchKeywords.push(keyword);
       });
-      // initialize every keyword at count zero (0)
+      // set every keyword value to zero
       _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
       // return the initialized watchList
       resolve(watchList);
     });
   });
 };
-
-// finished product
-// initializeFeed().then(function(watchList) {
-//   console.log(watchList)
-// });
 
 exports.mergeNewsfeed = function() {
   return new Promise(function(resolve, reject) {
@@ -50,60 +47,12 @@ exports.mergeNewsfeed = function() {
               if (text.indexOf(e.toLowerCase()) !== -1) {
                 watchList.keywords[e] += 1;
                 watchList.total += 1;
-                // console.log(watchList);
-                // resolve(watchList);
               }
+              resolve(watchList);
             });
-            // console.log(watchList);
-            // resolve(watchList);
           }
-        // console.log(watchList);
-        resolve(watchList);
         });
       });
     });
   });
 };
-
-
-// ***************
-// This works, but it doesn't export
-// Possibly because it is a promise inside a promise?
-// ***************
-
-// exports.newsfeed = function() {
-//   return new Promise(function(resolve, reject) {
-    // nytimes.getKeywords().then(function(keywords) {
-    //   // add nytimes words to keywords
-    //   _.each(keywords, function(keyword) {
-    //     watchKeywords.push(keyword);
-    //   });
-
-      // initialize values at zero
-      // _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
-
-    // // push nytimes keywords into twitter firehouse
-    // t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
-
-    //   // read twitter firehouse ('data') for incoming tweets.
-    //   stream.on('data', function(tweet) {
-
-    //     // if the tweet exists, make it lowercase
-    //     if (tweet.text !== undefined) {
-    //       var text = tweet.text.toLowerCase();
-    //       _.each(watchKeywords, function(e) {
-
-    //         // if the keyword is present in the tweet, += 1
-    //         if (text.indexOf(e.toLowerCase()) !== -1) {
-    //           watchList.keywords[e] += 1;
-    //           watchList.total += 1;
-    //         }
-
-    //       });
-    //     }
-    //     resolve(watchList);
-    //     console.log(resolve(watchList));
-    //   });
-    // });
-//   });
-// }
