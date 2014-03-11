@@ -1,783 +1,42 @@
 {
   "status": "OK",
   "copyright": "Copyright (c) 2014 The New York Times Company.  All Rights Reserved.",
-  "num_results": 57625,
+  "num_results": 57894,
   "results": [
-    {
-      "section": "T:Style",
-      "subsection": "",
-      "title": "All the Rage | Ephemeral Designs From the Flower Clubs of Philadelphia ",
-      "abstract": "Underneath layers of gold leaf in these fragile pieces of &#8220;jewelry&#8221; are dried flora that have been painstakingly assembled by hand.",
-      "url": "http://tmagazine.blogs.nytimes.com/2014/03/10/all-the-rage-ephemeral-designs-from-the-flower-clubs-of-philadelphia/",
-      "byline": "By CYNTHIA KLING",
-      "thumbnail_standard": "images/2014/03/10/t-magazine/10flower-kling-slide-C4SV/10flower-kling-slide-C4SV-thumbStandard.jpg",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T18:03:18-04:00",
-      "created_date": "2014-03-10T18:03:18-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "T Magazine",
-      "subheadline": "",
-      "des_facet": "",
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "blog_name": "T Magazine",
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/10/t-magazine/10flower-kling-slide-C4SV/10flower-kling-slide-C4SV-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        }
-      ]
-    },
-    {
-      "section": "Dining & Wine",
-      "subsection": "",
-      "title": "Rewriting the Menu in Tulum, Mexico",
-      "abstract": "The chef Eric Werner is inventing food that is avant-garde and ancient, global and local, at his restaurant Hartwood in Tulum.",
-      "url": "http://www.nytimes.com/2014/03/12/dining/rewriting-the-menu-in-tulum-mexico.html",
-      "byline": "By JULIA MOSKIN",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-414E/20140312-TULUM-slide-414E-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:57:11-04:00",
-      "created_date": "2014-03-10T17:57:12-04:00",
-      "published_date": "2014-03-12T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Restaurants", "Agriculture and Farming"],
-      "org_facet": ["Hartwood (Tulum, Mexico, Restaurant)"],
-      "per_facet": ["Eric Werner"],
-      "geo_facet": ["Tulum (Mexico)"],
-      "related_urls": null,
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-414E/20140312-TULUM-slide-414E-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Eric Werner with Antonio May Balan, on Mr. Balan&rsquo;s farm in the highlands. Corn, pumpkins, and beans grow together in the way of the Maya, who developed a system of agriculture here in about 4,000 B.C.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-414E/20140312-TULUM-slide-414E-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Eric Werner with Antonio May Balan, on Mr. Balan&rsquo;s farm in the highlands. Corn, pumpkins, and beans grow together in the way of the Maya, who developed a system of agriculture here in about 4,000 B.C.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-414E/20140312-TULUM-slide-414E-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Eric Werner with Antonio May Balan, on Mr. Balan&rsquo;s farm in the highlands. Corn, pumpkins, and beans grow together in the way of the Maya, who developed a system of agriculture here in about 4,000 B.C.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-414E/20140312-TULUM-slide-414E-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Eric Werner with Antonio May Balan, on Mr. Balan&rsquo;s farm in the highlands. Corn, pumpkins, and beans grow together in the way of the Maya, who developed a system of agriculture here in about 4,000 B.C.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-7D00/20140312-TULUM-slide-7D00-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "The very earliest stages of a pineapple, growing on Mr. Balan&rsquo;s farm.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-7D00/20140312-TULUM-slide-7D00-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "The very earliest stages of a pineapple, growing on Mr. Balan&rsquo;s farm.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-7D00/20140312-TULUM-slide-7D00-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "The very earliest stages of a pineapple, growing on Mr. Balan&rsquo;s farm.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/12/dining/20140312-TULUM-slide-7D00/20140312-TULUM-slide-7D00-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "The very earliest stages of a pineapple, growing on Mr. Balan&rsquo;s farm.",
-          "copyright": "Adriana Zehbrauskas for The New York Times"
-        }
-      ]
-    },
-    {
-      "section": "",
-      "subsection": "",
-      "title": "Jailed Leaders of Egypt's 2011 Revolt Describe Beatings",
-      "abstract": "In a letter smuggled out of Egypt&#8217;s Tora Prison over the weekend, a leading figure in the 2011 uprising who was recently jailed for protesting the current military-backed government, reported that prisoners are routinely tortured.",
-      "url": "http://thelede.blogs.nytimes.com/2014/03/10/jailed-leaders-of-egypts-2011-revolt-describe-beatings/",
-      "byline": "By ROBERT MACKEY",
-      "thumbnail_standard": "",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:56:31-04:00",
-      "created_date": "2014-03-10T17:56:31-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "The Lede",
-      "subheadline": "",
-      "des_facet": [
-        "Middle East and North Africa Unrest (2010- )",
-        "Political Prisoners",
-        "Prisons and Prisoners",
-        "Torture"
-      ],
-      "org_facet": ["April 6 Youth Movement (Egypt)"],
-      "per_facet": ["Abd El Fattah, Alaa", "Adel, Mohamed", "Douma, Ahmed", "Maher, Ahmed"],
-      "geo_facet": ["Egypt"],
-      "related_urls": [
-        {
-          "suggested_link_text": "Egyptian Bloggers Who Mobilized Support for 2011 Uprising in Jail or Under Threat",
-          "url": "http://thelede.blogs.nytimes.com/2014/01/06/egyptian-bloggers-who-mobilized-support-for-2011-uprising-in-jail-or-under-threat/"
-        },
-        {
-          "suggested_link_text": "Egyptian Puppet Called Terrorist Mouthpiece",
-          "url": "http://thelede.blogs.nytimes.com/2014/01/02/egyptian-puppet-called-terrorist-mouthpiece/"
-        },
-        {
-          "suggested_link_text": "Activists Fear Egypt's Police Force, First Target of Protests, Is Out for Revenge",
-          "url": "http://thelede.blogs.nytimes.com/2013/12/03/activists-fear-egypts-reviled-police-force-first-target-of-protests-is-out-for-revenge/"
-        },
-        {
-          "suggested_link_text": "For Egypt's New Rulers, Familiar Scapegoats",
-          "url": "http://thelede.blogs.nytimes.com/2013/11/29/for-egypts-new-rulers-familiar-scapegoats/"
-        },
-        {
-          "suggested_link_text": "A Detained Egyptian-American Activist's Letter to His Mother",
-          "url": "http://thelede.blogs.nytimes.com/2013/09/30/a-detained-egyptian-american-activists-letter-to-his-mother/"
-        }
-      ],
-      "blog_name": "The Lede",
-      "multimedia": ""
-    },
-    {
-      "section": "Opinion",
-      "subsection": "",
-      "title": "Weekend Gun Report: March 7-9, 2014",
-      "abstract": "A weekend in the life of armed America.",
-      "url": "http://nocera.blogs.nytimes.com/2014/03/10/weekend-gun-report-march-7-9-2014/",
-      "byline": "",
-      "thumbnail_standard": "images/2014/03/10/opinion/pistol/pistol-thumbStandard.jpg",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:56:26-04:00",
-      "created_date": "2014-03-10T17:56:27-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "Joe Nocera",
-      "subheadline": "",
-      "des_facet": "",
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "blog_name": "Joe Nocera",
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/10/opinion/pistol/pistol-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        }
-      ]
-    },
-    {
-      "section": "U.S.",
-      "subsection": "",
-      "title": "Joseph L. Sax, Who Pioneered Legal Protections for Natural Resources, Dies at 78",
-      "abstract": "Professor Sax formulated a far-reaching legal doctrine that recognized the environment as a public trust and helped fuel the movement in the 1970s.",
-      "url": "http://www.nytimes.com/2014/03/11/us/joseph-l-sax-who-pioneered-legal-protections-for-natural-resources-dies-at-78.html",
-      "byline": "By DOUGLAS MARTIN",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-1-obit-web/SAX-1-obit-web-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:57:47-04:00",
-      "created_date": "2014-03-10T17:53:54-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "Obituary (Obit)",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Legal Profession", "Deaths (Obituaries)"],
-      "org_facet": "",
-      "per_facet": ["Joseph L. Sax"],
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-1-obit-web/SAX-1-obit-web-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Joseph L. Sax at the University of Michigan Law School in 1967.",
-          "copyright": "University of Michigan Law School"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-1-obit-web/SAX-1-obit-web-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Joseph L. Sax at the University of Michigan Law School in 1967.",
-          "copyright": "University of Michigan Law School"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-1-obit-web/SAX-1-obit-web-articleInline.jpg",
-          "format": "Normal",
-          "height": 135,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Joseph L. Sax at the University of Michigan Law School in 1967.",
-          "copyright": "University of Michigan Law School"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-1-obit-web/SAX-1-obit-web-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Joseph L. Sax at the University of Michigan Law School in 1967.",
-          "copyright": "University of Michigan Law School"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-2-obit-web/SAX-2-obit-web-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Professor Sax in 2013.",
-          "copyright": "University of California, Berkeley, School of Law"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-2-obit-web/SAX-2-obit-web-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Professor Sax in 2013.",
-          "copyright": "University of California, Berkeley, School of Law"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-2-obit-web/SAX-2-obit-web-articleInline.jpg",
-          "format": "Normal",
-          "height": 238,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Professor Sax in 2013.",
-          "copyright": "University of California, Berkeley, School of Law"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/us/SAX-2-obit-web/SAX-2-obit-web-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Professor Sax in 2013.",
-          "copyright": "University of California, Berkeley, School of Law"
-        }
-      ]
-    },
-    {
-      "section": "World",
-      "subsection": "Americas",
-      "title": "No Winner Yet in El Salvador’s Close Presidential Race",
-      "abstract": "An electoral tribunal said that the narrow margin made it impossible to declare a winner between Salvador Sánchez Cerén and Norman Quijano.",
-      "url": "http://www.nytimes.com/2014/03/11/world/americas/el-salvador-presidential-race.html",
-      "byline": "By ELISABETH MALKIN",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador-1/Salvador-1-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T18:02:30-04:00",
-      "created_date": "2014-03-10T17:53:30-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": "",
-      "org_facet": "",
-      "per_facet": ["Sanchez Ceren, Salvador", "Quijano, Norman"],
-      "geo_facet": ["El Salvador", "Central America"],
-      "related_urls": null,
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador-1/Salvador-1-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Supporters of Norman Quijano, a two-term mayor of San Salvador.",
-          "copyright": "Esteban Felix/Associated Press"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador-1/Salvador-1-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Supporters of Norman Quijano, a two-term mayor of San Salvador.",
-          "copyright": "Esteban Felix/Associated Press"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador-1/Salvador-1-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Supporters of Norman Quijano, a two-term mayor of San Salvador.",
-          "copyright": "Esteban Felix/Associated Press"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador-1/Salvador-1-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Supporters of Norman Quijano, a two-term mayor of San Salvador.",
-          "copyright": "Esteban Felix/Associated Press"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador/Salvador-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Salvador S&aacute;nchez Cer&eacute;n, the governing party&rsquo;s candidate, held a narrow lead.",
-          "copyright": "Jose Cabezas/Agence France-Presse — Getty Images"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador/Salvador-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Salvador S&aacute;nchez Cer&eacute;n, the governing party&rsquo;s candidate, held a narrow lead.",
-          "copyright": "Jose Cabezas/Agence France-Presse — Getty Images"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador/Salvador-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Salvador S&aacute;nchez Cer&eacute;n, the governing party&rsquo;s candidate, held a narrow lead.",
-          "copyright": "Jose Cabezas/Agence France-Presse — Getty Images"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/world/Salvador/Salvador-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Salvador S&aacute;nchez Cer&eacute;n, the governing party&rsquo;s candidate, held a narrow lead.",
-          "copyright": "Jose Cabezas/Agence France-Presse — Getty Images"
-        }
-      ]
-    },
-    {
-      "section": "Business Day",
-      "subsection": "Media",
-      "title": "Secret Agent, Book Agent, All the Same",
-      "abstract": "Chris Pavone, a novelist and former nonfiction editor, contends that the sedate book publishing industry can make an exciting setting for a fictional thriller.",
-      "url": "http://www.nytimes.com/2014/03/11/business/media/chris-pavones-thriller-the-accident-set-in-book-world.html",
-      "byline": "By JULIE BOSMAN",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/arts/jppavone/jppavone-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:45:10-04:00",
-      "created_date": "2014-03-10T17:40:00-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Books and Literature", "Writing and Writers"],
-      "org_facet": "",
-      "per_facet": ["Pavone, Chris"],
-      "geo_facet": "",
-      "related_urls": [
-        {
-          "suggested_link_text": "Amid the Slush Piles and Proofs Lurks a Page-Turner With a Dirty Secret",
-          "url": "http://www.nytimes.com/2014/03/06/books/the-accident-a-new-novel-by-chris-pavone-of-the-expats.html"
-        }
-      ],
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jppavone/jppavone-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Chris Pavone, the author of &ldquo;The Accident&rdquo; and a former nonfiction book editor at Clarkson Potter.",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jppavone/jppavone-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Chris Pavone, the author of &ldquo;The Accident&rdquo; and a former nonfiction book editor at Clarkson Potter.",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jppavone/jppavone-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Chris Pavone, the author of &ldquo;The Accident&rdquo; and a former nonfiction book editor at Clarkson Potter.",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jppavone/jppavone-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Chris Pavone, the author of &ldquo;The Accident&rdquo; and a former nonfiction book editor at Clarkson Potter.",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/pavone/pavone-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Mr. Pavone",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/pavone/pavone-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Mr. Pavone",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/pavone/pavone-articleInline.jpg",
-          "format": "Normal",
-          "height": 261,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Mr. Pavone",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/pavone/pavone-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Mr. Pavone",
-          "copyright": "Chester Higgins Jr./The New York Times"
-        }
-      ]
-    },
     {
       "section": "Business Day",
       "subsection": "Dealbook",
-      "title": "Blackstone and TPG Said to Plan $5.5 Billion Bid for Gates Global",
-      "abstract": "The private equity firms Blackstone Group and TPG Capital are said to be teaming up in a planned bid for Gates Global, a maker of industrial and automotive parts.",
-      "url": "http://dealbook.nytimes.com/2014/03/10/blackstone-and-tpg-said-to-plan-5-5-billion-bid-for-gates-global/",
+      "title": "Chobani Said to Seek Investment That Would Value It at $5 Billion",
+      "abstract": "Chobani, the fast-growing yogurt maker, is said to be in talks with six potential investors as it seeks more capital to expand internationally.",
+      "url": "http://dealbook.nytimes.com/2014/03/11/chobani-said-to-seek-investment-that-would-value-it-at-5-billion/",
       "byline": "By WILLIAM ALDEN",
-      "thumbnail_standard": "",
+      "thumbnail_standard": "images/2014/03/12/business/dbpix-chobani/dbpix-chobani-thumbStandard.jpg",
       "item_type": "Blog",
       "source": "The New York Times",
-      "updated_date": "2014-03-10T17:45:28-04:00",
-      "created_date": "2014-03-10T17:38:32-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
+      "updated_date": "2014-03-11T18:14:26-04:00",
+      "created_date": "2014-03-11T18:14:27-04:00",
+      "published_date": "2014-03-11T00:00:00-04:00",
       "material_type_facet": "News",
       "kicker": "DealBook",
       "subheadline": "",
-      "des_facet": ["Mergers, Acquisitions and Divestitures", "Private Equity"],
-      "org_facet": ["Canada Pension Plan Investment Board", "Onex Corp", "The Blackstone Group", "TPG Capital"],
+      "des_facet": ["Factories and Manufacturing", "Yogurt"],
+      "org_facet": ["Chobani Inc"],
       "per_facet": "",
       "geo_facet": "",
       "related_urls": [
         {
-          "suggested_link_text": "K.K.R. to Buy Landscaping Company Brickman for $1.6 Billion",
-          "url": "http://dealbook.nytimes.com/2013/11/11/k-k-r-to-buy-landscaping-company-brickman-for-1-6-billion/"
+          "suggested_link_text": "Cameron Sees Technology as Unlikely Ally of Western Workers ",
+          "url": "http://dealbook.nytimes.com/2014/01/24/cameron-sees-technology-as-western-workers-unlikely-ally/"
         },
         {
-          "suggested_link_text": "A Potential Potemkin Fight Over Dell",
-          "url": "http://dealbook.nytimes.com/2013/03/27/a-potential-potemkin-fight-over-dell/"
+          "suggested_link_text": "Apprenticeships Could Help Reduce Youth Unemployment, Business Leaders Say",
+          "url": "http://dealbook.nytimes.com/2014/01/23/apprenticeships-could-reduce-youth-unemployment-business-leaders-say/"
         }
       ],
       "blog_name": "DealBook",
-      "multimedia": ""
-    },
-    {
-      "section": "U.S.",
-      "subsection": "Politics",
-      "title": "Social Issues Splitting Young Republicans From Their Elders",
-      "abstract": "The party’s opposition to same-sex marriage and legalization of marijuana is causing a rift along generational lines.",
-      "url": "http://www.nytimes.com/2014/03/11/us/politics/social-issues-splitting-young-republicans-from-their-elders.html",
-      "byline": "By JONATHAN MARTIN",
-      "thumbnail_standard": "",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:37:17-04:00",
-      "created_date": "2014-03-10T17:37:17-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Same-Sex Marriage, Civil Unions and Domestic Partnerships"],
-      "org_facet": ["Republican Party", "Conservative Political Action Conference"],
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": ""
-    },
-    {
-      "section": "Science",
-      "subsection": "",
-      "title": "One Author of a Stem Cell Study Calls for Its Retraction",
-      "abstract": "A Japanese professor who was on the team that claimed to have found a simple way to make stem cells said he was no longer sure of its conclusions.",
-      "url": "http://www.nytimes.com/2014/03/11/business/one-author-of-a-stem-cell-study-calls-for-its-retraction.html",
-      "byline": "By HIROKO TABUCHI",
-      "thumbnail_standard": "",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T18:02:48-04:00",
-      "created_date": "2014-03-10T17:32:45-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Stem Cells (Embryonic)", "Research"],
-      "org_facet": ["Nature (Journal)", "Brigham and Women's Hospital", "Harvard Medical School"],
-      "per_facet": ["Wakayama, Teruhiko", "Obokata, Haruko"],
-      "geo_facet": "",
-      "related_urls": [
-        {
-          "suggested_link_text": "Study Says New Method Could Be a Quicker Source of Stem Cells",
-          "url": "http://www.nytimes.com/2014/01/30/business/study-says-new-method-could-be-a-quicker-source-of-stem-cells.html"
-        }
-      ],
       "multimedia": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/technology/11stem-web1/11stem-web1-articleInline.jpg",
-          "format": "Normal",
-          "height": 136,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Haruko Obokata, the 30-year-old lead writer of a stem cell study&rsquo;s two papers, has became an overnight celebrity in Tokyo and a symbol of the rising stature of female scientists.",
-          "copyright": "Kyodo, via Reuters"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/technology/11stem-web1/11stem-web1-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Haruko Obokata, the 30-year-old lead writer of a stem cell study&rsquo;s two papers, has became an overnight celebrity in Tokyo and a symbol of the rising stature of female scientists.",
-          "copyright": "Kyodo, via Reuters"
-        }
-      ]
-    },
-    {
-      "section": "Arts",
-      "subsection": "Television",
-      "title": "The Next Step Is Just Showing Up",
-      "abstract": "Lindsay Lohan needs a lifeline, and Oprah Winfrey needs someone to save. The result is &#8220;Lindsay,&#8221; a new docu-series on OWN.",
-      "url": "http://www.nytimes.com/2014/03/11/arts/television/following-lindsay-lohan-after-her-latest-rehab.html",
-      "byline": "By JON CARAMANICA",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/arts/LOHAN/LOHAN-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:45:06-04:00",
-      "created_date": "2014-03-10T17:29:06-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "Review",
-      "kicker": "Television Review",
-      "subheadline": "",
-      "des_facet": ["Television"],
-      "org_facet": "",
-      "per_facet": ["Lohan, Lindsay"],
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/LOHAN/LOHAN-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Lindsay</strong> This new reality show on Sundays on Oprah Winfrey&rsquo;s channel, OWN, follows Lindsay Lohan after her latest rehab stint, including at a photo shoot.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/LOHAN/LOHAN-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Lindsay</strong> This new reality show on Sundays on Oprah Winfrey&rsquo;s channel, OWN, follows Lindsay Lohan after her latest rehab stint, including at a photo shoot.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/LOHAN/LOHAN-articleInline.jpg",
-          "format": "Normal",
-          "height": 102,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Lindsay</strong> This new reality show on Sundays on Oprah Winfrey&rsquo;s channel, OWN, follows Lindsay Lohan after her latest rehab stint, including at a photo shoot.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/LOHAN/LOHAN-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Lindsay</strong> This new reality show on Sundays on Oprah Winfrey&rsquo;s channel, OWN, follows Lindsay Lohan after her latest rehab stint, including at a photo shoot.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jplohan/jplohan-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Ms. Lohan with her mother, Dina Lohan, going over her journal.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jplohan/jplohan-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Ms. Lohan with her mother, Dina Lohan, going over her journal.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jplohan/jplohan-articleInline.jpg",
-          "format": "Normal",
-          "height": 127,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Ms. Lohan with her mother, Dina Lohan, going over her journal.",
-          "copyright": "OWN"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/jplohan/jplohan-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "Ms. Lohan with her mother, Dina Lohan, going over her journal.",
-          "copyright": "OWN"
-        }
-      ]
-    },
-    {
-      "section": "T:Style",
-      "subsection": "",
-      "title": "Seeing Double | The Sleeker Side of Floral Prints",
-      "abstract": "T highlights one seasonal wardrobe staple, worn two ways. This week&#8217;s pick: a classic motif, styled to have a modern edge.",
-      "url": "http://tmagazine.blogs.nytimes.com/2014/03/10/seeing-double-the-sleeker-side-of-floral-prints/",
-      "byline": "By ALEX TUDELA",
-      "thumbnail_standard": "/images/2014/03/10/t-magazine/10two-tudela/10two-tudela-thumbStandard-v2.jpg",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:54:18-04:00",
-      "created_date": "2014-03-10T17:26:18-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "T Magazine",
-      "subheadline": "",
-      "des_facet": "",
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "blog_name": "T Magazine",
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/10/t-magazine/10two-tudela/10two-tudela-thumbStandard.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/business/dbpix-chobani/dbpix-chobani-thumbStandard.jpg",
           "format": "Standard Thumbnail",
           "height": 75,
           "width": 75,
@@ -787,351 +46,788 @@
           "copyright": ""
         }
       ]
-    },
-    {
-      "section": "Your Money",
-      "subsection": "",
-      "title": "For Some With Flexible Spending Accounts, Time to Act",
-      "abstract": "If you have a health care flexible spending account, it may be crunch time: The March 15 deadline to spend any available balance remaining is only days away.",
-      "url": "http://www.nytimes.com/2014/03/11/your-money/for-some-with-flexible-spending-accounts-time-to-act.html",
-      "byline": "By ANN CARRNS",
-      "thumbnail_standard": "",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:25:09-04:00",
-      "created_date": "2014-03-10T17:25:10-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "Your Money Adviser",
-      "subheadline": "",
-      "des_facet": ["Health Insurance and Managed Care", "Tax Credits, Deductions and Exemptions", "Savings"],
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": ""
     },
     {
       "section": "Business Day",
       "subsection": "Economy",
-      "title": "Study: Women Who Can Do Math Still Don't Get Hired",
-      "abstract": "Managers, of either sex, tended to hire men over women when the criteria was math skills, three business school professor found. It happened even when women had measurably better math skills.",
-      "url": "http://economix.blogs.nytimes.com/2014/03/10/study-women-who-can-do-math-still-dont-get-hired/",
-      "byline": "By SHAILA DEWAN",
-      "thumbnail_standard": "",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:24:19-04:00",
-      "created_date": "2014-03-10T17:24:20-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "Economix",
-      "subheadline": "",
-      "des_facet": ["Discrimination", "Science and Technology", "Women and Girls"],
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": [
-        {
-          "suggested_link_text": "Women Gain in Some STEM Fields, but Not Computer Science",
-          "url": "http://economix.blogs.nytimes.com/2013/11/15/women-gain-in-some-stem-fields-but-not-computer-science/"
-        },
-        {
-          "suggested_link_text": "Comparing the World's Glass Ceilings ",
-          "url": "http://economix.blogs.nytimes.com/2013/04/02/comparing-the-worlds-glass-ceilings/"
-        },
-        {
-          "suggested_link_text": "The Uneven Progress of Equal Opportunity ",
-          "url": "http://economix.blogs.nytimes.com/2013/01/28/the-uneven-progress-of-equal-opportunity/"
-        },
-        {
-          "suggested_link_text": "The End of Men, Revisited",
-          "url": "http://economix.blogs.nytimes.com/2012/10/29/the-end-of-men-revisited/"
-        },
-        {
-          "suggested_link_text": "Women Made Jobs Gains in February",
-          "url": "http://economix.blogs.nytimes.com/2014/03/07/women-made-jobs-gains-in-february/"
-        }
-      ],
-      "blog_name": "Economix",
-      "multimedia": ""
-    },
-    {
-      "section": "Books",
-      "subsection": "",
-      "title": "Anne Rice Reviving the Vampire Lestat",
-      "abstract": "“Prince Lesta” is set for release in October.",
-      "url": "http://www.nytimes.com/2014/03/11/books/anne-rice-reviving-the-vampire-lestat.html",
-      "byline": "By JULIE BOSMAN",
-      "thumbnail_standard": "",
+      "title": "A Relentless Rise in Unequal Wealth",
+      "abstract": "The economic forces concentrating more and more wealth into the hands of the fortunate few are almost sure to prevail for a long time, according to a new book by the economist Thomas Piketty.",
+      "url": "http://www.nytimes.com/2014/03/12/business/economy/a-relentless-rise-in-unequal-wealth.html",
+      "byline": "By EDUARDO PORTER",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2012/02/29/business/eduardo-porter/eduardo-porter-thumbStandard-v6.jpg",
       "item_type": "Article",
       "source": "The New York Times",
-      "updated_date": "2014-03-10T17:23:52-04:00",
-      "created_date": "2014-03-10T17:23:53-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "Brief",
-      "kicker": "Arts, Briefly",
-      "subheadline": "",
-      "des_facet": "",
-      "org_facet": ["Facebook Inc|FB|NASDAQ"],
-      "per_facet": "",
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": ""
-    },
-    {
-      "section": "Opinion",
-      "subsection": "",
-      "title": "Rush Limbaugh Needn&rsquo;t Worry",
-      "abstract": "Turns out access to free birth control doesn&#8217;t encourage promiscuity.",
-      "url": "http://takingnote.blogs.nytimes.com/2014/03/10/rush-limbaugh-neednt-worry/",
-      "byline": "By JULIET LAPIDOS",
-      "thumbnail_standard": "",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:35:22-04:00",
-      "created_date": "2014-03-10T17:22:18-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
+      "updated_date": "2014-03-11T18:13:47-04:00",
+      "created_date": "2014-03-11T18:11:34-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
       "material_type_facet": "News",
-      "kicker": "Taking Note",
+      "kicker": "Economic Scene",
       "subheadline": "",
-      "des_facet": ["Birth Control and Family Planning"],
-      "org_facet": "",
-      "per_facet": ["Fluke, Sandra", "Limbaugh, Rush"],
-      "geo_facet": "",
-      "related_urls": [
-        {
-          "suggested_link_text": "What's Behind the Declining Abortion Rate?",
-          "url": "http://takingnote.blogs.nytimes.com/2014/02/03/whats-behind-the-declining-abortion-rate/"
-        },
-        {
-          "suggested_link_text": "Mike Huckabee's War for Women",
-          "url": "http://takingnote.blogs.nytimes.com/2014/01/24/mike-huckabees-war-for-women/"
-        },
-        {
-          "suggested_link_text": "Republicans Respond to the Pope",
-          "url": "http://takingnote.blogs.nytimes.com/2014/01/07/republicans-respond-to-the-pope/"
-        },
-        {
-          "suggested_link_text": "Trouble for the Contraception Mandate",
-          "url": "http://takingnote.blogs.nytimes.com/2013/11/12/trouble-for-the-contraception-mandate/"
-        },
-        {
-          "suggested_link_text": "No Comment Necessary: Limbaugh Reads the Polls",
-          "url": "http://takingnote.blogs.nytimes.com/2013/10/11/no-comment-necessary-limbaugh-reads-the-polls/"
-        }
-      ],
-      "blog_name": "Taking Note",
-      "multimedia": ""
-    },
-    {
-      "section": "Business Day",
-      "subsection": "Media",
-      "title": "Event-Free, Sunday Night Still Pulls in Big Ratings",
-      "abstract": "Even without an awards show or other special event, Sunday night pulled in impressive television audiences, led by the premieres of “Resurrection” and “Cosmos” and the season finale of “True Detective.”",
-      "url": "http://www.nytimes.com/2014/03/11/business/media/event-free-sunday-night-still-pulls-in-big-ratings.html",
-      "byline": "By BILL CARTER",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/arts/11RATINGS/11RATINGS-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:21:36-04:00",
-      "created_date": "2014-03-10T17:21:36-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "",
-      "subheadline": "",
-      "des_facet": ["Television", "Ratings (Audience Measurement)"],
+      "des_facet": ["Income Inequality", "Economic Conditions and Trends", "Labor and Jobs", "Wages and Salaries"],
       "org_facet": "",
       "per_facet": "",
       "geo_facet": "",
       "related_urls": null,
       "multimedia": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11RATINGS/11RATINGS-thumbStandard.jpg",
+          "url": "http://graphics8.nytimes.com/images/2012/02/29/business/eduardo-porter/eduardo-porter-thumbStandard-v6.jpg",
           "format": "Standard Thumbnail",
           "height": 75,
           "width": 75,
           "type": "image",
           "subtype": "photo",
-          "caption": "&ldquo;True Detective,&rdquo; with Matthew McConaughey, drew so many streamers that HBO Go crashed.",
-          "copyright": "Lacey Terrell"
+          "caption": "Eduardo Porter",
+          "copyright": "Earl Wilson/The New York Times"
         },
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11RATINGS/11RATINGS-thumbLarge.jpg",
+          "url": "http://graphics8.nytimes.com/images/2012/02/29/business/eduardo-porter/eduardo-porter-articleInline-v3.jpg",
+          "format": "Normal",
+          "height": 285,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Eduardo Porter",
+          "copyright": "Earl Wilson/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2012/02/29/business/eduardo-porter/eduardo-porter-thumbLarge-v5.jpg",
           "format": "thumbLarge",
           "height": 150,
           "width": 150,
           "type": "image",
           "subtype": "photo",
-          "caption": "&ldquo;True Detective,&rdquo; with Matthew McConaughey, drew so many streamers that HBO Go crashed.",
-          "copyright": "Lacey Terrell"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11RATINGS/11RATINGS-articleInline.jpg",
-          "format": "Normal",
-          "height": 138,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "&ldquo;True Detective,&rdquo; with Matthew McConaughey, drew so many streamers that HBO Go crashed.",
-          "copyright": "Lacey Terrell"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11RATINGS/11RATINGS-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "&ldquo;True Detective,&rdquo; with Matthew McConaughey, drew so many streamers that HBO Go crashed.",
-          "copyright": "Lacey Terrell"
-        }
-      ]
-    },
-    {
-      "section": "Multimedia",
-      "subsection": "",
-      "title": "Pictures of the Day: Indonesia and Elsewhere",
-      "abstract": "Photos from Indonesia, Nepal, Afghanistan and India.",
-      "url": "http://lens.blogs.nytimes.com/2014/03/10/pictures-of-the-day-indonesia-and-elsewhere-7/",
-      "byline": "By THE NEW YORK TIMES",
-      "thumbnail_standard": "images/2014/03/10/blogs/20140310POD-slide-D8O0/20140310POD-slide-D8O0-thumbStandard.jpg",
-      "item_type": "Blog",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:20:23-04:00",
-      "created_date": "2014-03-10T17:20:24-04:00",
-      "published_date": "2014-03-10T00:00:00-04:00",
-      "material_type_facet": "News",
-      "kicker": "Lens",
-      "subheadline": "",
-      "des_facet": ["Photography"],
-      "org_facet": "",
-      "per_facet": "",
-      "geo_facet": ["Afghanistan", "India", "Indonesia", "Nepal"],
-      "related_urls": [
-        {
-          "suggested_link_text": "Pictures of the Day: Afghanistan and Elsewhere",
-          "url": "http://lens.blogs.nytimes.com/2012/10/17/pictures-of-the-day-afghanistan-and-elsewhere-38/"
-        },
-        {
-          "suggested_link_text": "Pictures of the Day: Germany and Elsewhere",
-          "url": "http://lens.blogs.nytimes.com/2011/09/22/pictures-of-the-day-germany-and-elsewhere/"
-        },
-        {
-          "suggested_link_text": "Pictures of the Day: Philippines and Elsewhere",
-          "url": "http://lens.blogs.nytimes.com/2013/11/13/pictures-of-the-day-philippines-and-elsewhere-8/"
-        },
-        {
-          "suggested_link_text": "Pictures of the Day — Turkey and Elsewhere",
-          "url": "http://lens.blogs.nytimes.com/2013/06/13/pictures-of-the-day-turkey-and-elsewhere-14/"
-        },
-        {
-          "suggested_link_text": "Pictures of the Day: Turkey and Elsewhere",
-          "url": "http://lens.blogs.nytimes.com/2013/05/01/pictures-of-the-day-turkey-and-elsewhere-9/"
-        }
-      ],
-      "blog_name": "Lens",
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/10/blogs/20140310POD-slide-D8O0/20140310POD-slide-D8O0-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        }
-      ]
-    },
-    {
-      "section": "Arts",
-      "subsection": "Dance",
-      "title": "Flashes of Red Break Through in a Brooding Spanish Landscape",
-      "abstract": "Eva Yerbabuena starred in two programs at City Center as part of the Flamenco Festival 2014.",
-      "url": "http://www.nytimes.com/2014/03/11/arts/dance/eva-yerbabuena-stars-in-flamenco-festival.html",
-      "byline": "By ALASTAIR MACAULAY",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/arts/11EVA/11EVA-thumbStandard.jpg",
-      "item_type": "Article",
-      "source": "The New York Times",
-      "updated_date": "2014-03-10T17:17:15-04:00",
-      "created_date": "2014-03-10T17:17:16-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
-      "material_type_facet": "Review",
-      "kicker": "Dance Review",
-      "subheadline": "",
-      "des_facet": ["Flamenco (Dance)", "Dancing"],
-      "org_facet": ["New York City Center Theater"],
-      "per_facet": ["Yerbabuena, Eva"],
-      "geo_facet": "",
-      "related_urls": null,
-      "multimedia": [
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11EVA/11EVA-thumbStandard.jpg",
-          "format": "Standard Thumbnail",
-          "height": 75,
-          "width": 75,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Eva Yerbabuena </strong> The mistress of flamenco with her company at City Center, as part of Flamenco Festival 2014. The festival continues at other spots in the city through March 24.",
-          "copyright": "Paula Lobo for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11EVA/11EVA-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Eva Yerbabuena </strong> The mistress of flamenco with her company at City Center, as part of Flamenco Festival 2014. The festival continues at other spots in the city through March 24.",
-          "copyright": "Paula Lobo for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11EVA/11EVA-articleInline.jpg",
-          "format": "Normal",
-          "height": 123,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Eva Yerbabuena </strong> The mistress of flamenco with her company at City Center, as part of Flamenco Festival 2014. The festival continues at other spots in the city through March 24.",
-          "copyright": "Paula Lobo for The New York Times"
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11EVA/11EVA-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "<strong>Eva Yerbabuena </strong> The mistress of flamenco with her company at City Center, as part of Flamenco Festival 2014. The festival continues at other spots in the city through March 24.",
-          "copyright": "Paula Lobo for The New York Times"
+          "caption": "Eduardo Porter",
+          "copyright": "Earl Wilson/The New York Times"
         }
       ]
     },
     {
       "section": "Arts",
       "subsection": "Music",
-      "title": "Albums From Aloe Blacc, Sara Evans and Ambrose Akinmusire",
-      "abstract": "The songs in new recordings from Aloe Blacc, Sara Evans and Ambrose Akinmusire range from nostalgic to vexed to subtly sophisticated.",
-      "url": "http://www.nytimes.com/2014/03/11/arts/music/albums-from-aloe-blacc-sara-evans-and-ambrose-akinmusire.html",
-      "byline": "By JON PARELES",
-      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC2/11NEWMUSIC2-thumbStandard.jpg",
+      "title": "Celebrating the Pianist Ursula Oppens at 70",
+      "abstract": "“Happy Birthday, Ursula” featured four pianists at Symphony Space on Thursday, along with an appearance by the woman of the hour.",
+      "url": "http://www.nytimes.com/2014/03/12/arts/music/happy-birthday-ursula-a-tribute-at-symphony-space.html",
+      "byline": "By VIVIEN SCHWEITZER",
+      "thumbnail_standard": "",
       "item_type": "Article",
       "source": "The New York Times",
-      "updated_date": "2014-03-10T17:15:13-04:00",
-      "created_date": "2014-03-10T16:57:49-04:00",
-      "published_date": "2014-03-11T00:00:00-04:00",
+      "updated_date": "2014-03-11T18:07:14-04:00",
+      "created_date": "2014-03-11T18:07:16-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
       "material_type_facet": "Review",
-      "kicker": "New Music",
+      "kicker": "Music Review",
       "subheadline": "",
-      "des_facet": ["Music"],
+      "des_facet": ["Classical Music"],
       "org_facet": "",
-      "per_facet": ["Akinmusire, Ambrose", "Evans, Sara", "Blacc, Aloe"],
+      "per_facet": ["Oppens, Ursula"],
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "N.S.A. Memo Expands Access to FISA Information",
+      "abstract": "In 2006, the National Security Agency sought to expand access to Foreign Intelligence Surveillance Act information to codebreakers around the country.",
+      "url": "http://www.nytimes.com/interactive/2014/03/12/us/NSA-internal-access-memo.html",
+      "byline": "By CHARLIE SAVAGE",
+      "thumbnail_standard": "",
+      "item_type": "Interactive",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:05:15-04:00",
+      "created_date": "2014-03-11T18:05:16-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Surveillance of Citizens by Government", "Foreign Intelligence Surveillance Act (FISA)"],
+      "org_facet": ["National Security Agency"],
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "Ashcroft Memo on Intelligence Sharing Procedures",
+      "abstract": "In August 2002, the attorney general issued new procedures that lowered safeguards on providing information about Americans to foreign governments that was deemed relevant to terrorism issues.",
+      "url": "http://www.nytimes.com/interactive/2014/03/12/us/ashcroft-dissemination-doc.html",
+      "byline": "By CHARLIE SAVAGE",
+      "thumbnail_standard": "",
+      "item_type": "Interactive",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:03:37-04:00",
+      "created_date": "2014-03-11T18:03:37-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Surveillance of Citizens by Government", "Foreign Intelligence Surveillance Act (FISA)"],
+      "org_facet": ["National Security Agency"],
+      "per_facet": ["Ashcroft, John"],
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "Classification Guide for FISA, the Protect America Act and the FISA Amendments Act",
+      "abstract": "A guide to secrecy restrictions for various aspects of programs to spy on domestic soil for national security purposes.",
+      "url": "http://www.nytimes.com/interactive/2014/03/12/us/fisa-classification-doc.html",
+      "byline": "By CHARLIE SAVAGE",
+      "thumbnail_standard": "",
+      "item_type": "Interactive",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:01:35-04:00",
+      "created_date": "2014-03-11T18:01:36-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Foreign Intelligence Surveillance Act (FISA)", "Surveillance of Citizens by Government"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "Arts",
+      "subsection": "Music",
+      "title": "Offering Choral Solace for Composers’ Laments",
+      "abstract": "The Choir of Trinity Wall Street opened a concert series based on works inspired by the Book of Lamentations.",
+      "url": "http://www.nytimes.com/2014/03/12/arts/music/trinity-choir-performs-works-based-on-the-book-of-lamentations.html",
+      "byline": "By STEVE SMITH",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/arts/12TRINITY/12TRINITY-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:00:29-04:00",
+      "created_date": "2014-03-11T18:00:30-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "Review",
+      "kicker": "Music Review",
+      "subheadline": "",
+      "des_facet": ["Music", "Classical Music"],
+      "org_facet": ["Choir of Trinity Wall Street"],
+      "per_facet": "",
       "geo_facet": "",
       "related_urls": null,
       "multimedia": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC2/11NEWMUSIC2-thumbStandard.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12TRINITY/12TRINITY-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>Choir of Trinity Wall Street </strong> The ensemble performed on Sunday as part of Trinity Church&rsquo;s Lamentatio concert series in Lower Manhattan.",
+          "copyright": "Tina Fineberg for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12TRINITY/12TRINITY-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>Choir of Trinity Wall Street </strong> The ensemble performed on Sunday as part of Trinity Church&rsquo;s Lamentatio concert series in Lower Manhattan.",
+          "copyright": "Tina Fineberg for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12TRINITY/12TRINITY-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>Choir of Trinity Wall Street </strong> The ensemble performed on Sunday as part of Trinity Church&rsquo;s Lamentatio concert series in Lower Manhattan.",
+          "copyright": "Tina Fineberg for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12TRINITY/12TRINITY-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>Choir of Trinity Wall Street </strong> The ensemble performed on Sunday as part of Trinity Church&rsquo;s Lamentatio concert series in Lower Manhattan.",
+          "copyright": "Tina Fineberg for The New York Times"
+        }
+      ]
+    },
+    {
+      "section": "Arts",
+      "subsection": "Dance",
+      "title": "Dancing With Doors and Amid Trash Cans",
+      "abstract": "Daredevil vignettes devised by Brian Sanders for his company, Junk, rely heavily on props and precarious contraptions.",
+      "url": "http://www.nytimes.com/2014/03/12/arts/dance/brian-sanderss-junk-infuses-choreography-with-props.html",
+      "byline": "By SIOBHAN BURKE",
+      "thumbnail_standard": "",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:59:45-04:00",
+      "created_date": "2014-03-11T17:59:46-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "Review",
+      "kicker": "Dance Review",
+      "subheadline": "",
+      "des_facet": ["Dancing"],
+      "org_facet": ["Junk"],
+      "per_facet": ["Sanders, Brian"],
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "Classification Guide for Stellarwind Program",
+      "abstract": "A guide to secrecy restrictions for Bush administration surveillance and data collection programs that operated outside FISA rules.",
+      "url": "http://www.nytimes.com/interactive/2014/03/12/us/stellarwind-guidance-doc.html",
+      "byline": "By CHARLIE SAVAGE",
+      "thumbnail_standard": "",
+      "item_type": "Interactive",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:58:52-04:00",
+      "created_date": "2014-03-11T17:58:52-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Foreign Intelligence Surveillance Act (FISA)", "Surveillance of Citizens by Government"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "Arts",
+      "subsection": "Music",
+      "title": "Traces of Lives, From Scores to Cigarettes",
+      "abstract": "Carnegie Hall, in its Rose Museum, is hosting an exhibition of objects that relate to musical works being performed in the festival Vienna: City of Dreams.",
+      "url": "http://www.nytimes.com/2014/03/12/arts/music/viennas-musical-giants-brings-artifacts-to-carnegie-hall.html",
+      "byline": "By JAMES R. OESTREICH",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie1/carnegie1-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:11:38-04:00",
+      "created_date": "2014-03-11T17:56:55-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "Critic’s Notebook",
+      "subheadline": "",
+      "des_facet": ["Classical Music", "Musical Instruments"],
+      "org_facet": ["Carnegie Hall", "Rose Museum"],
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie1/carnegie1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Visitors at the exhibition, at the Rose Museum at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie1/carnegie1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Visitors at the exhibition, at the Rose Museum at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie1/carnegie1-articleInline.jpg",
+          "format": "Normal",
+          "height": 119,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Visitors at the exhibition, at the Rose Museum at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie1/carnegie1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Visitors at the exhibition, at the Rose Museum at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12CARNEGIE/12CARNEGIE-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Beethoven&rsquo;s medicine spoon is on display at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12CARNEGIE/12CARNEGIE-articleInline.jpg",
+          "format": "Normal",
+          "height": 40,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Beethoven&rsquo;s medicine spoon is on display at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12CARNEGIE/12CARNEGIE-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Beethoven&rsquo;s medicine spoon is on display at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12CARNEGIE/12CARNEGIE-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Beethoven&rsquo;s medicine spoon is on display at Carnegie Hall.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie2/carnegie2-thumbStandard-v2.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "An autograph score from Mahler and a replica of his baton.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie2/carnegie2-thumbLarge-v2.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "An autograph score from Mahler and a replica of his baton.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie2/carnegie2-articleInline.jpg",
+          "format": "Normal",
+          "height": 118,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "An autograph score from Mahler and a replica of his baton.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/carnegie2/carnegie2-mediumThreeByTwo210-v2.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "An autograph score from Mahler and a replica of his baton.",
+          "copyright": "Hiroyuki Ito for The New York Times"
+        }
+      ]
+    },
+    {
+      "section": "U.S.",
+      "subsection": "",
+      "title": "N.S.A. Timeline of Surveillance Law Developments",
+      "abstract": "A chart, apparently from an internal National Security Agency presentation, lists milestones in surveillance rules over nearly four decades.",
+      "url": "http://www.nytimes.com/interactive/2014/03/12/us/nsa-timeline.html",
+      "byline": "By CHARLIE SAVAGE",
+      "thumbnail_standard": "",
+      "item_type": "Interactive",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:55:12-04:00",
+      "created_date": "2014-03-11T17:55:13-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Surveillance of Citizens by Government", "Foreign Intelligence Surveillance Act (FISA)"],
+      "org_facet": ["National Security Agency"],
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "Arts",
+      "subsection": "Art & Design",
+      "title": "Park Avenue, the Art Gallery",
+      "abstract": "The sculptures in Alice Aycock&#8217;s art installation &#8220;Park Avenue Paper Chase&#8221; are, as she had hoped, drawing attention.",
+      "url": "http://www.nytimes.com/2014/03/12/arts/design/alice-aycocks-latest-installation-is-unveiled.html",
+      "byline": "By TED LOOS",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCK/12AYCOCK-thumbStandard-v2.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:47:44-04:00",
+      "created_date": "2014-03-11T17:47:46-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Art", "Sculpture"],
+      "org_facet": ["Fund for Park Avenue"],
+      "per_facet": ["Aycock, Alice"],
+      "geo_facet": ["Park Avenue (Manhattan, NY)", "Manhattan (NYC)"],
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCK/12AYCOCK-thumbStandard-v2.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "&ldquo;Cyclone Twist,&rdquo; an Alice Aycock art installation, being assembled along Park Avenue.",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCK/12AYCOCK-thumbLarge-v2.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "&ldquo;Cyclone Twist,&rdquo; an Alice Aycock art installation, being assembled along Park Avenue.",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCK/12AYCOCK-articleInline-v2.jpg",
+          "format": "Normal",
+          "height": 126,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "&ldquo;Cyclone Twist,&rdquo; an Alice Aycock art installation, being assembled along Park Avenue.",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCK/12AYCOCK-mediumThreeByTwo210-v2.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "&ldquo;Cyclone Twist,&rdquo; an Alice Aycock art installation, being assembled along Park Avenue.",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp1/12AYCOCKjp1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Maelstrom.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp1/12AYCOCKjp1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Maelstrom.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp1/12AYCOCKjp1-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Maelstrom.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp1/12AYCOCKjp1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Maelstrom.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp2/12AYCOCKjp2-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Hoop-La.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp2/12AYCOCKjp2-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Hoop-La.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp2/12AYCOCKjp2-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Hoop-La.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp2/12AYCOCKjp2-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's &ldquo;Hoop-La.\"",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp3/12AYCOCKjp3-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's \"Cyclone Twist,\" part of &ldquo;Park Avenue Paper Chase.&rdquo;",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp3/12AYCOCKjp3-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's \"Cyclone Twist,\" part of &ldquo;Park Avenue Paper Chase.&rdquo;",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp3/12AYCOCKjp3-articleInline.jpg",
+          "format": "Normal",
+          "height": 127,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's \"Cyclone Twist,\" part of &ldquo;Park Avenue Paper Chase.&rdquo;",
+          "copyright": "Richard Perry/The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12AYCOCKjp3/12AYCOCKjp3-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Alice Aycock's \"Cyclone Twist,\" part of &ldquo;Park Avenue Paper Chase.&rdquo;",
+          "copyright": "Richard Perry/The New York Times"
+        }
+      ]
+    },
+    {
+      "section": "Arts",
+      "subsection": "Music",
+      "title": "The Voices of Montserrat",
+      "abstract": "Europe’s oldest boys choir, the Escolania de Montserrat, has eased its residency requirements to raise enrollment. The move was effective and now they are on their first American tour.",
+      "url": "http://www.nytimes.com/video/arts/music/100000002762324/the-voices-of-montserrat.html",
+      "byline": "Braden Phillips",
+      "thumbnail_standard": "",
+      "item_type": "Video",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:55:23-04:00",
+      "created_date": "2014-03-11T17:43:35-04:00",
+      "published_date": "2014-03-11T00:00:00-04:00",
+      "material_type_facet": "",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Classical Music"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": ["Catalonia (Spain)", "Spain"],
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/multimedia/montserrat-choir/montserrat-choir-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/multimedia/montserrat-choir/montserrat-choir-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/multimedia/montserrat-choir/montserrat-choir-articleInline.jpg",
+          "format": "Normal",
+          "height": 107,
+          "width": 190,
+          "type": "image",
+          "subtype": "",
+          "caption": "",
+          "copyright": ""
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/multimedia/montserrat-choir/montserrat-choir-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "",
+          "caption": "",
+          "copyright": ""
+        }
+      ]
+    },
+    {
+      "section": "Theater",
+      "subsection": "",
+      "title": "An Identity He Won’t Cede That Easily",
+      "abstract": "The actor Armando Riesco reflects on his run, soon ending, as the war veteran Elliot Ortiz, a role he has played on and off since 2006 in a trilogy of plays by Quiara Alegr&#237;a Hudes.",
+      "url": "http://www.nytimes.com/2014/03/12/theater/armando-riesco-reflects-on-his-role-in-the-elliot-trilogy.html",
+      "byline": "By PATRICK HEALY",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/arts/12ARMANDO-inline/12ARMANDO-inline-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:42:43-04:00",
+      "created_date": "2014-03-11T17:42:43-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Theater", "Actors and Actresses"],
+      "org_facet": ["CBS Corporation|CBS|NYSE"],
+      "per_facet": ["Riesco, Armando", "Hudes, Quiara Alegria"],
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12ARMANDO-inline/12ARMANDO-inline-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Armando Riesco, left, with Elliot Ruiz, the real-life inspiration for Mr. Riesco's character in the so-called Elliot Trilogy of plays by Quiara Alegr&iacute;a Hudes.",
+          "copyright": "Steve Shevett"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12ARMANDO-inline/12ARMANDO-inline-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Armando Riesco, left, with Elliot Ruiz, the real-life inspiration for Mr. Riesco's character in the so-called Elliot Trilogy of plays by Quiara Alegr&iacute;a Hudes.",
+          "copyright": "Steve Shevett"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12ARMANDO-inline/12ARMANDO-inline-articleInline.jpg",
+          "format": "Normal",
+          "height": 126,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Armando Riesco, left, with Elliot Ruiz, the real-life inspiration for Mr. Riesco's character in the so-called Elliot Trilogy of plays by Quiara Alegr&iacute;a Hudes.",
+          "copyright": "Steve Shevett"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/arts/12ARMANDO-inline/12ARMANDO-inline-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Armando Riesco, left, with Elliot Ruiz, the real-life inspiration for Mr. Riesco's character in the so-called Elliot Trilogy of plays by Quiara Alegr&iacute;a Hudes.",
+          "copyright": "Steve Shevett"
+        }
+      ]
+    },
+    {
+      "section": "Travel",
+      "subsection": "",
+      "title": "Hotel Discounts for Egencia Users",
+      "abstract": "Egencia, the business travel brand of Expedia, is offering discounts to users who book through its new Trip Navigator application.",
+      "url": "http://intransit.blogs.nytimes.com/2014/03/11/hotel-discounts-for-egencia-users/",
+      "byline": "By RACHEL LEE HARRIS",
+      "thumbnail_standard": "images/2014/03/11/travel/11egencia2/11egencia2-thumbStandard.jpg",
+      "item_type": "Blog",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:28:22-04:00",
+      "created_date": "2014-03-11T17:28:23-04:00",
+      "published_date": "2014-03-11T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "In Transit",
+      "subheadline": "",
+      "des_facet": ["Computers and the Internet", "Hotels and Travel Lodgings", "Travel and Vacations"],
+      "org_facet": ["Apple Inc", "Expedia Inc"],
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": [
+        {
+          "suggested_link_text": "An Early Start for Cyber Deals",
+          "url": "http://intransit.blogs.nytimes.com/2013/11/22/an-early-start-for-cyber-deals/"
+        },
+        {
+          "suggested_link_text": "A London Hotel Has a Focus on Sustainability",
+          "url": "http://intransit.blogs.nytimes.com/2014/03/07/a-london-hotel-has-a-focus-on-sustainability/"
+        },
+        {
+          "suggested_link_text": "Park Hyatt Flagship Is Set for New York",
+          "url": "http://intransit.blogs.nytimes.com/2014/03/04/park-hyatt-flagship-is-set-for-new-york/"
+        },
+        {
+          "suggested_link_text": "In Miami Beach, a Concierge for Daytime Activities",
+          "url": "http://intransit.blogs.nytimes.com/2014/02/28/in-miami-beach-a-concierge-for-daytime-activities/"
+        },
+        {
+          "suggested_link_text": "New Butler Services Buff Luxury Hotels ",
+          "url": "http://intransit.blogs.nytimes.com/2014/02/27/new-butler-services-buff-luxury-hotels/"
+        }
+      ],
+      "blog_name": "In Transit",
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/travel/11egencia2/11egencia2-thumbStandard.jpg",
           "format": "Standard Thumbnail",
           "height": 75,
           "width": 75,
@@ -1139,39 +835,66 @@
           "subtype": "photo",
           "caption": "",
           "copyright": ""
-        },
+        }
+      ]
+    },
+    {
+      "section": "Business Day",
+      "subsection": "Media",
+      "title": "Anne Sweeney, Top Disney TV Executive, Will Step Down",
+      "abstract": "Ms. Sweeney, one of the most powerful women in television, will leave in 2015 after 18 years at the company.",
+      "url": "http://www.nytimes.com/2014/03/12/business/media/anne-sweeney-top-disney-tv-executive-will-step-down.html",
+      "byline": "By BROOKS BARNES and BILL CARTER",
+      "thumbnail_standard": "",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:49:21-04:00",
+      "created_date": "2014-03-11T17:26:51-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Appointments and Executive Changes", "Television"],
+      "org_facet": ["Walt Disney Company"],
+      "per_facet": ["Sweeney, Anne"],
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": ""
+    },
+    {
+      "section": "T:Style",
+      "subsection": "",
+      "title": "Q. and A. | Filmmaker Matt Wolf on the Origins of Teenage Culture ",
+      "abstract": "The documentarian discusses his new project, a collage-like exploration of early-20th-century youth subcultures.",
+      "url": "http://tmagazine.blogs.nytimes.com/2014/03/11/q-and-a-filmmaker-matt-wolf-on-the-origins-of-teenage-culture/",
+      "byline": "By TIM MURPHY",
+      "thumbnail_standard": "images/2014/03/11/t-magazine/11murphy-teenage/11murphy-teenage-thumbStandard.jpg",
+      "item_type": "Blog",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:25:55-04:00",
+      "created_date": "2014-03-11T17:25:56-04:00",
+      "published_date": "2014-03-11T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "T Magazine",
+      "subheadline": "",
+      "des_facet": ["Documentary Films and Programs"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC2/11NEWMUSIC2-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
+          "suggested_link_text": "Now Screening ",
+          "url": " Putting a Human Face on the African AIDS Epidemic "
         },
+        { "suggested_link_text": "Now Screening ", "url": " The King of Modern Longboarding Looks Back " },
+        { "suggested_link_text": "Now Screening ", "url": " Forty Years of Love and Art and Chaos " },
+        { "suggested_link_text": "Site to Be Seen ", "url": " The PG Lives of X-Rated Stars" },
+        { "suggested_link_text": "Now Showing ", "url": " 'The Source Family'" }
+      ],
+      "blog_name": "T Magazine",
+      "multimedia": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC2/11NEWMUSIC2-articleInline.jpg",
-          "format": "Normal",
-          "height": 190,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC2/11NEWMUSIC2-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC3/11NEWMUSIC3-thumbStandard.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/11/t-magazine/11murphy-teenage/11murphy-teenage-thumbStandard.jpg",
           "format": "Standard Thumbnail",
           "height": 75,
           "width": 75,
@@ -1179,39 +902,43 @@
           "subtype": "photo",
           "caption": "",
           "copyright": ""
+        }
+      ]
+    },
+    {
+      "section": "Business Day",
+      "subsection": "Dealbook",
+      "title": "Herbalife Shares Fall as Ackman Makes New Accusations",
+      "abstract": "Shares in Herbalife were down slightly after William A. Ackman, the founder of the firm Pershing Square Capital Management, called Herbalife&#8217;s accounting of its Chinese business as &#8220;highly misleading.&#8221;",
+      "url": "http://dealbook.nytimes.com/2014/03/11/herbalife-shares-fall-as-ackman-makes-new-accusations/",
+      "byline": "By ALEXANDRA STEVENSON",
+      "thumbnail_standard": "images/2014/03/12/business/dbpix-ackman/dbpix-ackman-thumbStandard.jpg",
+      "item_type": "Blog",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T18:08:29-04:00",
+      "created_date": "2014-03-11T17:17:29-04:00",
+      "published_date": "2014-03-11T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "DealBook",
+      "subheadline": "",
+      "des_facet": ["Diet and Nutrition", "Law and Legislation", "Regulation and Deregulation of Industry"],
+      "org_facet": ["Herbalife Ltd", "Pershing Square Capital Management"],
+      "per_facet": ["Ackman, William A"],
+      "geo_facet": "",
+      "related_urls": [
+        {
+          "suggested_link_text": "Senator Is Lobbying for Inquiry on Herbalife",
+          "url": "http://dealbook.nytimes.com/2014/01/23/senator-calls-for-inquiry-into-herbalife/"
         },
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC3/11NEWMUSIC3-articleInline.jpg",
-          "format": "Normal",
-          "height": 190,
-          "width": 190,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        },
+          "suggested_link_text": "Ackman, Herbalife and Celebrity Short-Sellers",
+          "url": "http://dealbook.nytimes.com/2013/01/01/ackman-herbalife-and-celebrity-short-sellers/"
+        }
+      ],
+      "blog_name": "DealBook",
+      "multimedia": [
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC3/11NEWMUSIC3-thumbLarge.jpg",
-          "format": "thumbLarge",
-          "height": 150,
-          "width": 150,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC3/11NEWMUSIC3-mediumThreeByTwo210.jpg",
-          "format": "mediumThreeByTwo210",
-          "height": 140,
-          "width": 210,
-          "type": "image",
-          "subtype": "photo",
-          "caption": "",
-          "copyright": ""
-        },
-        {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC1/11NEWMUSIC1-thumbStandard.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/business/dbpix-ackman/dbpix-ackman-thumbStandard.jpg",
           "format": "Standard Thumbnail",
           "height": 75,
           "width": 75,
@@ -1219,36 +946,254 @@
           "subtype": "photo",
           "caption": "",
           "copyright": ""
+        }
+      ]
+    },
+    {
+      "section": "Sports",
+      "subsection": "Olympics",
+      "title": "Student (Russia) Beats Teacher (U.S.) in Sledge Hockey",
+      "abstract": "The Russians, who decided five years ago to field a team for these Paralympics, and asked American coaches to help, beat the United States on Tuesday, a major victory for a young program.",
+      "url": "http://www.nytimes.com/2014/03/12/sports/olympics/student-russia-beats-teacher-us-in-sledge-hockey.html",
+      "byline": "By BEN SHPIGEL",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/12/sports/olympics/12paralympics1/12paralympics1-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:10:39-04:00",
+      "created_date": "2014-03-11T17:09:15-04:00",
+      "published_date": "2014-03-12T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "",
+      "subheadline": "",
+      "des_facet": ["Sledge Hockey", "Paralympic Games"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": "",
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/olympics/12paralympics1/12paralympics1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "Rico Roman of the United States, left, and Ilia Volkov of Russia clashed on Tuesday.",
+          "copyright": "James Hill for The New York Times"
         },
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC1/11NEWMUSIC1-thumbLarge.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/olympics/12paralympics1/12paralympics1-thumbLarge.jpg",
           "format": "thumbLarge",
           "height": 150,
           "width": 150,
           "type": "image",
           "subtype": "photo",
-          "caption": "",
-          "copyright": ""
+          "caption": "Rico Roman of the United States, left, and Ilia Volkov of Russia clashed on Tuesday.",
+          "copyright": "James Hill for The New York Times"
         },
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC1/11NEWMUSIC1-articleInline.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/olympics/12paralympics1/12paralympics1-articleInline.jpg",
           "format": "Normal",
-          "height": 190,
+          "height": 126,
           "width": 190,
           "type": "image",
           "subtype": "photo",
-          "caption": "",
-          "copyright": ""
+          "caption": "Rico Roman of the United States, left, and Ilia Volkov of Russia clashed on Tuesday.",
+          "copyright": "James Hill for The New York Times"
         },
         {
-          "url": "http://graphics8.nytimes.com/images/2014/03/11/arts/11NEWMUSIC1/11NEWMUSIC1-mediumThreeByTwo210.jpg",
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/olympics/12paralympics1/12paralympics1-mediumThreeByTwo210.jpg",
           "format": "mediumThreeByTwo210",
           "height": 140,
           "width": 210,
           "type": "image",
           "subtype": "photo",
-          "caption": "",
-          "copyright": ""
+          "caption": "Rico Roman of the United States, left, and Ilia Volkov of Russia clashed on Tuesday.",
+          "copyright": "James Hill for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/12hockey1/12hockey1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "lia Volkov of Russia celebrated scoring Russia's first goal.",
+          "copyright": "James Hill for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/12hockey1/12hockey1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "lia Volkov of Russia celebrated scoring Russia's first goal.",
+          "copyright": "James Hill for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/12hockey1/12hockey1-articleInline.jpg",
+          "format": "Normal",
+          "height": 126,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "lia Volkov of Russia celebrated scoring Russia's first goal.",
+          "copyright": "James Hill for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/12/sports/12hockey1/12hockey1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "lia Volkov of Russia celebrated scoring Russia's first goal.",
+          "copyright": "James Hill for The New York Times"
+        }
+      ]
+    },
+    {
+      "section": "Real Estate",
+      "subsection": "",
+      "title": "New Roots in Carroll Gardens",
+      "abstract": "A Brooklyn neighborhood rich with brownstones and brick townhouses, and new zoning protects the urban-small-town atmosphere.",
+      "url": "http://www.nytimes.com/2014/03/16/realestate/new-roots-in-carroll-gardens.html",
+      "byline": "By JOHN FREEMAN GILL",
+      "thumbnail_standard": "http://graphics8.nytimes.com/images/2014/03/16/realestate/SUB-16-Gaz1/SUB-16-Gaz1-thumbStandard.jpg",
+      "item_type": "Article",
+      "source": "The New York Times",
+      "updated_date": "2014-03-11T17:08:58-04:00",
+      "created_date": "2014-03-11T17:08:59-04:00",
+      "published_date": "2014-03-16T00:00:00-04:00",
+      "material_type_facet": "News",
+      "kicker": "Living in",
+      "subheadline": "",
+      "des_facet": ["Real Estate and Housing (Residential)"],
+      "org_facet": "",
+      "per_facet": "",
+      "geo_facet": ["Carroll Gardens (Brooklyn, NY)"],
+      "related_urls": null,
+      "multimedia": [
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/SUB-16-Gaz1/SUB-16-Gaz1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>292 Sackett Street</strong><br />A new five-bedroom five-and-a-half-bath two-family <a href=\"http://streeteasy.com/nyc/sale/856769-townhouse-292-sackett-street-carroll-gardens-brooklyn\" title=\"The listing.\">townhouse</a>, listed at $3.68 million.<br />(212) 732-0372",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/SUB-16-Gaz1/SUB-16-Gaz1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>292 Sackett Street</strong><br />A new five-bedroom five-and-a-half-bath two-family <a href=\"http://streeteasy.com/nyc/sale/856769-townhouse-292-sackett-street-carroll-gardens-brooklyn\" title=\"The listing.\">townhouse</a>, listed at $3.68 million.<br />(212) 732-0372",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/SUB-16-Gaz1/SUB-16-Gaz1-articleInline.jpg",
+          "format": "Normal",
+          "height": 83,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>292 Sackett Street</strong><br />A new five-bedroom five-and-a-half-bath two-family <a href=\"http://streeteasy.com/nyc/sale/856769-townhouse-292-sackett-street-carroll-gardens-brooklyn\" title=\"The listing.\">townhouse</a>, listed at $3.68 million.<br />(212) 732-0372",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/SUB-16-Gaz1/SUB-16-Gaz1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>292 Sackett Street</strong><br />A new five-bedroom five-and-a-half-bath two-family <a href=\"http://streeteasy.com/nyc/sale/856769-townhouse-292-sackett-street-carroll-gardens-brooklyn\" title=\"The listing.\">townhouse</a>, listed at $3.68 million.<br />(212) 732-0372",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-gaz1/16-gaz1-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>154 President Street</strong><br />A two-family <a href=\"http://www.corcoran.com/nyc/Listings/Display/2912628\" title=\"The listing.\">brownstone</a> with central air-conditioning, listed at $2.99 million.<br />(718) 923-8027",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-gaz1/16-gaz1-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>154 President Street</strong><br />A two-family <a href=\"http://www.corcoran.com/nyc/Listings/Display/2912628\" title=\"The listing.\">brownstone</a> with central air-conditioning, listed at $2.99 million.<br />(718) 923-8027",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-gaz1/16-gaz1-articleInline.jpg",
+          "format": "Normal",
+          "height": 83,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>154 President Street</strong><br />A two-family <a href=\"http://www.corcoran.com/nyc/Listings/Display/2912628\" title=\"The listing.\">brownstone</a> with central air-conditioning, listed at $2.99 million.<br />(718) 923-8027",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-gaz1/16-gaz1-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>154 President Street</strong><br />A two-family <a href=\"http://www.corcoran.com/nyc/Listings/Display/2912628\" title=\"The listing.\">brownstone</a> with central air-conditioning, listed at $2.99 million.<br />(718) 923-8027",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-Gaz3/16-Gaz3-thumbStandard.jpg",
+          "format": "Standard Thumbnail",
+          "height": 75,
+          "width": 75,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>162 Huntington Street, #4R</strong><br />A two-bedroom two-and-a-half-bath duplex <a href=\"http://www.corcoran.com/nyc/Listings/Display/2770077\" title=\"The listing.\">condo</a> with a balcony, listed at $895,000.<br />(718) 422-2524",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-Gaz3/16-Gaz3-thumbLarge.jpg",
+          "format": "thumbLarge",
+          "height": 150,
+          "width": 150,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>162 Huntington Street, #4R</strong><br />A two-bedroom two-and-a-half-bath duplex <a href=\"http://www.corcoran.com/nyc/Listings/Display/2770077\" title=\"The listing.\">condo</a> with a balcony, listed at $895,000.<br />(718) 422-2524",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-Gaz3/16-Gaz3-articleInline.jpg",
+          "format": "Normal",
+          "height": 83,
+          "width": 190,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>162 Huntington Street, #4R</strong><br />A two-bedroom two-and-a-half-bath duplex <a href=\"http://www.corcoran.com/nyc/Listings/Display/2770077\" title=\"The listing.\">condo</a> with a balcony, listed at $895,000.<br />(718) 422-2524",
+          "copyright": "Katie Orlinsky for The New York Times"
+        },
+        {
+          "url": "http://graphics8.nytimes.com/images/2014/03/16/realestate/16-Gaz3/16-Gaz3-mediumThreeByTwo210.jpg",
+          "format": "mediumThreeByTwo210",
+          "height": 140,
+          "width": 210,
+          "type": "image",
+          "subtype": "photo",
+          "caption": "<strong>162 Huntington Street, #4R</strong><br />A two-bedroom two-and-a-half-bath duplex <a href=\"http://www.corcoran.com/nyc/Listings/Display/2770077\" title=\"The listing.\">condo</a> with a balcony, listed at $895,000.<br />(718) 422-2524",
+          "copyright": "Katie Orlinsky for The New York Times"
         }
       ]
     }
