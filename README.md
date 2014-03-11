@@ -13,7 +13,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + Keywords are represented as squares that change color based on volume of tweets.
 + Squares refresh with each new tweet.
 
-#####v.0.0.2      [NYT Breaking News]:                5 hours
+#####v.0.0.2      [NYT Breaking News]:                ~~5 hours~
 + Wire up connection to NYT Breaking News API.
 
 #####v.0.0.3      [Dynamic Keywords]:                 7 hours
