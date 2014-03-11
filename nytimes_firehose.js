@@ -1,13 +1,17 @@
 var http = require('http')
-  , nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661'
-  , options = {
-    host: "api.nytimes.com",
-    path: "/svc/news/v3/content/all/all.json?api-key=" + nytimes_key
-  }
   , Promise = require('bluebird');
 
+var nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661';
+
+var options = {
+  host: "api.nytimes.com",
+  path: "/svc/news/v3/content/all/all.json?api-key=" + nytimes_key
+};
+
+// Pulls keywords out of the titles of NYTimes Breaking News articles
 exports.getKeywords = function() {
   return new Promise(function(resolve, reject) {
+    // establish connection with NYTimes API and pull down Breaking News
     http.get(options, function(res) {
       var news = ""
         , count = 0
@@ -27,9 +31,10 @@ exports.getKeywords = function() {
         }
 
         console.log("Pulling down " + articles.length + " NYTimes articles...")
-        // Why is it only pulling down 20 articles?
+        // ??? Why is it only pulling down 20 articles?
 
         articles.forEach(function(e,i) {
+          // pluck the titles from each article
           titleCollection.push(articles[i].title.trim().toLowerCase().split(' '));
           // remove duplicates
           keywords = titleCollection.concat.apply([], titleCollection);
@@ -46,6 +51,7 @@ exports.getKeywords = function() {
           console.log("Deleted " + count + " junkword(s).")
           console.log("Pulled " + keywords.length + " keyword(s).")
           resolve(keywords);
+          console.log("++Keywords is " + keywords.length + " long in nytimes_firehose.js++")
         });
       });
     });

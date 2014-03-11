@@ -38,8 +38,8 @@ io.sockets.on('connection', function(socket) {
   });
 });
 
+// pull down newsfeed and add it to socket.io
 twitter.mergeNewsfeed().then(function(watchList) {
-  // console.log(watchList)
   io.sockets.emit('data', {'watchList': watchList});
   console.log("* * * updating socket with data * * *");
 });
