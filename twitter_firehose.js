@@ -35,7 +35,7 @@ var initializeFeed = function() {
 //   console.log(watchList)
 // });
 
-exports.getNewsfeed = function() {
+exports.mergeNewsfeed = function() {
   return new Promise(function(resolve, reject) {
     initializeFeed().then(function(watchList) {
       t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
@@ -43,17 +43,22 @@ exports.getNewsfeed = function() {
         stream.on('data', function(tweet) {
           // if the tweet exists, make it lowercase
           if (tweet.text !== undefined) {
+            // console.log('hey')
             var text = tweet.text.toLowerCase();
             _.each(watchKeywords, function(e) {
               // if the keyword is present in the tweet, += 1
               if (text.indexOf(e.toLowerCase()) !== -1) {
                 watchList.keywords[e] += 1;
                 watchList.total += 1;
+                // console.log(watchList);
+                // resolve(watchList);
               }
             });
+            // console.log(watchList);
+            // resolve(watchList);
           }
-          console.log(watchList)
-          resolve(watchList);
+        // console.log(watchList);
+        resolve(watchList);
         });
       });
     });

@@ -3,14 +3,13 @@ var express = require('express')
   , http    = require('http')
   , server  = require('http').createServer(app)
   , io      = require('socket.io').listen(server)
-  , twitter = require('ntwitter')
   , cronJob = require('cron').CronJob
   , _       = require('underscore')
   , path    = require('path')
   , twitter = require('./twitter_firehose.js');
 
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.logger('dev'));
@@ -33,65 +32,30 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-twitter.getNewsfeed().then(function(watchList) {
-  console.log(watchList);
-})
-// console.log(twitter.watchList);
 // =====================
-// console.log(twitter.newsfeed());
-// var watchKeywords = [];
+// watchList data exists, but I can't access it from inside socket.io
 
-// var watchList     = {
-//       total: 0,
-//       keywords: {}
-//     };
+twitter.mergeNewsfeed().then(function(watchList) {
+  if (watchList) {
+    console.log("watchList is defined");
+  }
+  // watchList does not update dynamically from app.js?
+  // is watchList a one-time pull fromm app.js? 11 hits
+  io.sockets.on('connection', function(socket) {
+    twitter.mergeNewsfeed().then(function(watchList) {
+      if (!watchList) {
+      console.log("watchList is UNdefined");
+      }
+      // why is watchList undefined inside socket.io scope?
+      socket.emit('data', watchList);
+    });
+  });
+});
 
-// var t = new twitter({
-//     consumer_key: 'djsET78GAcb6SemgYT6Xw'
-//   , consumer_secret: 'AWfNIZbUkcToO8ZVsKt5xeNFmKwjGmLHfLAqLiOqUg'
-//   , access_token_key: '322965911-17Rkt0lWekPQCQBiQYIpIS3SC63MqGZR2SSnXm3g'
-//   , access_token_secret: 'jvaf1cFPx1AFsmLdATVGl8zd7dTcsXVCR5mPuk4UoNR9u'
-// });
+// // reset total every 24 hours
+new cronJob('0 0 0 * * *', function(){
+  watchList.total = 0;
+  _.each(watchKeywords, function(e) { watchList.symbols[e] = 0; });
 
-// nytimes.getKeywords().then(function(keywords) {
-//   _.each(keywords, function(keyword) {
-//     watchKeywords.push(keyword);
-//     console.log(watchKeywords.length)
-//   });
-
-//   _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
-
-//   // io.sockets.on('connection', function(socket) {
-//   //   console.log("* * * Client connected... * * *");
-//   //   socket.emit('data', watchList);
-
-//     // Filter Twitter firehouse by watchList[keywords]
-//     t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
-
-//       // watch the firehouse ('data') event for incoming tweets.
-//       stream.on('data', function(tweet) {
-
-//         if (tweet.text !== undefined) {
-//           var text = tweet.text.toLowerCase();
-//           _.each(watchKeywords, function(e) {
-
-//             // if the tweet matches a keyword
-//             if (text.indexOf(e.toLowerCase()) !== -1) {
-//               // io.sockets.emit('data', watchList);
-//               watchList.keywords[e] += 1;
-//               watchList.total += 1;
-//             }
-//           });
-//           console.log(watchList);
-//         }
-//       // });
-//     });
-//   });
-// });
-
-// new cronJob('0 0 0 * * *', function(){
-//   watchList.total = 0;
-//   _.each(watchKeywords, function(e) { watchList.symbols[e] = 0; });
-
-//   io.sockets.emit('data', watchList);
-// }, null, true);
+  io.sockets.emit('data', watchList);
+}, null, true);
