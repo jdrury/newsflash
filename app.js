@@ -7,7 +7,7 @@ var express = require('express')
   , _       = require('underscore')
   , path    = require('path')
   , twitter = require('./twitter_firehose.js');
-
+// export initialize
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
@@ -25,7 +25,7 @@ if ('development' == app.get('env')) {
 }
 watchlist = [];
 app.get('/', function(req, res) {
-  res.render('index', { data: watchlist });
+  res.render('index', { data: twitter.initializeFeed() });
 });
 
 server.listen(app.get('port'), function(){
@@ -43,5 +43,12 @@ io.sockets.on('connection', function(socket) {
 twitter.mergeNewsfeed().then(function(watchList) {
   io.sockets.emit('data', {'watchList': watchList});
   console.log("* * * updating socket with data * * *");
-  console.log(watchList);
+
+  var count = 0;
+  for (var key in watchList.keywords) {
+    if (watchList.keywords.hasOwnProperty(key)) {
+      count += 1;
+    }
+  }
+  console.log("[app.js]: watchList.keywords=", count);
 });

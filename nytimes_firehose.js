@@ -56,6 +56,7 @@ exports.getKeywords = function() {
             });
           });
         });
+        console.log("[nyt_firehose]: keywords.length=", keywords.length);
         resolve(keywords);
       });
     });
