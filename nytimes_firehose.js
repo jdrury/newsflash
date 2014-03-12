@@ -20,13 +20,13 @@ exports.getKeywords = function() {
     // establish connection with NYTimes API and pull down Breaking News
     http.get(options, function(res) {
       var news = ""
-        , count = 0
+        , junkDeleted = 0
         , title = ""
         , keywords = []
         , articles = []
         , titles = []
         , filteredKeywords = []
-        , junkwords = ["", "a", "an", "and", "at", "of", "in", "is", "its", "it's", "his", "her", "on", "the", "was"];
+        , junkwords = ["", "a", "an", "and", "are", "as", "at", "by", "for", "in", "is", "it", "its", "it's", "he", "his", "her", "how", "of", "on", "s", "that", "the", "to", "was", "with"];
 
       res.on('data', function(chunk) {
         news += chunk;
@@ -36,40 +36,27 @@ exports.getKeywords = function() {
         if (res.statusCode == 200) {
           var pretty_news = JSON.parse(news)
             , articles    = pretty_news.results;
-            // console.log(articles)
         }
 
         console.log("Pulling down " + articles.length + " NYTimes articles...")
 
-        // !!! pushes keywords out one title at a time
         articles.forEach(function(article) {
           // pluck the titles from each article
           title = article.title.trim().toLowerCase().split(' ');
-          console.log(title)
           titles.push(title);
           // remove duplicates
           keywords = titles.concat.apply([], titles);
-          console.log(keywords)
           // remove junk words
           keywords.map(function(word) {
             junkwords.forEach(function(junk) {
               if (word === junk) {
                 keywords.splice(keywords.indexOf(word),1);
-                count += 1;
-                // console.log("deleted ", word);
+                // junkDeleted += 1;
               };
             });
           });
-
-          console.log("Deleted " + count + " junkword(s).")
-          console.log("Pulled " + keywords.length + " keyword(s).")
-          console.log("++Keywords is " + keywords.length + " long in nytimes_firehose.js++")
-
-          // resolve(keywords);
-
         });
         resolve(keywords);
-        console.log(keywords)
       });
     });
   });
