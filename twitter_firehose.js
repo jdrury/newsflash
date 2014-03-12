@@ -1,8 +1,7 @@
 var nytimes = require('./nytimes_firehose.js')
   , twitter = require('ntwitter')
   , Promise = require('bluebird')
-  , _       = require('underscore')
-  , self    = require('./twitter_firehose.js');
+  , _       = require('underscore');
 
 var watchKeywords = [];
 
@@ -20,7 +19,6 @@ var t = new twitter({
 
 // Catches NYTimes Promise, applies keywords to watchList object and sets all counts to zero
 exports.initializeFeed = function() {
-  console.log("initializeFeed");
   return new Promise(function(resolve, reject) {
     // catch final value from NYTimes Promise
     nytimes.getKeywords().then(function(keywords) {
@@ -29,27 +27,16 @@ exports.initializeFeed = function() {
         watchKeywords.push(keyword);
       });
 
-      console.log("[twit]pre-init: watchKeywords=",watchKeywords.length)
-
       // set every keyword value to zero
       _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
 
-      var count = 0;
-      for (var key in watchList.keywords) {
-        if (watchList.keywords.hasOwnProperty(key)) {
-          count += 1;
-        }
-      }
-
-      console.log("[twit]pre-stream: watchList.keywords=", count);
       resolve(watchList);
     });
   });
 };
 // use event
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
-exports.mergeNewsfeed = function(callback) {
-  console.log("mergeNewsfeed");
+exports.mergedNewsfeed = function(callback) {
     exports.initializeFeed().then(function(watchList) {
       var count = 0;
       for (var key in watchList.keywords) {
@@ -73,7 +60,7 @@ exports.mergeNewsfeed = function(callback) {
             }
           });
           // streaming constantly here...
-          console.log(watchList);
+          // console.log(watchList);
           // ... but freezes in app.js once it gets resolved
           callback(watchList);
         });

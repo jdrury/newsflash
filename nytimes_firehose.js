@@ -20,20 +20,16 @@ exports.getKeywords = function() {
     // establish connection with NYTimes API and pull down Breaking News
     http.get(options, function(res) {
       var news = ""
-        , junkDeleted = 0
         , title = ""
-        , keywords = []
         , articles = []
         , titles = []
-        , filteredKeywords = []
-        , junkWords = [];
+        , keywords = [];
 
       res.on('data', function(chunk) {
         news += chunk;
       });
 
       res.on('end', function() {
-        console.log("getKeywords");
         if (res.statusCode == 200) {
           var pretty_news = JSON.parse(news)
             , articles    = pretty_news.results;
@@ -45,6 +41,7 @@ exports.getKeywords = function() {
           // pluck the titles from each article
           title = article.title.trim().toLowerCase().split(' ');
           titles.push(title);
+
           // remove duplicates
           keywords = titles.concat.apply([], titles);
           // remove junk words
@@ -57,7 +54,7 @@ exports.getKeywords = function() {
           //   });
           // });
         });
-        console.log("[nyt_firehose]: keywords.length=", keywords.length);
+        console.log("[nyt]: keywords.length=", keywords.length);
         resolve(keywords);
       });
     });

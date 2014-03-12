@@ -1,17 +1,13 @@
-$(function() {
+$(document).ready(function() {
   var socket = io.connect(window.location.hostname);
-  socket.on('data', function(data) {
-    var total = data.total;
-    for (var key in data.keywords) {
-      var val = data.keywords[key] / total;
-      if (isNaN(val)) {
-          val = 0;
-      }
 
-      $('li[data-symbol="' + key + '"]').each(function() {
-          $(this).css('background-color', 'rgb(' + Math.round(val * 255) +',0,0)');
-      });
+  socket.on('watchList', function(data) {
+    $('#list').empty();
+    var tally = data.total;
+    for (var key in data.keywords) {
+      // var val = data.keywords[key] / total;
+      $('#list').append('<li id='+key+'>' + key + ': ' + data.keywords[key] + '</li>')
+      $("li #\'"+key+"\'").css({"font-size:"+ val});
     }
-    $('#last-update').text(new Date().toTimeString());
   });
-})
+});
