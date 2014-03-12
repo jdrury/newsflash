@@ -16,7 +16,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/components', express.static(path.join(__dirname, 'components')));
+// app.use('/components', express.static(path.join(__dirname, 'components')));
 
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
@@ -30,17 +30,18 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+// ==============
+
 twithose.mergedNewsfeed(function(watchList) {
-  // pull down newsfeed and emit to server environment
+  // STREAMING . . .
   io.sockets.emit('data', {'watchList': watchList});
 });
 
 io.sockets.on('connection', function(socket) {
+  console.log("client connected...")
   // listen for data event from the server side
   socket.on('data', function(watchList){
     // forward data event to client
     socket.emit('watchList', watchList);
   });
 });
-
-

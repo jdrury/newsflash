@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>newsflash</title>
-
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/stylesheets/style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -61,11 +52,9 @@
            <!-- display tweets here -->
           <div class="tweetcontrol">
             <ul id="list">
-
             </ul>
           </div>
         </div>
-
     </div>
 
     <div id="footer">
@@ -74,27 +63,24 @@
       </div>
     </div>
 
+    <!-- Bootstrap and Socket.io -->
+    <!-- ======================================= -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="/stylesheets/custom.css" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
     <script>
-    $( document ).ready(function() {
-      var socket = io.connect();
-      alert("CONNECTED")
+      var socket = io.connect('http://localhost:8080');
       socket.on('watchList', function(data) {
         $('#list').empty();
-        alert("EMPTIED");
-
         var total = data.total;
         for (var key in data.keywords) {
           // var val = data.keywords[key] / total;
-          var val = data.keywords[key] / total
+          var val = data.keywords[key] / total;
           $('ul').append('<li>' + key + ":" + data.keywords[key] + '</li>')
+          $("li #"+key).css({"font-size:"+ val});
         }
       });
-    });
     </script>
-    <!-- Bootstrap core JavaScript -->
-    <!-- ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!-- ======================================= -->
   </body>
 </html>
