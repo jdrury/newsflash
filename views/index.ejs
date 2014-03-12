@@ -75,10 +75,11 @@
     </div>
 
     <script>
-      var socket = io.connect(window.location.hostname);
+    $( document ).ready(function() {
+      var socket = io.connect();
       alert("CONNECTED")
       socket.on('watchList', function(data) {
-        // $('#list').empty();
+        $('#list').empty();
         alert("EMPTIED");
 
         var total = data.total;
@@ -88,6 +89,7 @@
           $('ul').append('<li>' + key + ":" + data.keywords[key] + '</li>')
         }
       });
+    });
     </script>
     <!-- Bootstrap core JavaScript -->
     <!-- ================================================== -->

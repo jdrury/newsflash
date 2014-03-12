@@ -30,14 +30,17 @@ server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+twithose.mergedNewsfeed(function(watchList) {
+  // pull down newsfeed and emit to server environment
+  io.sockets.emit('data', {'watchList': watchList});
+});
+
 io.sockets.on('connection', function(socket) {
+  // listen for data event from the server side
   socket.on('data', function(watchList){
+    // forward data event to client
     socket.emit('watchList', watchList);
   });
 });
 
-// pull down newsfeed and add it to socket.io
-twithose.mergedNewsfeed(function(watchList) {
-  io.sockets.emit('data', {'watchList': watchList});
-  // console.log("chirp");
-});
+

@@ -7,7 +7,7 @@ $(document).ready(function() {
     for (var key in data.keywords) {
       // var val = data.keywords[key] / total;
       $('#list').append('<li id='+key+'>' + key + ': ' + data.keywords[key] + '</li>')
-      $("li #\'"+key+"\'").css({"font-size:"+ val});
+      $("li #"+key).css({"font-size:"+ val});
     }
   });
 });
