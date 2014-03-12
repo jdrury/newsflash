@@ -5,7 +5,7 @@ var nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661';
 
 var options = {
   host: "api.nytimes.com",
-  path: "/svc/news/v3/content/nyt/all.json?&limit=50&api-key=" + nytimes_key
+  path: "/svc/news/v3/content/all/all.json?&limit=50&api-key=" + nytimes_key
 };
 // ====================
 // To pull more than 50 articles...
@@ -26,13 +26,14 @@ exports.getKeywords = function() {
         , articles = []
         , titles = []
         , filteredKeywords = []
-        , junkwords = ["", "a", "an", "and", "are", "as", "at", "by", "for", "in", "is", "it", "its", "it's", "he", "his", "her", "how", "of", "on", "s", "that", "the", "to", "was", "with"];
+        , junkWords = [];
 
       res.on('data', function(chunk) {
         news += chunk;
       });
 
       res.on('end', function() {
+        console.log("getKeywords");
         if (res.statusCode == 200) {
           var pretty_news = JSON.parse(news)
             , articles    = pretty_news.results;
@@ -47,14 +48,14 @@ exports.getKeywords = function() {
           // remove duplicates
           keywords = titles.concat.apply([], titles);
           // remove junk words
-          keywords.map(function(word) {
-            junkwords.forEach(function(junk) {
-              if (word === junk) {
-                keywords.splice(keywords.indexOf(word),1);
-                // junkDeleted += 1;
-              };
-            });
-          });
+          // keywords.map(function(word) {
+          //   junkwords.forEach(function(junk) {
+          //     if (word === junk) {
+          //       keywords.splice(keywords.indexOf(word),1);
+          //       // junkDeleted += 1;
+          //     };
+          //   });
+          // });
         });
         console.log("[nyt_firehose]: keywords.length=", keywords.length);
         resolve(keywords);

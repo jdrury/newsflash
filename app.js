@@ -40,15 +40,15 @@ io.sockets.on('connection', function(socket) {
 });
 
 // pull down newsfeed and add it to socket.io
-twitter.mergeNewsfeed().then(function(watchList) {
+twitter.mergeNewsfeed(function(watchList) {
   io.sockets.emit('data', {'watchList': watchList});
   console.log("* * * updating socket with data * * *");
 
-  var count = 0;
-  for (var key in watchList.keywords) {
-    if (watchList.keywords.hasOwnProperty(key)) {
-      count += 1;
-    }
-  }
-  console.log("[app.js]: watchList.keywords=", count);
+  // var count = 0;
+  // for (var key in watchList.keywords) {
+  //   if (watchList.keywords.hasOwnProperty(key)) {
+  //     count += 1;
+  //   }
+  // }
+  // console.log("[app.js]: watchList.keywords=", count);
 });

@@ -20,6 +20,7 @@ var t = new twitter({
 
 // Catches NYTimes Promise, applies keywords to watchList object and sets all counts to zero
 exports.initializeFeed = function() {
+  console.log("initializeFeed");
   return new Promise(function(resolve, reject) {
     // catch final value from NYTimes Promise
     nytimes.getKeywords().then(function(keywords) {
@@ -45,11 +46,11 @@ exports.initializeFeed = function() {
     });
   });
 };
-
+// use event
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
-exports.mergeNewsfeed = function() {
-  return new Promise(function(resolve, reject) {
-    self.initializeFeed().then(function(watchList) {
+exports.mergeNewsfeed = function(callback) {
+  console.log("mergeNewsfeed");
+    exports.initializeFeed().then(function(watchList) {
       var count = 0;
       for (var key in watchList.keywords) {
         if (watchList.keywords.hasOwnProperty(key)) {
@@ -73,10 +74,9 @@ exports.mergeNewsfeed = function() {
           });
           // streaming constantly here...
           console.log(watchList);
-          // but freezes in app.js once it gets resolved -> no more dynamic tabulating
-          resolve(watchList);
+          // ... but freezes in app.js once it gets resolved
+          callback(watchList);
         });
       });
     });
-  });
 };
