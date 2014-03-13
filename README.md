@@ -61,3 +61,6 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 ??? How to resolve twitter stream continuously, so that watchList in app.js reflects all the changes? As it is now, it is frozen at first transfer (very low total, around 10)
 
 ??? How to render index.jade on first load? watchList is nested
+
+!!! To manually pull from NYTimes Breaking News API:
+// curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js
