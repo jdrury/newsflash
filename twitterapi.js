@@ -20,9 +20,10 @@ var t = new twitter({
 // Catches NYTimes Promise, applies keywords to watchList object and sets each to zero
 exports.initializeFeed = function() {
   return new Promise(function(resolve, reject) {
-    // catch all the keywords from NYTimes Promise
+    // catch all the keywords from alchemy Promise
     nytimes.getKeywords().then(function(keyterms) {
-      // add the NYT keywords to the watchKeywords array
+      // add the alchemy keywords to the watchKeywords array
+
       _.each(keyterms, function(keyterm) {
         watchKeywords.push(keyterm);
       });

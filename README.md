@@ -57,7 +57,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 #####v.0.1.0      [CSS Styling]:                      4 hours
 + Add improved CSS styling and fonts
 
-
+Notes to self:
 ??? How to resolve twitter stream continuously, so that watchList in app.js reflects all the changes? As it is now, it is frozen at first transfer (very low total, around 10)
 
 ??? How to render index.jade on first load? watchList is nested
