@@ -1,4 +1,4 @@
-#####newsFlash v.0.0.3
+#####newsFlash v.0.0.5
 
 =================
 
@@ -22,17 +22,16 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + Index each keyword in the watchList object.
 + Sift NYT Keywords through Twitter stream and capture matches.
 
-#####v.0.0.4      [Views and socket.io]:                4 hours
+#####v.0.0.4      [Views and socket.io]:                ~~4 hours~~
 + Wire Jade to render index.jade properly, including script.js.
 + Set client to load initialized watchList on first view.
 + Wire up socket.io for seamless refresh.
 + Display news items in a skeleton format.
 + Fix logic so the browser does not lockdown due to volume.
 
-#####v.0.0.5      [Refined Keywords, Better Results]:   5 hours
-+ Trim keywords for whitespace and meaningless words such as 'in', 'of', 'the'.
+#####v.0.0.5      [Refined Keywords, Better Results]:   ~~5 hours~~
++ Wire up alchemy api to produce meaningful keywords out of the NYTimes abstracts.
 + Add logic to view to hide words that occur less than 10 times.
-+ Create algorithm combine words that have no meaning on their own (United + States)
 + Total news items shown is capped at 75.
 
 #####v.0.0.6      [Visualization with D3]:            10 hours
@@ -57,11 +56,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 #####v.0.1.0      [CSS Styling]:                      4 hours
 + Add improved CSS styling and fonts
 
-Notes to self:
-??? How to resolve twitter stream continuously, so that watchList in app.js reflects all the changes? As it is now, it is frozen at first transfer (very low total, around 10)
-
-??? How to render index.jade on first load? watchList is nested
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 !!! To manually pull from NYTimes Breaking News API:
 // curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js
 

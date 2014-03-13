@@ -31,16 +31,11 @@ server.listen(app.get('port'), function() {
 
 // ==============
 
-firehose.matchingStream(function(watchList) {
-  console.log(watchList)
-//   // STREAMING . . .
-//   io.sockets.emit('data', {'watchList': watchList});
+io.sockets.on('connection', function(socket) {
+  // console.log("client connected");
 });
 
-// io.sockets.on('connection', function(socket) {
-//   // listens for data event from the server side
-//   socket.on('data', function(watchList) {
-//     // forwards data event to client
-//     socket.emit('watchList', {'watchList': watchList});
-//   });
-// });
+firehose.keywordStream(function(watchList) {
+  // STREAMING . . .
+  io.sockets.emit('watchUpdate', {'watchList': watchList});
+});

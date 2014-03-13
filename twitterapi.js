@@ -37,7 +37,7 @@ exports.initializeFeed = function() {
 };
 
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
-exports.matchingStream = function(callback) {
+exports.keywordStream = function(callback) {
   exports.initializeFeed().then(function(watchList) {
     var count = 0;
     for (var key in watchList.keywords) {

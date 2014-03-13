@@ -43,6 +43,7 @@
       <div class="container">
         <div class="page-header">
           <h1>Welcome to newsFlash</h1>
+          <h4></h4>
         </div>
 
 
@@ -68,19 +69,21 @@
     <!-- ======================================= -->
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
     <link href="/stylesheets/custom.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
       var socket = io.connect(window.location.hostname);
       console.log('hello world')
-      socket.on('watchList', function(data) {
-        console.log('tweets')
+      socket.on('watchUpdate', function(data) {
+        console.log('chirp')
         // $('#list').empty();
-        // var total = data.total;
-        for (var key in data.keywords) {
+        var total = data.watchList.total;
+        $("#list").empty();
+        $('h4').text(total + ' tweets');
+        for (var key in data.watchList.keywords) {
           // var val = data.keywords[key] / total;
-          var val = data.keywords[key] / total;
-          $('ul').append('<li>' + key + ":" + data.keywords[key] + '</li>')
-          // $("li #"+key).css({"font-size:"+ val});
+          // val = data.watchList.keywords[key] / total;
+          $('#list').append('<li>' + key + ":" + data.watchList.keywords[key] + '</li>')
         }
       });
     </script>
