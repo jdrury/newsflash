@@ -43,28 +43,47 @@
       <div class="container">
         <div class="page-header">
           <h1>Welcome to newsFlash</h1>
-          <h4></h4>
         </div>
 
-
-        <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-10">
           <!-- FORM CONTENT -->
 
-           <!-- display tweets here -->
-          <div class="tweetcontrol">
-            <ul id="list">
-
-            </ul>
+           <!-- display count here -->
+          <div class="col-md-5">
+            <div class="tweetcontrol">
+              <br>
+              <ul id="list">
+              </ul>
+            </div>
           </div>
-        </div>
-    </div>
 
-    <div id="footer">
-      <div class="container">
-        <p class="text-muted">newsflash, Fullstack Academy</p>
+          <!-- display total here -->
+          <div class="col-md-4 col-md-offset-1">
+            <br>
+            <br>
+            <div class="well">
+              <center><h4></h4></center>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="row">
+      <div id="footer">
+        <div class="container">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <hr>
+          <p class="text-muted" style="text-align: right">Fullstack Academy &#9829; 2014</p>
+        </div>
       </div>
     </div>
-
     <!-- Bootstrap and Socket.io -->
     <!-- ======================================= -->
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
@@ -82,7 +101,7 @@
         $('h4').text(total + ' tweets');
         for (var key in data.watchList.keywords) {
           if (data.watchList.keywords[key]) {
-            $('#list').append('<li>' + key + ":" + data.watchList.keywords[key] + '</li>')
+            $('#list').append('<li>' + key + ": " + data.watchList.keywords[key] + '</li>')
           }
         }
       });
