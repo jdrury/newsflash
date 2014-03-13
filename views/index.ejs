@@ -81,9 +81,9 @@
         $("#list").empty();
         $('h4').text(total + ' tweets');
         for (var key in data.watchList.keywords) {
-          // var val = data.keywords[key] / total;
-          // val = data.watchList.keywords[key] / total;
-          $('#list').append('<li>' + key + ":" + data.watchList.keywords[key] + '</li>')
+          if (data.watchList.keywords[key]) {
+            $('#list').append('<li>' + key + ":" + data.watchList.keywords[key] + '</li>')
+          }
         }
       });
     </script>
