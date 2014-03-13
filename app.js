@@ -37,5 +37,7 @@ io.sockets.on('connection', function(socket) {
 
 firehose.keywordStream(function(watchList) {
   // STREAMING . . .
-  io.sockets.emit('watchUpdate', {'watchList': watchList});
+  setInterval(function() {
+    io.sockets.emit('watchUpdate', {'watchList': watchList});
+  }, 1000/60);
 });
