@@ -1,6 +1,5 @@
 var express = require('express')
   , app     = express()
-  , http    = require('http')
   , server  = require('http').createServer(app)
   , io      = require('socket.io').listen(server)
   , cronJob = require('cron').CronJob
@@ -18,7 +17,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/components', express.static(path.join(__dirname, 'components')));
 
-if ('development' == app.get('env')) {
+if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
@@ -26,7 +25,7 @@ app.get('/', function(req, res) {
     res.render('index');
 });
 
-server.listen(app.get('port'), function(){
+server.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
@@ -38,10 +37,19 @@ twithose.mergedNewsfeed(function(watchList) {
 });
 
 io.sockets.on('connection', function(socket) {
-  console.log("client connected...")
-  // listen for data event from the server side
-  socket.on('data', function(watchList){
+  // listens for data event from the server side
+  socket.on('data', function(watchList) {
     // forward data event to client
-    socket.emit('watchList', watchList);
+    socket.emit('watchList', {'watchList': watchList});
   });
 });
+
+// var AlchemyAPI = require('./alchemyapi');
+// var alchemyapi = new AlchemyAPI();
+
+// twithose.mergedNewsfeed(function(watchList) {
+  // var myText = "Whoa, AlchemyAPI's Node.js SDK is really great, I can't wait to build my app!";
+  // alchemyapi.keywords("text", text, {}, function(response) {
+  //   console.log("Sentiment: " + response["docSentiment"]["type"]);
+  // });
+// });

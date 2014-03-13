@@ -23,18 +23,19 @@ exports.initializeFeed = function() {
     // catch final value from NYTimes Promise
     nytimes.getKeywords().then(function(keywords) {
       // add the NYT keywords to the watchKeywords array
+      console.log(keywords.length)
       _.each(keywords, function(keyword) {
         watchKeywords.push(keyword);
       });
-
+      // console.log(watchKeywords)
       // set every keyword value to zero
       _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
-
+      // console.log(watchList)
       resolve(watchList);
     });
   });
 };
-// use event
+
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
 exports.mergedNewsfeed = function(callback) {
     exports.initializeFeed().then(function(watchList) {
@@ -59,9 +60,6 @@ exports.mergedNewsfeed = function(callback) {
               watchList.total += 1;
             }
           });
-          // streaming constantly here...
-          // console.log(watchList);
-          // ... but freezes in app.js once it gets resolved
           callback(watchList);
         });
       });

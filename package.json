@@ -11,8 +11,9 @@
     "ejs": "~0.8.5",
     "express": "3.1.2",
     "ntwitter": "*",
+    "request": "~2.34.0",
     "socket.io": "*",
     "stylus": "*",
-    "underscore": "*"
+    "underscore": "*",
   }
 }

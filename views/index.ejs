@@ -52,6 +52,7 @@
            <!-- display tweets here -->
           <div class="tweetcontrol">
             <ul id="list">
+
             </ul>
           </div>
         </div>
@@ -69,15 +70,17 @@
     <link href="/stylesheets/custom.css" rel="stylesheet">
     <script src="/socket.io/socket.io.js"></script>
     <script>
-      var socket = io.connect('http://localhost:8080');
+      var socket = io.connect(window.location.hostname);
+      console.log('hello world')
       socket.on('watchList', function(data) {
-        $('#list').empty();
-        var total = data.total;
+        console.log('tweets')
+        // $('#list').empty();
+        // var total = data.total;
         for (var key in data.keywords) {
           // var val = data.keywords[key] / total;
           var val = data.keywords[key] / total;
           $('ul').append('<li>' + key + ":" + data.keywords[key] + '</li>')
-          $("li #"+key).css({"font-size:"+ val});
+          // $("li #"+key).css({"font-size:"+ val});
         }
       });
     </script>

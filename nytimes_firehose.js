@@ -13,6 +13,8 @@ var options = {
 // http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=50
 // http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
 
+var AlchemyAPI = require('./alchemyapi');
+var alchemyapi = new AlchemyAPI();
 
 // Defines keywords as the split values of titles in NYTimes Breaking News firehose
 exports.getKeywords = function() {
@@ -21,8 +23,9 @@ exports.getKeywords = function() {
     http.get(options, function(res) {
       var news = ""
         , title = ""
+        , text = ""
         , articles = []
-        , titles = []
+        , cauldron = {}
         , keywords = [];
 
       res.on('data', function(chunk) {
@@ -36,26 +39,28 @@ exports.getKeywords = function() {
         }
 
         console.log("Pulling down " + articles.length + " NYTimes articles...")
+        var wrapper = function(callback) {
+          articles.forEach(function(article) {
+            // pluck the abstracts from each article
+            abstract = article.abstract;
+            text += abstract + " ";
+            // get the keywords from each abstract
+            alchemyapi.keywords("text", text, {}, function(response) {
+              cauldron['keywords'] = { text: text, response:JSON.stringify(response,null,4), results:response['keywords'] };
 
-        articles.forEach(function(article) {
-          // pluck the titles from each article
-          title = article.title.trim().toLowerCase().split(' ');
-          titles.push(title);
-
-          // remove duplicates
-          keywords = titles.concat.apply([], titles);
-          // remove junk words
-          // keywords.map(function(word) {
-          //   junkwords.forEach(function(junk) {
-          //     if (word === junk) {
-          //       keywords.splice(keywords.indexOf(word),1);
-          //       // junkDeleted += 1;
-          //     };
-          //   });
-          // });
+              // take out keywords from returned object
+              cauldron.keywords.results.forEach(function(element) {
+                for(var key in element) {
+                  if (key === 'text') {
+                    keywords.push(element[key])
+                  }
+                }
+              });
+              callback(keywords)
+            });                     // end of alchemy API
+          });
         });
-        console.log("[nyt]: keywords.length=", keywords.length);
-        resolve(keywords);
+        resolve(wrapper(keywords))
       });
     });
   });
