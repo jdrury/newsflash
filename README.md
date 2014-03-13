@@ -56,11 +56,11 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 #####v.0.1.0      [CSS Styling]:                      4 hours
 + Add improved CSS styling and fonts
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-!!! To manually pull from NYTimes Breaking News API:
-// curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+*To manually pull from NYTimes Breaking News API...*
+```curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js```
 
-!!! To pull more than 50 articles...
-// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=0
-// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=50
-// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
+*To pull more than 50 articles...*
+http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=0
+http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=50
+http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
