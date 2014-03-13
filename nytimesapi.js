@@ -42,7 +42,8 @@ exports.getKeywords = function() {
     exports.pullArticles(function(articles) {
       var content  = ""
         , cauldron = {}
-        , keywords = [];
+        , keyterms = [];
+
 
       articles.forEach(function(article) {
         // pluck the abstracts from each article
@@ -50,17 +51,19 @@ exports.getKeywords = function() {
         content += abstract + " ";
       });
 
-      alchemyapi.keywords('text', content, { 'sentiment':1 }, function(response) {
+      alchemyapi.keywords('text', content, {}, function(response) {
         cauldron['keywords'] = { text:content, response:JSON.stringify(response,null,4), results:response['keywords'] };
 
+        // pick all of the results out of the returned object
         cauldron.keywords.results.forEach(function(element) {
           for(var key in element) {
-            if (key === 'content') {
-              keywords.push(element[key]);
+            if (key === 'text') {
+              keyterms.push(element[key]);
             }
           }
         });
-        resolve(keywords);
+        // !!! Keep promise out of the forEach statement
+        resolve(keyterms);
       });
     });
   });

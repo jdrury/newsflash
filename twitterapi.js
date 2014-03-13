@@ -20,15 +20,14 @@ var t = new twitter({
 // Catches NYTimes Promise, applies keywords to watchList object and sets each to zero
 exports.initializeFeed = function() {
   return new Promise(function(resolve, reject) {
-    // catch final value from NYTimes Promise
-    nytimes.getKeywords().then(function(keywords) {
+    // catch all the keywords from NYTimes Promise
+    nytimes.getKeywords().then(function(keyterms) {
       // add the NYT keywords to the watchKeywords array
-
-      _.each(keywords, function(keyword) {
-        watchKeywords.push(keyword);
+      _.each(keyterms, function(keyterm) {
+        watchKeywords.push(keyterm);
       });
 
-      // set every keyword value to zero
+      // initialize keywords at zero
       _.each(watchKeywords, function(e) { watchList.keywords[e] = 0; });
 
       resolve(watchList);
@@ -45,7 +44,6 @@ exports.matchingStream = function(callback) {
         count += 1;
       }
     }
-
     console.log("[twit]inner stream: watchList.keywords=", count);
 
     t.stream('statuses/filter', { track: watchKeywords }, function(stream) {

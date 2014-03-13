@@ -32,6 +32,7 @@ server.listen(app.get('port'), function() {
 // ==============
 
 firehose.matchingStream(function(watchList) {
+  // console.log(watchList)
 //   // STREAMING . . .
 //   io.sockets.emit('data', {'watchList': watchList});
 });
