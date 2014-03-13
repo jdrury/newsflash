@@ -32,14 +32,14 @@ server.listen(app.get('port'), function() {
 // ==============
 
 firehose.matchingStream(function(watchList) {
-  // STREAMING . . .
-  io.sockets.emit('data', {'watchList': watchList});
+//   // STREAMING . . .
+//   io.sockets.emit('data', {'watchList': watchList});
 });
 
-io.sockets.on('connection', function(socket) {
-  // listens for data event from the server side
-  socket.on('data', function(watchList) {
-    // forwards data event to client
-    socket.emit('watchList', {'watchList': watchList});
-  });
-});
+// io.sockets.on('connection', function(socket) {
+//   // listens for data event from the server side
+//   socket.on('data', function(watchList) {
+//     // forwards data event to client
+//     socket.emit('watchList', {'watchList': watchList});
+//   });
+// });

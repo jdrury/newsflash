@@ -64,3 +64,8 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 
 !!! To manually pull from NYTimes Breaking News API:
 // curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js
+
+!!! To pull more than 50 articles...
+// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=0
+// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=50
+// http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
