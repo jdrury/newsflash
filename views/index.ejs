@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>newsflash</title>
-    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
   </head>
 
   <body>
@@ -100,6 +100,15 @@
         // $('#list').empty();
         var total = data.watchList.total;
         $("#list").empty();
+
+        // for (var key in data.watchList.keywords) {
+        //   d3.select('#list').selectAll('li')
+        //     .data(data.watchList.keywords)
+        //     .enter()
+        //     .append('li')
+        //     .text(key + ": " + data.watchList.keywords[key]);
+        // };
+
         $('h4').text(total + ' tweets');
         for (var key in data.watchList.keywords) {
           if (data.watchList.keywords[key]) {

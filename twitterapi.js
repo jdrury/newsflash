@@ -39,27 +39,27 @@ exports.initializeFeed = function() {
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
 exports.keywordStream = function(callback) {
   exports.initializeFeed().then(function(watchList) {
-    var count = 0;
-    for (var key in watchList.keywords) {
-      if (watchList.keywords.hasOwnProperty(key)) {
-        count += 1;
-      }
-    }
-    console.log("[twit]inner stream: watchList.keywords=", count);
+    // var count = 0;
+    // for (var key in watchList.keywords) {
+    //   if (watchList.keywords.hasOwnProperty(key)) {
+    //     count += 1;
+    //   }
+    // }
+    // console.log("[twit]inner stream: watchList.keywords=", count);
 
     t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
       // read twitter firehose ('data') for incoming tweets.
       stream.on('data', function(tweet) {
-        var text = tweet.text.toLowerCase();
+        var tweetText = tweet.text.toLowerCase();
         // compare the text of each tweet to each NYT keyword in the watchList
         _.each(watchKeywords, function(e) {
           // if the keyword exists in the tweet, += 1
-          if (text.indexOf(e.toLowerCase()) !== -1) {
+          if (tweetText.indexOf(e.toLowerCase()) !== -1) {
             watchList.keywords[e] += 1;
             watchList.total += 1;
           }
+          callback(watchList);
         });
-        callback(watchList);
       });
     });
   });
