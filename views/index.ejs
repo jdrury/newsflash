@@ -1,123 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>newsflash</title>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  </head>
-
-  <body>
-    <div id="wrap">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">newsflash</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">@ Connect</a></li>
-              <li><a href="#contact"># Discover</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-
-      <!-- Begin page content -->
-      <br>
-      <br>
-      <div class="container">
-        <div class="page-header">
-          <h1>Welcome to newsFlash</h1>
-        </div>
-
-
-      <div class="row">
-        <div class="col-md-10">
-          <!-- FORM CONTENT -->
-
-           <!-- display count here -->
-          <div class="col-md-5">
-            <div class="tweetcontrol">
-              <br>
-              <ul id="list">
-              </ul>
-            </div>
-          </div>
-
-          <!-- display total here -->
-          <div class="col-md-4 col-md-offset-1">
-            <br>
-            <br>
-            <div class="well">
-              <center><h4></h4></center>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    <div class="row">
-      <div id="footer">
-        <div class="container">
-          <br>
-          <br>
-          <br>
-          <svg width="500" height="500">
-      <circle cx="25" cy="25" r="25" fill="blue" 5>
-    </svg>
-          <p class="text-muted" style="text-align: right">Fullstack Academy &#9829; 2014</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap and Socket.io -->
-    <!-- ======================================= -->
+    <meta charset="utf-8">
+    <title>newsFlash</title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
     <link href="/stylesheets/custom.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <form>
+      <label><input type="radio" name="mode" value="size" checked> Size</label>
+      <label><input type="radio" name="mode" value="count"> Count</label>
+    </form>
     <script>
       var socket = io.connect(window.location.hostname);
-      console.log('hello world')
-      socket.on('watchUpdate', function(data) {
+      var margin = {top: 40, right: 10, bottom: 10, left: 10},
+          width = 1000 - margin.left - margin.right,
+          height = 700 - margin.top - margin.bottom;
+
+      var color = d3.scale.category20c();
+
+      var treemap = d3.layout.treemap()
+          .size([width, height])
+          .sticky(true)
+          .value(function(d) { return d.size; });
+
+      var div = d3.select("body").append("div")
+          .style("position", "relative")
+          .style("width", (width + margin.left + margin.right) + "px")
+          .style("height", (height + margin.top + margin.bottom) + "px")
+          .style("left", margin.left + "px")
+          .style("top", margin.top + "px");
+
+      socket.on('watchUpdate', function(stream) {
         console.log('chirp')
-        // $('#list').empty();
-        var total = data.watchList.total;
-        $("#list").empty();
 
-        // for (var key in data.watchList.keywords) {
-        //   d3.select('#list').selectAll('li')
-        //     .data(data.watchList.keywords)
-        //     .enter()
-        //     .append('li')
-        //     .text(key + ": " + data.watchList.keywords[key]);
-        // };
+        // div.datum(root).selectAll(".node").remove();
+        // root = stream.watchList;
 
-        $('h4').text(total + ' tweets');
-        for (var key in data.watchList.keywords) {
-          if (data.watchList.keywords[key]) {
-            $('#list').append('<li>' + key + ": " + data.watchList.keywords[key] + '</li>')
-          }
+        root = stream.watchList
+        div.datum(root).selectAll(".node")
+          .data(treemap.nodes)
+          .transition()
+            .call(position);
+
+        function runD3() {
+          var node = div.datum(root).selectAll(".node")
+              .data(treemap.nodes)
+            .enter().append("div")
+              .attr("class", "node")
+              .call(position)
+              .style("background", function(d) { return d.children ? color(d.name) : null; })
+              .text(function(d) { return d.children ? null : d.name; });
+
+          d3.selectAll("input").on("change", function change() {
+            var value = this.value === "count"
+                ? function() { return 1; }
+                : function(d) { return d.size; };
+
+            node
+                .data(treemap.value(value).nodes)
+                .transition()
+                .duration(1500)
+                .call(position);
+          });
         }
+        runD3();
+
+
+      // setInterval(function() {
+      //   root.children[0].size = Math.floor(Math.random() * 50);
+      //   div.datum(root).selectAll(".node")
+      //     .data(treemap.nodes)
+      //       .transition()
+      //         .duration(1500)
+      //         .call(position);
+
+      // },2000);
+
+      function position() {
+        this.style("left", function(d) { return d.x + "px"; })
+            .style("top", function(d) { return d.y + "px"; })
+            .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
+            .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
+      }
       });
     </script>
-
-    <!-- ======================================= -->
   </body>
 </html>
