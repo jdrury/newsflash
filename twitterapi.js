@@ -57,8 +57,8 @@ exports.keywordStream = function(callback) {
           if (tweetText.indexOf(e.toLowerCase()) !== -1) {
             watchList.keywords[e] += 1;
             watchList.total += 1;
+            callback(watchList);
           }
-          callback(watchList);
         });
       });
     });
