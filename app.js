@@ -34,14 +34,6 @@ io.sockets.on('connection', function(socket) {
   // console.log("client connected");
 });
 
-var watchList = null;
 firehose.keywordStream(function(watchList) {
-  // STREAMING . . .
-  // watchList = wl;
   io.sockets.emit('watchUpdate', {'watchList': watchList});
-
 });
-
-setInterval(function() {
-  // io.sockets.emit('watchUpdate', {'watchList': watchList});
-}, 1000/60);

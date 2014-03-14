@@ -39,14 +39,6 @@ exports.initializeFeed = function() {
 // Compares watchList (NYT Keywords) to Twitter stream, counts every mention
 exports.keywordStream = function(callback) {
   exports.initializeFeed().then(function(watchList) {
-    // var count = 0;
-    // for (var key in watchList.keywords) {
-    //   if (watchList.keywords.hasOwnProperty(key)) {
-    //     count += 1;
-    //   }
-    // }
-    // console.log("[twit]inner stream: watchList.keywords=", count);
-
     t.stream('statuses/filter', { track: watchKeywords }, function(stream) {
       // read twitter firehose ('data') for incoming tweets.
       stream.on('data', function(tweet) {
