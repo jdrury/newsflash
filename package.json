@@ -1,18 +1,17 @@
 {
   "name": "newsflash",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "bluebird": "~1.1.0",
-    "cron": "*",
-    "ejs": "~0.8.5",
-    "express": "3.1.2",
-    "ntwitter": "*",
-    "request": "~2.34.0",
-    "socket.io": "*",
-    "stylus": "*"
+    "bluebird" : "~1.1.0",
+    "cron"     : "~1.0.4",
+    "ejs"      : "~0.8.5",
+    "express"  : "3.1.2",
+    "ntwitter" : "~0.5.0",
+    "request"  : "~2.34.0",
+    "socket.io": "~0.9.16"
   }
 }

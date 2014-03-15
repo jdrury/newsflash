@@ -1,4 +1,4 @@
-#####newsFlash v.0.0.5
+#####newsFlash v.0.0.6
 
 =================
 
@@ -34,7 +34,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + Add logic to view to hide words that occur less than 10 times.
 + Total news items shown is capped at 75.
 
-#####v.0.0.6      [Visualization with D3]:            ~~10 hours~~
+#####v.0.0.6      [Visualization with D3]:              ~~10 hours~~
 + Squares and color scheme have been removed.
 + Keywords are visually represented by a treemap which grows and shrinks.
 + Alchemy API is now searching for entities, changed from keywords.
@@ -75,8 +75,9 @@ http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
 
 
 ==================
-add config file
+setInterval functionality to avoid choppiness
 add children entities
 add custom templating
-switch to jade
-turn out scripts for view
+add config file
+switch back to jade
+export d3 to custom_d3.js

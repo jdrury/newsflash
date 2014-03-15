@@ -19,6 +19,7 @@ exports.parse = function() {
       // pluck abstracts from each article in the newswire
       newswire.forEach(function(article) {
         abstracts.push(article.abstract);
+        console.log(article.headline)
       });
 
       // fetch entities for each abstract
@@ -27,7 +28,7 @@ exports.parse = function() {
         alchemyapi.entities('text', abstract, {}, function(response) {
           // package each entity in the masterlist object
           response.entities.forEach(function(entity) {
-            masterlist.children[masterlist.size] = {"name": entity.text, "size": 0};
+            masterlist.children[masterlist.size] = {"name": entity.text, "size": 0, "children": []};
             masterlist.size += 1;
             masterlist.keywords.push(entity.text);
           });
