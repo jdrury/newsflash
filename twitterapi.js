@@ -1,4 +1,4 @@
-var databundler = require('./databundler.js')
+var data = require('./databundler.js')
   , twitter = require('ntwitter')
   , Promise = require('bluebird');
 
@@ -11,16 +11,14 @@ var t = new twitter({
 
 // Compares entities to Twitter stream, counts every match
 exports.matches = function(callback) {
-  databundler.parse().then(function(masterlist) {
+  data.initialize().then(function(masterlist) {
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
 
       // read twitter firehose ('data') for incoming tweets.
       stream.on('data', function(tweet) {
         var tweetText = tweet.text.toLowerCase();
-        console.log(masterlist.children);
         // sift through each tweet for presence of entities
         masterlist.children.forEach(function(parentObject) {
-          console.log(parentObject);
           // if the keyword exists in the tweet, update counters
           if (tweetText.indexOf(parentObject.name.toLowerCase()) !== -1) {
             parentObject.size += 1;
