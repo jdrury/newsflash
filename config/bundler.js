@@ -1,5 +1,5 @@
 var AlchemyAPI = require('./alchemyapi')
-  , nytimes    = require('./nytimesapi')
+  , nytimes    = require('./newswire')
   , seed       = require('./seed')
   , Promise    = require('bluebird')
   , alchemyapi = new AlchemyAPI();
@@ -27,6 +27,7 @@ exports.initialize = function() {
         resolve(masterlist);
       });
 
+      // ALCHEMY CALL
       // // fetch entities for each abstract
       // abstracts.forEach(function(abstract) {
       //   // call the alchemy entities api

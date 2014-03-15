@@ -1,4 +1,4 @@
-var data = require('./databundler.js')
+var data    = require('./bundler.js')
   , twitter = require('ntwitter')
   , Promise = require('bluebird');
 
@@ -10,7 +10,7 @@ var t = new twitter({
 });
 
 // Compares entities to Twitter stream, counts every match
-exports.matches = function(callback) {
+exports.aggregator = function(callback) {
   data.initialize().then(function(masterlist) {
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
 

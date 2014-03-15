@@ -4,7 +4,7 @@ var express  = require('express')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
   , cronJob  = require('cron').CronJob
-  , firehose = require('./twitterapi.js');
+  , firehose = require('./config/firehose.js');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
@@ -13,7 +13,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
@@ -33,7 +33,7 @@ io.sockets.on('connection', function(socket) {
   // console.log("client connected");
 });
 
-firehose.matches(function(masterlist) {
+firehose.aggregator(function(masterlist) {
   console.log("streaming")
   io.sockets.emit('update', {'masterlist': masterlist});
 });

@@ -226,5 +226,6 @@ exports.fakeData = function(callback) {
          'Kevin McCrary',
          'Manhattan',
          'Chanel' ] }
+
   callback(masterlist);
 };
