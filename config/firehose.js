@@ -7,9 +7,9 @@ var t = new twitter(twitterapi.keys);
 
 // Compares entities to Twitter stream, counts every match
 exports.aggregator = function(callback) {
-  bundler.initialize().then(function(masterlist) {
+  bundler.initialize(function(masterlist) {
 
-    console.log("MASTER:", masterlist)
+    // console.log("MASTER:", masterlist)
 
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
       // read twitter firehose for incoming tweets.
