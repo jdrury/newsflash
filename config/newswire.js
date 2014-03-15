@@ -18,6 +18,7 @@ exports.pullBreakingNews = function(callback) {
       }
 
       console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
+
       callback(newswire);
     });
   });
