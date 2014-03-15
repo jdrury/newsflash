@@ -1,10 +1,9 @@
 var express  = require('express')
   , app      = express()
+  , path     = require('path')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
   , cronJob  = require('cron').CronJob
-  , _        = require('underscore')
-  , path     = require('path')
   , firehose = require('./twitterapi.js');
 
 app.set('port', process.env.PORT || 8080);
@@ -34,6 +33,7 @@ io.sockets.on('connection', function(socket) {
   // console.log("client connected");
 });
 
-firehose.keywordStream(function(watchList) {
-  io.sockets.emit('watchUpdate', {'watchList': watchList});
+firehose.matches(function(masterlist) {
+  console.log("streaming")
+  io.sockets.emit('update', {'masterlist': masterlist});
 });

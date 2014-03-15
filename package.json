@@ -13,7 +13,6 @@
     "ntwitter": "*",
     "request": "~2.34.0",
     "socket.io": "*",
-    "stylus": "*",
-    "underscore": "*",
+    "stylus": "*"
   }
 }

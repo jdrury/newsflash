@@ -15,20 +15,20 @@
       <label><input type="radio" name="mode" value="count"> Count</label>
     </form>
 <script>
-var socket  = io.connect(window.location.hostname);
-
+var socket = io.connect(window.location.hostname);
+console.log('hello world');
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
     width = 1000 - margin.left - margin.right,
     height = 650 - margin.top - margin.bottom;
 
-var color   = d3.scale.category20c();
+var color = d3.scale.category20c();
 
 var treemap = d3.layout.treemap()
     .size([width, height])
     .sticky(false)
     .value(function(d) { return d.size; });
 
-var div     = d3.select("body").append("div")
+var div = d3.select("body").append("div")
     .style("position", "relative")
     .style("width", (width + margin.left + margin.right) + "px")
     .style("height", (height + margin.top + margin.bottom) + "px")
@@ -37,12 +37,12 @@ var div     = d3.select("body").append("div")
 
 var root;
 
-socket.on('watchUpdate', function(stream) {
-  console.log('chirp')
+socket.on('update', function(stream) {
+  console.log("chirp");
 
   div.datum(root).selectAll(".node").remove();
 
-  root = stream.watchList
+  root = stream.masterlist;
 
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
@@ -64,7 +64,6 @@ socket.on('watchUpdate', function(stream) {
         .call(position);
   });
 });
-// runD3();
 
 function position() {
   this.style("left", function(d) { return d.x + "px"; })
