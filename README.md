@@ -30,36 +30,40 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + Fix logic so the browser does not lockdown due to volume.
 
 #####v.0.0.5      [Refined Keywords, Better Results]:   ~~5 hours~~
-+ Wire up alchemy api to produce meaningful keywords out of the NYTimes abstracts.
++ Wire up alchemy API to produce meaningful keywords out of the NYTimes abstracts.
 + Add logic to view to hide words that occur less than 10 times.
 + Total news items shown is capped at 75.
 
-#####v.0.0.6      [Visualization with D3]:            10 hours
+#####v.0.0.6      [Visualization with D3]:            ~~10 hours~~
 + Squares and color scheme have been removed.
-+ Keywords are visually represented by circles which grow and shrink.
-+ Circles are updated by socket.io every 3 seconds.
++ Keywords are visually represented by a treemap which grows and shrinks.
++ Alchemy API is now searching for entities, changed from keywords.
+
+#####v.0.0.6a      [Better Visualization with D3]:            10 hours
++ newsFlash pings NYTimes newswire every two (2) minutes to see if there is a new story.
++ New stories are added to the pre-existing list and announced in a banner message.
++ The treemap now has transition animation.
++ Each breaking news item is sent through NYTIMES article search API. Article content is searched for keywords and added as children of the parent entity.
++ The treemap now has three layers of nodes: root, parent and child.
 
 #####v.0.0.7      [View streams]:                     2 hours
-+ Each news item now has a show view that streams respective tweets from Twitter.
+? Each news item now has a show view that streams respective tweets from Twitter.
 
 #####v.0.0.8      [Data persistence with Mongoose]:   1 hour
-+ Data is now stored on MongoDB.
-+ Mongoose wired up.
-+ Schemas created for news items and tweets.
-+ Database dropped every 72 hours.
+? Data is now stored on MongoDB.
+? Mongoose wired up.
+? Schemas created for news items and tweets.
+? Database dropped every 72 hours.
 
 #####v.0.0.9      [User authentication]:              6 hours
-+ Sessions can now persist through user authentication.
-+ Basic user authentication via Passportjs.
-+ Users are also able to authenticate using github, Twitter or Facebook.
+? Sessions can now persist through user authentication.
+? Basic user authentication via Passportjs.
+? Users are also able to authenticate using github, Twitter or Facebook.
 
 #####v.0.1.0      [CSS Styling]:                      4 hours
-+ Add improved CSS styling and fonts
++ Add custom CSS styling and fonts
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*To manually pull from NYTimes Breaking News API...*
-```curl http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=9f827b34ac633dc815206c8dab6ff00b:3:56570661 | underscore print -o store.js```
 
 *To pull more than 50 articles...*
 
@@ -68,3 +72,11 @@ http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=0
 http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=50
 
 http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
+
+
+==================
+add config file
+add children entities
+add custom templating
+switch to jade
+turn out scripts for view

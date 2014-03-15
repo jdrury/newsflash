@@ -1,4 +1,4 @@
-var nytimes = require('./nytimesapi.js')
+var databundler = require('./databundler.js')
   , twitter = require('ntwitter')
   , Promise = require('bluebird');
 
@@ -11,8 +11,7 @@ var t = new twitter({
 
 // Compares entities to Twitter stream, counts every match
 exports.matches = function(callback) {
-  nytimes.formatData().then(function(masterlist) {
-    console.log(masterlist);
+  databundler.parse().then(function(masterlist) {
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
 
       // read twitter firehose ('data') for incoming tweets.
