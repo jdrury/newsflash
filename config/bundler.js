@@ -5,8 +5,8 @@ var AlchemyAPI = require('./api/alchemyapi')
   , alchemyapi = new AlchemyAPI();
 
 var masterlist = {
-    "name": "newsfeed"
-  , "size": 0
+    "name"    : "newsfeed"
+  , "size"    : 0
   , "mentions": 0
   , "children": []
   , "keywords": []
@@ -22,6 +22,8 @@ exports.initialize = function() {
         abstracts.push(article.abstract);
       });
 
+      console.log(abstracts.length);
+
       seed.fakeData(function(masterlist) {
         resolve(masterlist);
       });
@@ -36,7 +38,7 @@ exports.initialize = function() {
 
       //         console.log("response.entities #",i,"=", entity.text);
 
-      //         masterlist.children[masterlist.size] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
+      //         masterlist.children[masterlist.children.length] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
       //         masterlist.size += 1;
       //         console.log("size=",masterlist.size);
 
@@ -48,6 +50,7 @@ exports.initialize = function() {
       //     resolve(masterlist);
       //   });
       // });
+
 
     });
   });
