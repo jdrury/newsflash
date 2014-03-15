@@ -44,7 +44,7 @@ newsFlash filters breaking news from the [NYTimes API](http://nyti.ms/PkaWYK) an
 + New stories are added to the pre-existing list and announced in a banner message.
 + The treemap now has transition animation.
 + Each breaking news item is sent through NYTIMES article search API. Article content is searched for keywords and added as children of the parent entity.
-+ The treemap now has three layers of nodes: root, parent and child.
++ The treemap now has three layers: root, parent and child.
 
 #####v.0.0.7      [View streams]:                     2 hours
 ? Each news item now has a show view that streams respective tweets from Twitter.
@@ -75,9 +75,15 @@ http://api.nytimes.com/svc/news/v3/content/nyt/all/.json?&limit=50&offset=100
 
 
 ==================
-setInterval functionality to avoid choppiness
+setInterval functionality to avoid treemap choppiness
 add children entities
 add custom templating
-add config file
+move components up one directory
 switch back to jade
 export d3 to custom_d3.js
+
+=======================
+1. Fix live-streaming with Alchemy API
+2. Add nytimes article search for each entity
+  + pull 3 headlines for each entity and add them as children
+3. Add Alchemy API for children

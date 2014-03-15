@@ -7,13 +7,13 @@ var express  = require('express')
   , firehose = require('./config/firehose.js');
 
 app.set('port', process.env.PORT || 8080);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'app/public')));
+app.use(express.static(path.join(__dirname, '/app/public')));
 
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());

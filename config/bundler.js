@@ -1,6 +1,6 @@
-var AlchemyAPI = require('./alchemyapi')
+var AlchemyAPI = require('./api/alchemyapi')
   , nytimes    = require('./newswire')
-  , seed       = require('./seed')
+  , seed       = require('./db/seed')
   , Promise    = require('bluebird')
   , alchemyapi = new AlchemyAPI();
 
@@ -22,28 +22,32 @@ exports.initialize = function() {
         abstracts.push(article.abstract);
       });
 
-      seed.fakeData(function(masterlist) {
-        masterlist = masterlist;
-        resolve(masterlist);
+      // seed.fakeData(function(masterlist) {
+      //   resolve(masterlist);
+      // });
+
+      console.log(abstracts);
+
+      // fetch entities for each abstract
+      abstracts.forEach(function(abstract) {
+        // call the alchemy entities api
+        alchemyapi.entities('text', abstract, {}, function(response) {
+          // bundle each entity in the masterlist object
+          console.log(response.entities.text);
+
+          response.entities.forEach(function(entity) {
+
+            masterlist.children[masterlist.size] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
+            masterlist.size += 1;
+            masterlist.keywords.push(entity.text);
+
+          });
+
+          console.log("Alchemy returned " + masterlist.size + " entities.")
+          resolve(masterlist);
+        });
       });
 
-      // ALCHEMY CALL
-      // // fetch entities for each abstract
-      // abstracts.forEach(function(abstract) {
-      //   // call the alchemy entities api
-      //   alchemyapi.entities('text', abstract, {}, function(response) {
-      //     // package each entity in the masterlist object
-      //     response.entities.forEach(function(entity) {
-      //       masterlist.children[masterlist.size] = {"name": entity.text, "size": 0, "children": []};
-      //       masterlist.size += 1;
-      //       masterlist.keywords.push(entity.text);
-      //     });
-
-      //     console.log(masterlist)
-      //     // console.log("Alchemy returned " + masterlist.size + " entities.")
-      //     resolve(masterlist);
-      //   });
-      // });
     });
   });
 };

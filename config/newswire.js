@@ -1,15 +1,9 @@
-var http = require('http');
-
-var nytimes_key = '9f827b34ac633dc815206c8dab6ff00b:3:56570661';
-
-var options = {
-      host: "api.nytimes.com",
-      path: "/svc/news/v3/content/all/all.json?&limit=50&api-key=" + nytimes_key
-    };
+var http = require('http')
+  , newswireKey = require('./api/nytimesapi');
 
 exports.pullBreakingNews = function(callback) {
   // establish connection with NYTimes API
-  http.get(options, function(res) {
+  http.get(newswireKey.options, function(res) {
     var data = "";
 
     res.on('data', function(chunk) {
@@ -24,7 +18,6 @@ exports.pullBreakingNews = function(callback) {
       }
 
       console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
-
       callback(newswire);
     });
   });
