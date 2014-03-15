@@ -12,39 +12,45 @@ var masterlist = {
   , "keywords": []
 };
 
-exports.initialize = function(callback) {
-  nytimes.pullBreakingNews(function(newswire) {
-    var abstracts = [];
+// initialize() returns a promise with the populated masterlist
+exports.initialize = function() {
+  return new Promise(function(resolve, reject) {
 
-    // pluck abstracts from each article in the newswire
-    newswire.forEach(function(article) {
-      abstracts.push(article.abstract);
-    });
+    // pullBreakingNews() returns a promise with the breaking news articles
+    nytimes.pullBreakingNews().then(function(newswire) {
+      var abstracts = [];
 
-    // seed.fakeData(function(masterlist) {
-    //   resolve(masterlist);
-    // });
+      // select the abstracts from each article in the newswire
+      newswire.forEach(function(article) {
+        abstracts.push(article.abstract);
+      });
 
-    // fetch entities for each abstract
-    abstracts.forEach(function(abstract) {
-      // call the alchemy entities api
-      alchemyapi.entities('text', abstract, {}, function(response) {
-        // initialize each entity in the masterlist object
-        response.entities.forEach(function(entity, i) {
+      // ** THIS WORKS **
+      // seed.fakeData(function(masterlist) {
+      //   resolve(masterlist);
+      // });
 
-          masterlist.children[masterlist.children.length] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
-          masterlist.size += 1;
-          masterlist.keywords.push(entity.text);
+      // find the entities in each abstract with alchemy API
+      abstracts.forEach(function(abstract) {
+        alchemyapi.entities('text', abstract, {}, function(response) {
+
+          // initialize each entity with masterlist
+          response.entities.forEach(function(entity) {
+            masterlist.children[masterlist.children.length] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
+            masterlist.size += 1;
+            masterlist.keywords.push(entity.text);
+          });
+
+          console.log("Alchemy returned " + masterlist.size + " entities from " + abstracts.length + " abstracts.");
+
+          console.log(masterlist.size)
+          resolve(masterlist);
 
         });
-
-        console.log("Alchemy returned " + masterlist.size + " entities from " + abstracts.length + " abstracts.");
-
-        callback(masterlist)
       });
+
+      // resolve(masterlist) // => undefined
+
     });
   });
 };
-
-// repl on alchemy repsonse
-// http://repl.it/QAG

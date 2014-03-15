@@ -7,17 +7,17 @@ var t = new twitter(twitterapi.keys);
 
 // Compares entities to Twitter stream, counts every match
 exports.aggregator = function(callback) {
-  bundler.initialize(function(masterlist) {
+  bundler.initialize().then(function(masterlist) {
 
-    // console.log("MASTER:", masterlist)
+    console.log("MASTER:", masterlist)
 
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
       // read twitter firehose for incoming tweets.
 
       stream.on('data', function(tweet) {
         var tweetText = tweet.text.toLowerCase();
-        // sift through each tweet for presence of entities
 
+        // sift through each tweet for presence of entities
         masterlist.children.forEach(function(parentObject) {
 
           // if the entity exists in the tweet, update counters
@@ -28,10 +28,7 @@ exports.aggregator = function(callback) {
           }
 
         });
-
       });
-
     });
-
   });
 };
