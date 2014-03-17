@@ -1,16 +1,18 @@
 var AlchemyAPI = require('./api/alchemyapi')
+  , async      = require('async')
   , nytimes    = require('./newswire')
-  , seed       = require('./db/seed')
   , Promise    = require('bluebird')
-  , alchemyapi = new AlchemyAPI();
+  , seed       = require('./db/seed');
+
+var alchemyapi = new AlchemyAPI();
 
 var masterlist = {
-    "name"    : "newsfeed"
-  , "size"    : 0
-  , "mentions": 0
-  , "children": []
+    "children": []
   , "keywords": []
-};
+  , "mentions": 0
+  , "name"    : "newsfeed"
+  , "size"    : 0
+}
 
 // initialize() returns a promise with the populated masterlist
 exports.initialize = function() {
@@ -20,36 +22,43 @@ exports.initialize = function() {
     nytimes.pullBreakingNews().then(function(newswire) {
       var abstracts = [];
 
-      // select the abstracts from each article in the newswire
+      // store the abstracts from each article in the newswire
       newswire.forEach(function(article) {
         abstracts.push(article.abstract);
       });
 
-      // ** THIS WORKS **
-      // seed.fakeData(function(masterlist) {
-      //   resolve(masterlist);
-      // });
+      async.map(abstracts, iterator, done);
 
-      // find the entities in each abstract with alchemy API
-      abstracts.forEach(function(abstract) {
-        alchemyapi.entities('text', abstract, {}, function(response) {
+      function iterator(item, callback) {
+        alchemyapi.entities('text', item, {}, function(response) {
 
           // initialize each entity with masterlist
           response.entities.forEach(function(entity) {
-            masterlist.children[masterlist.children.length] = {"name": entity.text, "size": 0, "abstract": abstract, "children": []};
+            masterlist.children[masterlist.children.length] =
+              {
+                  "abstract": item
+                , "children": []
+                , "name": entity.text
+                , "size": 0
+              };
             masterlist.size += 1;
             masterlist.keywords.push(entity.text);
+
+            // console.log("entity #" + masterlist.size + ": " + entity.text);
+            // console.log("keywords: " + masterlist.keywords.length);
           });
-
-          console.log("Alchemy returned " + masterlist.size + " entities from " + abstracts.length + " abstracts.");
-
-          console.log(masterlist.size)
-          resolve(masterlist);
-
+          callback(masterlist);
+          // console.log("outer keywords: " + masterlist.keywords.length);
         });
-      });
+      };
 
-      // resolve(masterlist) // => undefined
+      function done(err, results) {
+        if (err) {
+          console.log("ERROR: ", err);
+        } else {
+          resolve(results);
+        }
+      };
 
     });
   });

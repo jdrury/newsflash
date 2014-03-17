@@ -1,7 +1,6 @@
-var bundler = require('./bundler')
-  , twitterapi = require('./api/twitterapi')
-  , twitter = require('ntwitter')
-  , Promise = require('bluebird');
+var bundler    = require('./bundler')
+  , twitter    = require('ntwitter')
+  , twitterapi = require('./api/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
@@ -9,11 +8,9 @@ var t = new twitter(twitterapi.keys);
 exports.aggregator = function(callback) {
   bundler.initialize().then(function(masterlist) {
 
-    console.log("MASTER:", masterlist)
-
     t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
-      // read twitter firehose for incoming tweets.
 
+      // read twitter firehose for incoming tweets.
       stream.on('data', function(tweet) {
         var tweetText = tweet.text.toLowerCase();
 

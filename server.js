@@ -13,7 +13,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, '/app/public')));
+app.use(express.static(path.join(__dirname, 'app/public')));
 
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
@@ -34,6 +34,6 @@ io.sockets.on('connection', function(socket) {
 });
 
 firehose.aggregator(function(masterlist) {
-  console.log("streaming")
+  console.log(masterlist)
   io.sockets.emit('update', {'masterlist': masterlist});
 });

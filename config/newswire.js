@@ -1,11 +1,10 @@
 var http        = require('http')
-  , Promise     = require('bluebird')
-  , newswireKey = require('./api/nytimesapi');
+  , newswireKey = require('./api/nytimesapi')
+  , Promise     = require('bluebird');
 
 // pullBreakingNews() returns a promise with breaking news articles
-exports.pullBreakingNews = function() {
-  return new Promise(function(resolve, reject) {
-
+exports.pullBreakingNews = function(callback) {
+  return new Promise(function(resolve,reject) {
     // establish connection with NYTimes API
     http.get(newswireKey.options, function(res) {
       var data = "";
