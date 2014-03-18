@@ -14,23 +14,15 @@ var masterlist = {
   , "size"    : 0
 }
 
-var abstracts = []
-  , headlines = [];
 
 // initialize() returns a promise with the populated masterlist
 exports.initialize = function() {
   return new Promise(function(resolve, reject) {
 
     // pullBreakingNews() returns a promise with the breaking news articles
-    nytimes.pullBreakingNews().then(function(newswire) {
-
-      newswire.forEach(function(article) {
-        abstracts.push(article.abstract);
-        headlines.push(article.title);
-      });
+    nytimes.pullBreakingNews().then(function(abstracts) {
 
       console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...')
-      console.log(headlines);
 
       async.each(abstracts, iterator, done);
 
@@ -41,10 +33,8 @@ exports.initialize = function() {
           response.entities.forEach(function(entity) {
             masterlist.children[masterlist.children.length] =
               {
-                  "abstract": item
+                  "name"    : entity.text
                 , "children": []
-                , "name"    : entity.text
-                , "size"    : 0
               };
             masterlist.size += 1;
             masterlist.keywords.push(entity.text);
