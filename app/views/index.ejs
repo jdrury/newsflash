@@ -14,6 +14,7 @@
       <label><input type="radio" name="mode" value="size" checked> Size</label>
       <label><input type="radio" name="mode" value="count"> Count</label>
     </form>
+
 <script>
 var socket = io.connect(window.location.hostname);
 
@@ -41,6 +42,7 @@ socket.on('update', function(stream) {
   console.log('chirp')
 
   div.datum(root).selectAll(".node").remove();
+
   root = stream.masterlist;
 
   var node = div.datum(root).selectAll(".node")

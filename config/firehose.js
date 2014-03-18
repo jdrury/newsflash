@@ -20,7 +20,7 @@ exports.aggregator = function(callback) {
           // if the entity exists in the tweet, update counters
           if (tweetText.indexOf(child.name.toLowerCase()) !== -1) {
             child.size += 1;
-            masterlist.total += 1;
+            masterlist.mentions += 1;
             callback(masterlist);
           }
 

@@ -41,7 +41,7 @@ exports.initialize = function() {
           response.entities.forEach(function(entity) {
             masterlist.children[masterlist.children.length] =
               {
-                  "abstract": abstract
+                  "abstract": item
                 , "children": []
                 , "name"    : entity.text
                 , "size"    : 0
