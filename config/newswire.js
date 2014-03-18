@@ -5,9 +5,11 @@ var http        = require('http')
 // pullBreakingNews() returns a promise with breaking news articles
 exports.pullBreakingNews = function(callback) {
   return new Promise(function(resolve,reject) {
+
     // establish connection with NYTimes API
     http.get(newswireKey.options, function(res) {
-      var data = "";
+      var data = ""
+        , abstracts = [];
 
       res.on('data', function(chunk) {
         data += chunk;
@@ -22,7 +24,11 @@ exports.pullBreakingNews = function(callback) {
 
         console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
 
-        resolve(newswire);
+        newswire.forEach(function(article) {
+          abstracts.push(article.abstract);
+        });
+
+        resolve(abstracts);
       });
     });
   });

@@ -11,7 +11,7 @@ var masterlist = {
   , "keywords": []
   , "mentions": 0
   , "name"    : "newsfeed"
-  , "size"    : 0
+  // , "size"    : 0
 }
 
 // initialize() returns a promise with the populated masterlist
@@ -19,13 +19,9 @@ exports.initialize = function() {
   return new Promise(function(resolve, reject) {
 
     // pullBreakingNews() returns a promise with the breaking news articles
-    nytimes.pullBreakingNews().then(function(newswire) {
-      var abstracts = [];
+    nytimes.pullBreakingNews().then(function(abstracts) {
 
-      // store the abstracts from each article in the newswire
-      newswire.forEach(function(article) {
-        abstracts.push(article.abstract);
-      });
+      console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...')
 
       async.map(abstracts, iterator, done);
 
@@ -41,14 +37,12 @@ exports.initialize = function() {
                 , "name": entity.text
                 , "size": 0
               };
-            masterlist.size += 1;
+            // masterlist.size += 1;
             masterlist.keywords.push(entity.text);
-
-            // console.log("entity #" + masterlist.size + ": " + entity.text);
-            // console.log("keywords: " + masterlist.keywords.length);
           });
-          callback(masterlist);
-          // console.log("outer keywords: " + masterlist.keywords.length);
+
+          // callback(null, masterlist); // throw TypeError
+          callback(null, masterlist);
         });
       };
 
@@ -56,7 +50,9 @@ exports.initialize = function() {
         if (err) {
           console.log("ERROR: ", err);
         } else {
-          resolve(results);
+          console.log("Resolving");
+          console.log(masterlist);
+          resolve(masterlist);
         }
       };
 

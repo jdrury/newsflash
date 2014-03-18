@@ -41,8 +41,8 @@ socket.on('update', function(stream) {
   console.log('chirp')
 
   div.datum(root).selectAll(".node").remove();
-
-  root = stream.masterlist
+  root = stream.masterlist;
+  // debugger;
 
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
