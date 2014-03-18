@@ -11,19 +11,28 @@ var masterlist = {
   , "keywords": []
   , "mentions": 0
   , "name"    : "newsfeed"
-  // , "size"    : 0
+  , "size"    : 0
 }
+
+var abstracts = []
+  , headlines = [];
 
 // initialize() returns a promise with the populated masterlist
 exports.initialize = function() {
   return new Promise(function(resolve, reject) {
 
     // pullBreakingNews() returns a promise with the breaking news articles
-    nytimes.pullBreakingNews().then(function(abstracts) {
+    nytimes.pullBreakingNews().then(function(newswire) {
+
+      newswire.forEach(function(article) {
+        abstracts.push(article.abstract);
+        headlines.push(article.title);
+      });
 
       console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...')
+      console.log(headlines);
 
-      async.map(abstracts, iterator, done);
+      async.each(abstracts, iterator, done);
 
       function iterator(item, callback) {
         alchemyapi.entities('text', item, {}, function(response) {
@@ -32,16 +41,15 @@ exports.initialize = function() {
           response.entities.forEach(function(entity) {
             masterlist.children[masterlist.children.length] =
               {
-                  "abstract": item
+                  "abstract": abstract
                 , "children": []
-                , "name": entity.text
-                , "size": 0
+                , "name"    : entity.text
+                , "size"    : 0
               };
-            // masterlist.size += 1;
+            masterlist.size += 1;
             masterlist.keywords.push(entity.text);
           });
 
-          // callback(null, masterlist); // throw TypeError
           callback(null, masterlist);
         });
       };
@@ -50,8 +58,6 @@ exports.initialize = function() {
         if (err) {
           console.log("ERROR: ", err);
         } else {
-          console.log("Resolving");
-          console.log(masterlist);
           resolve(masterlist);
         }
       };

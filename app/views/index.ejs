@@ -42,7 +42,6 @@ socket.on('update', function(stream) {
 
   div.datum(root).selectAll(".node").remove();
   root = stream.masterlist;
-  // debugger;
 
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)

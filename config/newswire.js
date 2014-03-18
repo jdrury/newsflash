@@ -8,8 +8,9 @@ exports.pullBreakingNews = function(callback) {
 
     // establish connection with NYTimes API
     http.get(newswireKey.options, function(res) {
-      var data = ""
-        , abstracts = [];
+      var data      = ""
+        , abstracts = []
+        , headlines = [];
 
       res.on('data', function(chunk) {
         data += chunk;
@@ -24,11 +25,7 @@ exports.pullBreakingNews = function(callback) {
 
         console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
 
-        newswire.forEach(function(article) {
-          abstracts.push(article.abstract);
-        });
-
-        resolve(abstracts);
+        resolve(newswire);
       });
     });
   });
