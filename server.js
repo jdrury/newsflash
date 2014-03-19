@@ -4,7 +4,8 @@ var express  = require('express')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
   , cronJob  = require('cron').CronJob
-  , firehose = require('./config/firehose.js');
+  , firehose = require('./config/firehose.js')
+  , nytimes  = require('./config/newswire.js');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
@@ -20,7 +21,11 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-    res.render('index');
+  // // var articles = nytimes.articles(articles);
+  // console.log(nytimes.articles)
+  // console.log(articles)
+
+  res.render('index');
 });
 
 server.listen(app.get('port'), function() {
@@ -36,3 +41,5 @@ io.sockets.on('connection', function(socket) {
 firehose.aggregator(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
+
+// console.log(exports.articles);

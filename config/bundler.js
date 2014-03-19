@@ -1,8 +1,7 @@
 var AlchemyAPI = require('./api/alchemyapi')
   , async      = require('async')
   , nytimes    = require('./newswire')
-  , Promise    = require('bluebird')
-  , seed       = require('./db/seed');
+  , Promise    = require('bluebird');
 
 var alchemyapi = new AlchemyAPI();
 
@@ -10,8 +9,7 @@ var masterlist = {
     "children": []
   , "keywords": []
   , "name"    : "newsfeed"
-  , "size"    : 0
-}
+};
 
 
 // initialize() returns a promise with the populated masterlist
@@ -21,8 +19,6 @@ exports.initialize = function() {
     // pullBreakingNews() returns a promise with the breaking news articles
     nytimes.pullBreakingNews().then(function(abstracts) {
 
-      console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...')
-
       async.each(abstracts, iterator, done);
 
       function iterator(item, callback) {
@@ -30,12 +26,7 @@ exports.initialize = function() {
 
           // initialize each entity with masterlist
           response.entities.forEach(function(entity) {
-            masterlist.children[masterlist.children.length] =
-              {
-                  "name"    : entity.text
-                , "children": []
-              };
-            masterlist.size += 1;
+            masterlist.children.push({"name": entity.text, "children": []});
             masterlist.keywords.push(entity.text);
           });
 
@@ -47,6 +38,7 @@ exports.initialize = function() {
         if (err) {
           console.log("ERROR: ", err);
         } else {
+          console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...');
           resolve(masterlist);
         }
       };

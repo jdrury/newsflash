@@ -1,8 +1,10 @@
 body {
+  background: #fefefe url('../images/bg.png') repeat;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  width: 960px;
+  /*width: 960px;*/
 }
 
 form {
