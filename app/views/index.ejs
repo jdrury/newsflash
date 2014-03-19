@@ -16,7 +16,7 @@
     </form>
 
 <script>
-var socket = io.connect(window.location.hostname);
+var socket = io.connect();
 
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
     width = 1000 - margin.left - margin.right,
@@ -39,7 +39,7 @@ var div = d3.select("body").append("div")
 var root;
 
 socket.on('update', function(stream) {
-  console.log('chirp')
+  console.log('tweets')
 
   div.datum(root).selectAll(".node").remove();
 

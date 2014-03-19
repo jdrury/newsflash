@@ -9,7 +9,6 @@ var alchemyapi = new AlchemyAPI();
 var masterlist = {
     "children": []
   , "keywords": []
-  , "mentions": 0
   , "name"    : "newsfeed"
   , "size"    : 0
 }

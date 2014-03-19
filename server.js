@@ -9,15 +9,15 @@ var express  = require('express')
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
 app.set('view engine', 'ejs');
+app.use(express.favicon());
 app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.errorHandler());
+app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
-
-if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
-}
 
 app.get('/', function(req, res) {
     res.render('index');
@@ -34,6 +34,5 @@ io.sockets.on('connection', function(socket) {
 });
 
 firehose.aggregator(function(masterlist) {
-  console.log(masterlist)
   io.sockets.emit('update', {'masterlist': masterlist});
 });
