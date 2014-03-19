@@ -7,9 +7,7 @@ var t = new twitter(twitterapi.keys);
 // Compares entities to Twitter stream, counts every match
 exports.aggregator = function(callback) {
   bundler.initialize().then(function(masterlist) {
-
-    t.stream('statuses/filter', { track: masterlist.keywords }, function(stream) {
-
+    t.stream('statuses/filter', { track: masterlist.keywords, language: 'en' }, function(stream) {
       // read twitter firehose for incoming tweets.
       stream.on('data', function(tweet) {
         var tweetText = tweet.text.toLowerCase()
@@ -20,15 +18,13 @@ exports.aggregator = function(callback) {
               hashtags = tweetText.match(/#\S+/g);
 
               if (hashtags) {
-                // if there are no hashtags, add them all
+                // initialize an empty entity with a child
                 if (entity.children.length === 0 ) {
-
                   entity.children.push({"name": hashtags[0], "size": 1});
-
                 } else {
+                  // check to see if the hashtag is already a child
                   entity.children.forEach(function(child, i) {
                     hashtags.forEach(function(hashtag, j) {
-
                       if (hashtag === child.name) {
                         child.size += 1;
                         hashtags[j] = false;
@@ -37,8 +33,7 @@ exports.aggregator = function(callback) {
                       }
                     });
                   });
-
-                  // check if any values were never added
+                  // add any hashtags which were never added
                   hashtags.forEach(function(hashtag) {
                     if (hashtag) {
                       var newHashtag = {"name": hashtag, "size": 1};
@@ -47,14 +42,14 @@ exports.aggregator = function(callback) {
                       callback(masterlist);
                     }
                   });
-
                 };
 
               } else {
                 callback(masterlist);
               }
             }
-          });
+        }); // end masterlist.children
+
       });
     });
   });
