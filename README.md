@@ -1,10 +1,10 @@
-#####newsflash v.0.0.6
+#####newsflash v.0.0.7
 
 =================
 
 **newsflash** is a visual news-cycle app that tracks news events as they are mentioned on Twitter.
 
-News is defined by [The New York Times newswire API](http://nyti.ms/PkaWYK). [Alchemy API](link) provides entities for the 50 most recent abstracts on the newswire. Each entity is compared to the [Twitter](https://dev.twitter.com/) stream. Any tweets which contain an entity have their hashtags transposed on a [D3 treemap](). [Socket.io](http://socket.io/) feeds the treemap with Twitter stream updates, eliminating the need to refresh the browser.
+News is defined by [The New York Times newswire API](http://nyti.ms/PkaWYK). [Alchemy API](link) provides entities for the 50 most recent abstracts on the newswire. Each entity is compared to the [Twitter](https://dev.twitter.com/) stream. Any tweets which contain an entity have their hashtags transposed on a [D3](http://d3js.org/) treemap. [Socket.io](http://socket.io/) feeds the treemap with Twitter stream updates, eliminating the need to refresh the browser.
 
 newsflash is a dynamic visualization of the news cycle, defined by professionals and vetted by the masses.
 
