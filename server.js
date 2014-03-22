@@ -30,6 +30,12 @@ server.listen(app.get('port'), function() {
 
 // ==============
 
+// socket.io config for Heroku
+sockets.configure(function() {
+  sockets.set('transports', ['xhr-polling']);
+  sockets.set('polling duration', 10);
+});
+
 io.sockets.on('connection', function(socket) {
   // console.log("client connected");
 });
