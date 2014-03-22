@@ -1,6 +1,6 @@
 var bundler    = require('./bundler')
   , twitter    = require('ntwitter')
-  , twitterapi = require('./api/twitterapi');
+  , twitterapi = require('./keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
@@ -18,7 +18,7 @@ exports.aggregator = function(callback) {
             hashtags = tweetText.match(/#\S+/g);
 
             if (hashtags) {
-              // ADD CURSE WORD CHECKER
+              // ADD CURSE WORD FILTER
               // initialize an empty entity with a child
               if (entity.children.length === 0 ) {
                 entity.children.push({"name": hashtags[0], "size": 1});
@@ -46,7 +46,9 @@ exports.aggregator = function(callback) {
               };
 
             } else {
+              // every once and a while, cull the hashtags
               entity.children = entity.children.slice(0,6);
+
               callback(masterlist);
             } // end hashtags check
           }

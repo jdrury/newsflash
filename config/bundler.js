@@ -1,4 +1,4 @@
-var AlchemyAPI = require('./api/alchemyapi')
+var AlchemyAPI = require('./keys/alchemyapi')
   , async      = require('async')
   , nytimes    = require('./newswire')
   , Promise    = require('bluebird');
@@ -10,7 +10,6 @@ var masterlist = {
   , "keywords": []
   , "name"    : "newsfeed"
 };
-
 
 // initialize() returns a promise with the populated masterlist
 exports.initialize = function() {
@@ -38,7 +37,7 @@ exports.initialize = function() {
         if (err) {
           console.log("ERROR: ", err);
         } else {
-          console.log('Analyzing ' + abstracts.length + ' abstracts with Alchemy...');
+          console.log('Alchemy returned ' + abstracts.length + ' entities...');
           resolve(masterlist);
         }
       };

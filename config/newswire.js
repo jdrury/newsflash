@@ -1,5 +1,5 @@
 var http        = require('http')
-  , newswireKey = require('./api/nytimesapi')
+  , newswireKey = require('./keys/nytimesapi')
   , Promise     = require('bluebird');
 
 // pullBreakingNews() returns a promise with breaking news articles

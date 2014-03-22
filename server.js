@@ -21,10 +21,6 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  // // var articles = nytimes.articles(articles);
-  // console.log(nytimes.articles)
-  // console.log(articles)
-
   res.render('index');
 });
 
@@ -41,5 +37,3 @@ io.sockets.on('connection', function(socket) {
 firehose.aggregator(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
-
-// console.log(exports.articles);
