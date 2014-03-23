@@ -3,9 +3,7 @@ var express  = require('express')
   , path     = require('path')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
-  , cronJob  = require('cron').CronJob
-  , firehose = require('./config/firehose.js')
-  , nytimes  = require('./config/newswire.js');
+  , firehose = require('./config/firehose.js');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
@@ -17,11 +15,13 @@ app.use(express.errorHandler());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(app.router);
+// app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  res.render('index');
+  firehose.aggregator(function(masterlist) {
+    res.render('index', {'masterlist': masterlist});
+  });
 });
 
 server.listen(app.get('port'), function() {
@@ -31,6 +31,7 @@ server.listen(app.get('port'), function() {
 // ==============
 
 // socket.io config for Heroku
+// https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
 io.configure(function() {
   io.set('transports', ['xhr-polling']);
   io.set('polling duration', 10);

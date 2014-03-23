@@ -1,8 +1,8 @@
 // nytimes api
 
-var nytNewswireKey = '9f827b34ac633dc815206c8dab6ff00b:3:56570661';
+var nytNewswireKey = '24995b8ee4501f3b552ed25e8a608801:10:68945244';
 
 exports.options = {
     host: "api.nytimes.com"
-  , path: "/svc/news/v3/content/all/all.json?&limit=25&api-key=" + nytNewswireKey
+  , path: "/svc/news/v3/content/all/all.json?&limit=12&api-key=" + nytNewswireKey
 };

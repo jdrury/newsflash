@@ -6,23 +6,58 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="/javascripts/custom_d3.js"></script>
-    <!--     <link href="/stylesheets/bootstrap.css" rel="stylesheet"> -->
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
     <link href="/stylesheets/custom.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
   </head>
   <body>
+    <div class="container">
 
-    <form>
-      <label><input type="radio" name="mode" value="size" checked> Size</label>
-      <label><input type="radio" name="mode" value="count"> Count</label>
-    </form>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="page-header">
+            <h4>Welcome to newsflash</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-11" id="treemap">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1">
+          <form>
+            <label><input type="radio" name="mode" value="size" checked> Size</label>
+            <label><input type="radio" name="mode" value="count"> Count</label>
+          </form>
+        </div>
+        <div class="col-md-11">
+          <% if (masterlist) { %>
+            <h4>Tracking <%= masterlist.keywords.length %> entities from 12 articles.</h4>
+            <ul class="list-inline">
+              <% masterlist.keywords.forEach(function(entity) { %>
+                <li><%= entity %></li>
+              <% }) %>
+            </ul>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
 
     <script>
     var socket = io.connect();
 
+    var parentWidth = $('#treemap').parent().width();
+    var parentHeight = $('#treemap').parent().height();
+
     var margin = {top: 10, right: 10, bottom: 10, left: 10},
-      width = 1350,
-      height = 875;
+        width = parentWidth,
+        height = parentHeight;
 
     var color = d3.scale.category20c();
 
@@ -31,7 +66,7 @@
       .sticky(false)
       .value(function(d) { return d.size; });
 
-    var div = d3.select("body").append("div")
+    var div = d3.select("#treemap").append("div")
       .style("position", "relative")
       .style("width", (width + margin.left + margin.right) + "px")
       .style("height", (height + margin.top + margin.bottom) + "px")
@@ -74,7 +109,7 @@
         .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
         .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
     }
-</script>
+    </script>
 
   </body>
 </html>

@@ -5,7 +5,6 @@ var http        = require('http')
 // pullBreakingNews() returns a promise with breaking news articles
 exports.pullBreakingNews = function() {
   return new Promise(function(resolve,reject) {
-
     // establish connection with NYTimes API
     http.get(newswireKey.options, function(res) {
       var data      = ""
