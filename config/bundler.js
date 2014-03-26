@@ -11,11 +11,13 @@ var masterlist = {
   , "name"    : "newsfeed"
 };
 
-// getEntities returns all the entities found
+
 function getEntities() {
+  // getEntities returns a promise with all the entities
   return new Promise(function(resolve, reject) {
-    // pullBreakingNews() returns a promise with the breaking news articles
+
     nytimes.pullBreakingNews().then(function(abstracts) {
+      // pullBreakingNews() returns a promise with the breaking news abstracts
 
       async.each(abstracts, iterator, done);
 
@@ -23,8 +25,9 @@ function getEntities() {
         masterlist.keywords = [];
         alchemyapi.entities('text', item, {}, function(response) {
 
-          // initialize each entity with masterlist
+
           response.entities.forEach(function(entity) {
+            // add each entity to masterlist
             masterlist.keywords.push(entity.text);
           });
 
@@ -45,32 +48,35 @@ function getEntities() {
   });
 };
 
-// initialize() returns initialized entities without duplicates
+
 exports.initialize = function() {
+  // initialize() removes duplicate entities and initializes remainders
   return new Promise(function(resolve, reject) {
     getEntities().then(function(masterlist) {
-      console.log("INSIDE INITIALIZE")
 
       masterlist.keywords.sort();
+      // sort the keywords so we save time in duplicate search
 
       async.each(masterlist.keywords, iterator, done);
 
       function iterator(entity, callback) {
-        console.log("INSIDE ITERATOR")
         var last;
 
         if (entity === "undefined") {
+          // if the entity is undefined , remove it
+          console.log('undefined');
           masterlist.keywords.splice(i,1);
         } else if (entity !== last || i === 0) {
-          // if entity valid and unique, initialize entity
+          // if entity is first in the list or it is not the same as the last entity
           masterlist.children.push({"name": entity, "children": [], "mentions": 0});
         } else {
           // entity is a duplicate, remove it
+          console.log('duplicate entity');
           masterlist.keywords.splice(i,1);
-          console.log('removed', entity)
         }
-        last = entity;
 
+        last = entity;
+        // set current entity to last before next iteration
         callback(null, masterlist);
       };
 
@@ -78,7 +84,7 @@ exports.initialize = function() {
         if (err) {
           console.log("ERROR: ", err);
         } else {
-          console.log('Final count: ' + masterlist.keywords.length + ' entities.');
+          console.log('Initializing with ' + masterlist.keywords.length + ' entities.');
           resolve(masterlist);
         }
       };
