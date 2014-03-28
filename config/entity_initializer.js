@@ -10,6 +10,8 @@ exports.bundleEntities = function() {
 
       // sort watchEntities to save time in duplicate search
       masterlist.watchEntities.sort();
+      // empty masterlist.children in case this is a refresh
+      masterlist.children = [];
       var i = masterlist.watchEntities.length;
 
       while (i--) {
