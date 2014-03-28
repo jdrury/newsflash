@@ -3,7 +3,7 @@
 **[Newsflash](newsflash.herokuapp.com)** is a visual representation of the news-cycle.
 
 ##### How It Works
-Newsflash pulls breaking news from the [The New York Times newswire](http://nyti.ms/PkaWYK) and translates it into entities (similar to keywords) with [AlchemyAPI](http://www.alchemyapi.com/). Each entity is compared to the [Twitter stream](https://dev.twitter.com/). When Newsflash finds a tweet which contains an entity, it uses [socket.io](http://socket.io/) to populate a [D3](http://d3js.org/) treemap with the respective hashtags.
+Newsflash pulls breaking news from the *The New York Times* [newswire](http://nyti.ms/PkaWYK) and translates it into entities (similar to keywords) with [AlchemyAPI](http://www.alchemyapi.com/). Each entity is compared to the [Twitter stream](https://dev.twitter.com/). When Newsflash finds a tweet with an entity, it uses [socket.io](http://socket.io/) to populate a [D3](http://d3js.org/) treemap with the respective hashtags.
 
 #####v0.1 Twitter Firehouse
 + Wire up connection to Twitter firehose.
