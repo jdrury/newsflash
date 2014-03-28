@@ -1,13 +1,13 @@
-var http        = require('http')
-  , newswireKey = require('./keys/nytimesapi')
-  , Promise     = require('bluebird');
+var http       = require('http')
+  , nytimesKey = require('./keys/nytimesapi')
+  , Promise    = require('bluebird');
 
+// pullBreakingNews() returns a promise with breaking news articles
 exports.pullBreakingNews = function() {
-  // pullBreakingNews() returns a promise with breaking news articles
   return new Promise(function(resolve,reject) {
 
-    http.get(newswireKey.options, function(res) {
-      // establish connection with NYTimes API
+    // establish connection with NYTimes API
+    http.get(nytimesKey.options, function(res) {
       var data      = ""
         , abstracts = []
         , articles  = [];
@@ -16,8 +16,8 @@ exports.pullBreakingNews = function() {
         data += chunk;
       });
 
+      // capture all the articles in the newswire
       res.on('end', function() {
-        // read all the articles in the newswire
         if (res.statusCode === 200) {
           var pretty = JSON.parse(data)
             , newswire = pretty.results;
@@ -25,8 +25,8 @@ exports.pullBreakingNews = function() {
 
         console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
 
+        // dummy function that stores meta data about newswire pull. not in use.
         newswire.forEach(function(article) {
-          // dummy function that stores meta data about the newswire pull. not in use.
           abstracts.push(article.abstract);
           articles.push({
               "headline" : article.title

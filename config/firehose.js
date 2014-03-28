@@ -4,65 +4,54 @@ var bundler    = require('./bundler')
 
 var t = new twitter(twitterapi.keys);
 
+Array.prototype.compare = function(array) {
+  var self = this;
+  for (var i = 0; i < this.length; i++) {
+    for (var j = 0; j < array.length; j++) {
+      if (this[i].name === array[j]) {
+        this[i].size += 1;
+        array[j] = null;
+      }
+    }
+  }
+  array.filter(function(e) {
+    e ? self.push({"name": e, "size": 1}) : '';
+  });
+}
+
+function descendingOrder(a,b) {
+  if (a.size < b.size) {
+    return 1;
+  }
+  if (a.size > b.size) {
+    return -1;
+  }
+  return 0;
+}
+
+// Compares entities to Twitter stream, counts every match
 exports.aggregator = function(callback) {
-  // Compares entities to Twitter stream, counts every match
   bundler.initialize().then(function(masterlist) {
-
-
+    // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.keywords, language: 'en' }, function(stream){
-      // enter twitter firehouse
-
+      // analyze each tweet for presence of entities
       stream.on('data', function(tweet) {
-        // analyze each tweet for presence of entities
         var tweetText = tweet.text.toLowerCase()
           , hashtags  = [];
 
         masterlist.children.forEach(function(entity) {
+          console.log(entity.children)
+          // if tweet contains an entity, increment count and grab hashtags
           if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
-            // if tweet contains an entity, increment count and grab hashtags
             entity.mentions += 1;
             hashtags = tweetText.match(/#\S+/g);
-            // grab any hashtags
 
-            if (hashtags) {
-              if (entity.children.length === 0 ) {
-                // if the entity has no preexisting hashtags, initialize with one hashtag
-                entity.children.push({"name": hashtags[0], "size": 1});
-                callback(masterlist);
+            // if hashtags, increment old/add new hashtags; else, cull hashtags
+            hashtags ? entity.children.compare(hashtags) : entity.children = entity.children.sort(descendingOrder).slice(0,7);
 
-              } else {
-                // otherwise, compare hashtags to preexisting and mark any duplicates
-                entity.children.forEach(function(child) {
-                  hashtags.forEach(function(hashtag) {
-                    if (hashtag === child.name) {
-                      // if hashtag is already present, increment size and set hashtag to false
-                      child.size += 1;
-                      hashtag = false;
-                      console.log("NULL");
-                    }
-                  });
-                });
-
-                hashtags.forEach(function(hashtag) {
-                  // add any hashtags not marked as pre-existing
-                  if (hashtag) {
-                    console.log("UNIQUE")
-                    var newHashtag = {"name": hashtag, "size": 1};
-                    entity.children.push(newHashtag);
-                    callback(masterlist);
-                  }
-                });
-              };
-              // end if (hashtags)
-            } else {
-              // if no hashtags present
-              entity.children = entity.children.slice(0,6);
-              // every once and a while, cull the hashtags
-              callback(masterlist);
-            }
+            callback(masterlist);
           }
-        }); // end masterlist.children (forEach(entity))
-
+        });
       });
     });
   });
