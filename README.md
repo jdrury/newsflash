@@ -1,6 +1,4 @@
-#####Newsflash v0.7
-
-=================
+#Newsflash v0.7
 
 **Newsflash** is a visual representation of the news-cycle.
 
