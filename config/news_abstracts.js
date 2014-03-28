@@ -3,7 +3,7 @@ var http       = require('http')
   , Promise    = require('bluebird');
 
 // pullBreakingNews() returns a promise with breaking news articles
-exports.pullBreakingNews = function() {
+exports.pullAbstracts = function() {
   return new Promise(function(resolve,reject) {
 
     // establish connection with NYTimes API

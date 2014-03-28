@@ -30,10 +30,10 @@
         </div>
         <div class="col-md-11">
           <% if (masterlist) { %>
-            <h4>Tracking <%= masterlist.keywords.length %> entities across 12 articles.</h4>
+            <h4>Tracking <%= masterlist.watchEntities.length %> entities across 5 articles.</h4>
             <ul class="list-inline">
-              <% masterlist.keywords.forEach(function(entity) { %>
-                <li><%= entity %></li>
+              <% masterlist.watchEntities.forEach(function(entity) { %>
+                <li><%= entity %></li>&#9;
               <% }) %>
             </ul>
           <% } %>
