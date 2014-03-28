@@ -1,7 +1,14 @@
 {
-  "name": "newsflash",
-  "version": "0.0.7",
+  "name": "Newsflash",
+  "version": "0.7",
   "private": true,
+  "author": {
+    "James Drury": "https://github.com/jamesdrury"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesdrury/newsflash"
+  },
   "scripts": {
     "start": "node server.js"
   },
