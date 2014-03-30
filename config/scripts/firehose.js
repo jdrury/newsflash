@@ -1,6 +1,6 @@
-var initializer = require('./entity_initializer')
-  , twitter     = require('ntwitter')
-  , twitterapi  = require('./keys/twitterapi');
+var bundler    = require('./bundler')
+  , twitter    = require('ntwitter')
+  , twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
@@ -29,9 +29,10 @@ function descendingOrder(a,b) {
   return 0;
 }
 
-// Compares entities to Twitter stream, counts every match
+// matchinFinder() compares entities to tweets, counts every match
 exports.matchFinder = function(callback) {
-  initializer.bundleEntities().then(function(masterlist) {
+  // initialize() returns a unique set of entities in D3 format
+  bundler.initializeEntities().then(function(masterlist) {
 
     // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){
@@ -56,7 +57,7 @@ exports.matchFinder = function(callback) {
 
             } else {
               // otherwise, sort and trim existing children
-              entity.children = entity.children.sort(descendingOrder).slice(0,7);
+              entity.children = entity.children.sort(descendingOrder).slice(0,3);
             }
 
             callback(masterlist);

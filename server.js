@@ -3,7 +3,7 @@ var express  = require('express')
   , path     = require('path')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
-  , twitterFirehose = require('./config/twitter_firehose.js');
+  , firehose = require('./config/scripts/firehose.js');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
@@ -19,7 +19,7 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  twitterFirehose.matchFinder(function(masterlist) {
+  firehose.matchFinder(function(masterlist) {
     res.render('index', {'masterlist': masterlist});
   });
 });
@@ -41,6 +41,6 @@ io.sockets.on('connection', function(socket) {
   // console.log("client connected");
 });
 
-twitterFirehose.matchFinder(function(masterlist) {
+firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });

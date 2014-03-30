@@ -1,6 +1,6 @@
-var AlchemyAPI = require('./keys/alchemyapi')
+var AlchemyAPI = require('../keys/alchemyapi')
   , async      = require('async')
-  , nytimes    = require('./news_abstracts')
+  , nytimes    = require('./newswire')
   , Promise    = require('bluebird');
 
 var alchemyapi = new AlchemyAPI();
@@ -13,7 +13,7 @@ var masterlist = {
 };
 
 // fetch turns NYT abstracts into entities (similar to keywords)
-exports.translate = function() {
+exports.fetch = function() {
   return new Promise(function(resolve, reject) {
 
     // pullAbstracts() returns a promise with the breaking news abstracts

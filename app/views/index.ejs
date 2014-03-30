@@ -1,108 +1,154 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>newsflash</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
-    <script src="/javascripts/custom_d3.js"></script>
-    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="/stylesheets/custom.css" rel="stylesheet">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-  </head>
-  <body>
-    <div class="container">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NEWSFLASH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Newsflash - a visual representation of the news-cycle">
+<meta name="author" content="James Drury">
 
-      <div class="row">
-        <div class="col-md-12" id="treemap">
-        </div>
-      </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+<link href="/stylesheets/custom.css" rel="stylesheet">
+<link href="/stylesheets/styles.css" rel="stylesheet">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 
-      <div class="row">
-      </div>
+</head>
 
-      <div class="row">
-        <div class="col-md-1">
-          <form>
-            <label><input type="radio" name="mode" value="size" checked> Size</label>
-            <label><input type="radio" name="mode" value="count"> Count</label>
-          </form>
-        </div>
-        <div class="col-md-11">
-          <% if (masterlist) { %>
-            <h4>Tracking <%= masterlist.watchEntities.length %> entities across 5 articles.</h4>
-            <ul class="list-inline">
-              <% masterlist.watchEntities.forEach(function(entity) { %>
-                <li><%= entity %></li>&#9;
-              <% }) %>
-            </ul>
-          <% } %>
-        </div>
-      </div>
 
+
+<body>
+
+<header id="wrapper">
+
+    <div id="options" class="clearfix visible-desktop">
+      <ul id="filters" class="option-set clearfix" data-option-key="filter">
+        <li><a class="reveal-bg-one" id="about" href="#filter=.about">What is this?</a></li>
+        <li><a class="reveal-bg-two" id="news" href="#filter=.services">What's news?</a></li>
+        <li><a class="reveal-bg-three" id="trending" href="#filter=.media">What's trending?</a></li>
+      </ul>
+    </div>
+    <!-- end nav -->
+
+</header>
+
+<section class="container">
+
+  <div class="row">
+    <div class="col-md-12" id="treemap">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1">
+      <form>
+        <label><input type="radio" name="mode" value="size" checked> Size</label>
+        <label><input type="radio" name="mode" value="count"> Count</label>
+      </form>
     </div>
 
-    <script>
-    var socket = io.connect();
+    <div class="col-md-11">
+      <div id="about-blurb">
+        <h4><strong>Newsflash</strong> is a visual representation of the news-cycle.</h4>
 
-    var containerWidth = $('.container').innerWidth();
-    var containerHeight = $(window).innerHeight();
+        <h4><em>How It Works</em></h4>
 
-    var margin = {top: 10, right: 10, bottom: 10, left: 10},
-        width = containerWidth,
-        height = containerHeight - (containerHeight * .20);
+        <p>Newsflash pulls breaking news from the <em>The New York Times</em> <a href="http://nyti.ms/PkaWYK">newswire</a> and translates it into entities (similar to keywords) with <a href="http://www.alchemyapi.com/">AlchemyAPI</a>. Each entity is compared to the <a href="https://dev.twitter.com/">Twitter stream</a>. When Newsflash finds a tweet with an entity, it uses <a href="http://socket.io/">socket.io</a> to populate a <a href="http://d3js.org/">D3</a> treemap with the tweet's hashtags.
+      </div>
+      <div id="news-blurb">
+        {% if newswire %}
+          <h4>Found {{newswire.length}} articles.</h4>
+          <ul>
+            {% for article in newswire %}
+              <li>
+                <a target="_blank" href="{{article.URL}}">{{article.headline}}</a><br>
+                {{article.abstract}}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div id="trending-blurb">
+        <p>trending</p>
+      </div>
+    </div>
 
-    var color = d3.scale.category20c();
+    <div class="row">
+      <div class="navbar navbar-fixed-bottom h6">
+        <div class="col-md-8 col-md-offset-2">
+          <hr/>
+          <div id="footer">Powered by Fullstack Academy &#9829 2014</div>
+        </div>
+      </div>
+    </div>
 
-    var treemap = d3.layout.treemap()
-      .size([width, height])
-      .sticky(false)
-      .value(function(d) { return d.size; });
+  </div>
 
-    var div = d3.select("#treemap").append("div")
-      .style("position", "relative")
-      .style("width", (width + margin.left + margin.right) + "px")
-      .style("height", (height + margin.top + margin.bottom) + "px")
-      .style("left", margin.left + "px")
-      .style("top", margin.top + "px");
+</section>
 
-    var root;
+<script>
+var socket = io.connect();
 
-    socket.on('update', function(stream) {
-    console.log('tweets')
+var containerWidth = $('.container').innerWidth();
+var containerHeight = $(window).innerHeight();
 
-    div.datum(root).selectAll(".node").remove();
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = containerWidth - (containerWidth * .10),
+    height = containerHeight - (containerHeight * .20);
 
-    root = stream.masterlist;
+var color = d3.scale.category20c();
 
-    var node = div.datum(root).selectAll(".node")
-        .data(treemap.nodes)
-      .enter().append("div")
-        .attr("class", "node")
-        .call(position)
-        .style("background", function(d) { return d.children ? color(d.name) : null; })
-        .text(function(d) { return d.children ? null : d.name; });
+var treemap = d3.layout.treemap()
+  .size([width, height])
+  .sticky(false)
+  .value(function(d) { return d.size; });
 
-    d3.selectAll("input").on("change", function change() {
-      var value = this.value === "count"
-          ? function() { return 1; }
-          : function(d) { return d.size; };
+var div = d3.select("#treemap").append("div")
+  .style("position", "relative")
+  .style("width", (width + margin.left + margin.right) + "px")
+  .style("height", (height + margin.top + margin.bottom) + "px")
+  .style("left", margin.left + "px")
+  .style("top", margin.top + "px");
 
-      node
-          .data(treemap.value(value).nodes)
-        .transition()
-          .duration(1500)
-          .call(position);
-      });
-    });
+var root;
 
-    function position() {
-    this.style("left", function(d) { return d.x + "px"; })
-        .style("top", function(d) { return d.y + "px"; })
-        .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
-        .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
-    }
-    </script>
+socket.on('update', function(stream) {
+console.log('tweets')
+
+div.datum(root).selectAll(".node").remove();
+
+root = stream.masterlist;
+
+var node = div.datum(root).selectAll(".node")
+    .data(treemap.nodes)
+  .enter().append("div")
+    .attr("class", "node")
+    .call(position)
+    .style("background", function(d) { return d.children ? color(d.name) : null; })
+    .text(function(d) { return d.children ? null : d.name; });
+
+d3.selectAll("input").on("change", function change() {
+  var value = this.value === "count"
+      ? function() { return 1; }
+      : function(d) { return d.size; };
+
+  node
+      .data(treemap.value(value).nodes)
+    .transition()
+      .duration(1500)
+      .call(position);
+  });
+});
+
+function position() {
+this.style("left", function(d) { return d.x + "px"; })
+    .style("top", function(d) { return d.y + "px"; })
+    .style("width", function(d) { return Math.max(0, d.dx - 1) + "px"; })
+    .style("height", function(d) { return Math.max(0, d.dy - 1) + "px"; });
+}
+</script>
 
   </body>
 </html>

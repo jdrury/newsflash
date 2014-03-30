@@ -1,12 +1,12 @@
-var abstract_to_entity = require('./abstract_to_entity')
-  , Promise = require('bluebird');
+var entities = require('./entities')
+  , Promise  = require('bluebird');
 
-// bundleEntities() removes duplicate entities and initializes remainders
-exports.bundleEntities = function() {
+// initializeEntities() removes duplicate entities and initializes remainders
+exports.initializeEntities = function() {
   return new Promise(function(resolve, reject) {
 
     // abstract_to_entity turns abstracts into entities
-    abstract_to_entity.translate().then(function(masterlist) {
+    entities.fetch().then(function(masterlist) {
 
       // sort watchEntities to save time in duplicate search
       masterlist.watchEntities.sort();
