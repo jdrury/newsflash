@@ -18,10 +18,8 @@ app.use(express.methodOverride());
 // app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
-app.get('*', function(req, res) {
-  // firehose.matchFinder(function(masterlist) {
-    res.render('index');
-  // });
+app.get('/', function(req, res) {
+  res.render('index', {'masterlist': masterlist});
 });
 
 server.listen(app.get('port'), function() {
@@ -44,3 +42,13 @@ io.sockets.on('connection', function(socket) {
 firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
+
+var job = new cronJob('0 */1 * * * *', function(){
+  // reset the total
+  firehose.matchFinder(function(masterlist) {
+    io.sockets.emit('update', {'masterlist': masterlist});
+  });
+  start: false;
+});
+
+job.start();

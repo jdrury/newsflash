@@ -4,7 +4,7 @@ var bundler    = require('./bundler')
 
 var t = new twitter(twitterapi.keys);
 
-Array.prototype.dupeFinder = function(array) {
+Array.prototype.dupeBuster = function(array) {
   var self = this;
   for (var i = 0; i < this.length; i++) {
     for (var j = 0; j < array.length; j++) {
@@ -29,7 +29,7 @@ function descendingOrder(a,b) {
   return 0;
 }
 
-// matchinFinder() compares entities to tweets, counts every match
+// matchFinder() compares entities to tweets, counts every match
 exports.matchFinder = function(callback) {
   // initialize() returns a unique set of entities in D3 format
   bundler.initializeEntities().then(function(masterlist) {
@@ -53,7 +53,7 @@ exports.matchFinder = function(callback) {
             // if hashtags exist, compare new hashtags to entity's children
             if (hashtags) {
               // increment entity.child if match; insert hashtag if no match
-              entity.children.dupeFinder(hashtags)
+              entity.children.dupeBuster(hashtags)
 
             } else {
               // otherwise, sort and trim existing children
