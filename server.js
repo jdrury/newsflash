@@ -1,5 +1,6 @@
 var express  = require('express')
   , app      = express()
+  , CronJob = require('cron').CronJob
   , path     = require('path')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
@@ -19,7 +20,7 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  res.render('index', {'masterlist': masterlist});
+  res.render('index');
 });
 
 server.listen(app.get('port'), function() {
@@ -43,7 +44,7 @@ firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
 
-var job = new cronJob('0 */1 * * * *', function(){
+var job = new CronJob('0 */1 * * * *', function(){
   // reset the total
   firehose.matchFinder(function(masterlist) {
     io.sockets.emit('update', {'masterlist': masterlist});
