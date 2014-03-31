@@ -18,10 +18,10 @@ app.use(express.methodOverride());
 // app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
-app.get('/', function(req, res) {
-  firehose.matchFinder(function(masterlist) {
-    res.render('index', {'masterlist': masterlist});
-  });
+app.get('*', function(req, res) {
+  // firehose.matchFinder(function(masterlist) {
+    res.render('index');
+  // });
 });
 
 server.listen(app.get('port'), function() {
