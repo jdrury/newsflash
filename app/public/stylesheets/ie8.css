@@ -1,0 +1,14 @@
+.hidden-ie8, .inner-panel{
+	display: none !important;
+	visibility: hidden !important;
+}
+#about-mid{
+}
+.element{
+}
+.height-01{
+		height: 230px !important;
+	}
+	.height-02{
+		height: 285px !important;
+	}

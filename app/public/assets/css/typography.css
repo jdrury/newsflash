@@ -1,0 +1,148 @@
+/* -----------------------------------------
+   Font-face:
+----------------------------------------- */
+@font-face{ 
+font-family:"Tex_R";
+src: url('fonts/texgyreheros/texgyreheros-regular-webfont.eot'); 
+src: 
+url('fonts/texgyreheros/texgyreheros-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/texgyreheros/texgyreheros-regular-webfont.woff') format('woff'), 
+url('fonts/texgyreheros/texgyreheros-regular-webfont.ttf') format('truetype'), 
+url('fonts/texgyreheros/texgyreheros-regular-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Tex_B";
+src: url('fonts/texgyreheros/texgyreheros-bold-webfont.eot'); 
+src: 
+url('fonts/texgyreheros/texgyreheros-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/texgyreheros/texgyreheros-bold-webfont.woff') format('woff'), 
+url('fonts/texgyreheros/texgyreheros-bold-webfont.ttf') format('truetype'), 
+url('fonts/texgyreheros/texgyreheros-bold-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Raleway_R";
+src: url('fonts/raleway/Raleway-Regular-webfont.eot'); 
+src: 
+url('fonts/raleway/Raleway-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/raleway/Raleway-Regular-webfont.woff') format('woff'), 
+url('fonts/raleway/Raleway-Regular-webfont.ttf') format('truetype'), 
+url('fonts/raleway/Raleway-Regular-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Raleway_L";
+src: url('fonts/raleway/Raleway-Light-webfont.eot'); 
+src: 
+url('fonts/raleway/Raleway-Light-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/raleway/Raleway-Light-webfont.woff') format('woff'), 
+url('fonts/raleway/Raleway-Light-webfont.ttf') format('truetype'), 
+url('fonts/raleway/Raleway-Light-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Raleway_B";
+src: url('fonts/raleway/Raleway-Bold-webfont.eot'); 
+src: 
+url('fonts/raleway/Raleway-Bold-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/raleway/Raleway-Bold-webfont.woff') format('woff'), 
+url('fonts/raleway/Raleway-Bold-webfont.ttf') format('truetype'), 
+url('fonts/raleway/Raleway-Bold-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Raleway_T";
+src: url('fonts/raleway/Raleway-Thin-webfont.eot'); 
+src: 
+url('fonts/raleway/Raleway-Thin-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/raleway/Raleway-Thin-webfont.woff') format('woff'), 
+url('fonts/raleway/Raleway-Thin-webfont.ttf') format('truetype'), 
+url('fonts/raleway/Raleway-Thin-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Roboto_L";
+src: url('fonts/roboto/Roboto-Light-webfont.eot'); 
+src: 
+url('fonts/roboto/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/roboto/Roboto-Light-webfont.woff') format('woff'), 
+url('fonts/roboto/Roboto-Light-webfont.ttf') format('truetype'), 
+url('fonts/roboto/Roboto-Light-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Roboto_B";
+src: url('fonts/roboto/Roboto-Bold-webfont.eot'); 
+src: 
+url('fonts/roboto/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/roboto/Roboto-Bold-webfont.woff') format('woff'), 
+url('fonts/roboto/Roboto-Bold-webfont.ttf') format('truetype'), 
+url('fonts/roboto/Roboto-Bold-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Open_Sans_B";
+src: url('fonts/open_sans/OpenSans-Bold-webfont.eot'); 
+src: 
+url('fonts/open_sans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/open_sans/OpenSans-Bold-webfont.woff') format('woff'), 
+url('fonts/open_sans/OpenSans-Bold-webfont.ttf') format('truetype'), 
+url('fonts/open_sans/OpenSans-Bold-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Open_Sans_R";
+src: url('fonts/open_sans/OpenSans-Regular-webfont.eot'); 
+src: 
+url('fonts/open_sans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/open_sans/OpenSans-Regular-webfont.woff') format('woff'), 
+url('fonts/open_sans/OpenSans-Regular-webfont.ttf') format('truetype'), 
+url('fonts/open_sans/OpenSans-Regular-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Open_Sans_L";
+src: url('fonts/open_sans/OpenSans-Light-webfont.eot'); 
+src: 
+url('fonts/open_sans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/open_sans/OpenSans-Light-webfont.woff') format('woff'), 
+url('fonts/open_sans/OpenSans-Light-webfont.ttf') format('truetype'), 
+url('fonts/open_sans/OpenSans-Light-webfont.svg#webfont') format('svg'); 
+}
+@font-face{ 
+font-family:"Carto_Sans_Bold";
+src: url('fonts/carto_sans/cartogothicstd-bold-webfont.eot'); 
+src: 
+url('fonts/carto_sans/cartogothicstd-bold-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/carto_sans/cartogothicstd-bold-webfont.woff') format('woff'), 
+url('fonts/carto_sans/cartogothicstd-bold-webfont.ttf') format('truetype'), 
+url('fonts/carto_sans/cartogothicstd-bold-webfont.svg#webfont') format('svg'); 
+}
+
+@font-face{ 
+font-family:"Carto_Sans_Book";
+src: url('fonts/carto_sans/cartogothicstd-book-webfont.eot'); 
+src: 
+url('fonts/carto_sans/cartogothicstd-book-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/carto_sans/cartogothicstd-book-webfont.woff') format('woff'), 
+url('fonts/carto_sans/cartogothicstd-book-webfont.ttf') format('truetype'), 
+url('fonts/carto_sans/cartogothicstd-book-webfont.svg#webfont') format('svg'); 
+}
+
+@font-face{ 
+font-family:"Questrial";
+src: url('fonts/questrial/questrial-regular-webfont.eot'); 
+src: 
+url('fonts/questrial/questrial-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+url('fonts/questrial/questrial-regular-webfont.woff') format('woff'), 
+url('fonts/questrial/questrial-regular-webfont.ttf') format('truetype'), 
+url('fonts/questrial/questrial-regular-webfont.svg#webfont') format('svg'); 
+}
+
+@font-face{ 
+font-family:"sosa";
+src: url('fonts/sosa/sosa.eot'); 
+src: 
+url('fonts/sosa/sosa.eot?#iefix') format('embedded-opentype'), 
+url('fonts/sosa/sosa.woff') format('woff'), 
+url('fonts/sosa/sosa.ttf') format('truetype'), 
+url('fonts/sosa/sosa.svg#webfont') format('svg'); 
+}
+
+.sosa-icon{
+font-family:"sosa";
+	font-style: normal;
+}
+
+

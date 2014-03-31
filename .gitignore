@@ -1,5 +1,4 @@
 .DS_Store
 
-/config/api/
-/version1/
+/config/keys/
 /node_modules

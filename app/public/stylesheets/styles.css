@@ -480,7 +480,7 @@ font-size: 16px;
      -moz-transition:  all 0.8s ease 0s;
      -o-transition:  all 0.8s ease 0s;
      transition:  all 0.8s ease 0s;
-     
+
  }
 
 #options li a:hover{
@@ -636,13 +636,13 @@ font-family:"Open_Sans_L";
     opacity: 1;
         transition: all 0.25s ease;
         -moz-transition: all 0.25s ease;
-        -webkit-transition: all 0.25s ease; 
+        -webkit-transition: all 0.25s ease;
 }
 #foot-icons li > a:hover{
     opacity: 0.3;
         transition: all 0.25s ease;
         -moz-transition: all 0.25s ease;
-        -webkit-transition: all 0.25s ease; 
+        -webkit-transition: all 0.25s ease;
 }
 
 /*CONTACT*/
@@ -732,7 +732,7 @@ fieldset h1
 {
     color:#000;
     font-size:24px;
-}   
+}
 
 
 /*Blog Post Full*/
@@ -1351,7 +1351,7 @@ fieldset h1
         max-width: 320px !important;
         /*overflow-x: hidden !important;*/
         font-size: 12px;
-    } 
+    }
     .container{
         width: 300px !important;
         padding-top: 50px !important;
@@ -1467,4 +1467,13 @@ fieldset h1
     text-align: center;
     top: 50%;
     width: 40px;
+}
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
 }
