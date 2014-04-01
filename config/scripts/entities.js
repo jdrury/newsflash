@@ -26,7 +26,6 @@ exports.fetch = function() {
         // use Alchemy API to get the entities out of each NYT abstract
         alchemyapi.entities('text', item, {}, function(response) {
           // add each entity returned by Alchemy to masterlist object
-          console.log(response);
           response.entities.forEach(function(entity) {
             masterlist.watchEntities.push(entity.text);
           });

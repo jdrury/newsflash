@@ -23,6 +23,10 @@ exports.pullAbstracts = function() {
             , newswire = pretty.results;
         }
 
+        newswire.forEach(function(article) {
+          abstracts.push(article.abstract);
+        });
+
         console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
         resolve(abstracts);
       });
