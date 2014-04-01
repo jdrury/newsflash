@@ -23,7 +23,7 @@ exports.initializeEntities = function() {
           masterlist.watchEntities.splice(i,1);
         }
       };
-
+      console.log("inside bundler");
       resolve(masterlist);
     });
   });

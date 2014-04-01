@@ -20,7 +20,10 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  res.render('index');
+  var tweets = 0;
+  firehose.matchFinder(function(masterlist) {
+    res.render('index', {'masterlist': masterlist, 'tweets': tweets});
+  });
 });
 
 server.listen(app.get('port'), function() {
@@ -44,12 +47,12 @@ firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
 
-var job = new CronJob('0 */1 * * * *', function(){
-  // reset the total
-  firehose.matchFinder(function(masterlist) {
-    io.sockets.emit('update', {'masterlist': masterlist});
-  });
-  start: false;
-});
+// reset every 60 mins
+// var job = new CronJob('0 */60 * * * *', function(){
+//   firehose.matchFinder(function(masterlist) {
+//     io.sockets.emit('update', {'masterlist': masterlist});
+//   });
+//   start: false;
+// });
 
-job.start();
+// job.start();

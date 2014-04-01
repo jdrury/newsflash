@@ -35,6 +35,7 @@ exports.pullAbstracts = function() {
           });
         });
 
+        console.log('inside newswire')
         resolve(abstracts);
       });
     });

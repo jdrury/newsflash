@@ -25,35 +25,31 @@
 <body>
 
 <!-- Preloader -->
-<!-- <div id="preloader">
+<div id="preloader">
   <div id="status">&nbsp;</div>
 </div>
- -->
+
 
 <!-- Mobile Only Navigation - 2 types each for (480px to 640px) and (640px to 960px) wide device screens -->
-<!-- <header id="mobile-header" class="clearfix hidden-desktop">
+<header id="mobile-header" class="clearfix hidden-desktop">
     <div id="nav">
       <ul>
-        <li><a href="#filter=.home" class="selected">Home</a></li>
-        <li><a href="#filter=.about">About</a></li>
-        <li><a href="#filter=.services">Services</a></li>
-        <li><a href="#filter=.media">Media</a></li>
-        <li><a href="#filter=.portfolio">Portfolio</a></li>
-        <li><a href="#filter=.blog">Blog</a></li>
-        <li><a href="#filter=.contact">Contact</a></li>
-        <li><a href="single.html">Single</a></li>
+        <li><a href="#filter=.welcome" class="selected">Newsflash</a></li>
+        <li><a href="#filter=.news">topics</a></li>
+        <li><a href="#filter=.trending">trending</a></li>
+        <li><a ref="#filter=.about">about</a></li>
       </ul>
     </div>
-</header> -->
-
+</header>
 
 <header id="wrapper">
 
     <div id="options" class="clearfix visible-desktop">
       <ul id="filters" class="option-set clearfix" data-option-key="filter">
-        <li><a class="reveal-bg-one selected" id="about" href="#filter=.about">Newsflash</a></li>
-        <li><a class="reveal-bg-two selected" id="news" href="#filter=.services">What's news?</a></li>
-        <li><a class="reveal-bg-three selected" id="trending" href="#filter=.media">What's trending?</a></li>
+        <li><a class="reveal-bg-one selected" href="#filter=.welcome">Newsflash</a></li>
+        <li><a class="reveal-bg-two" href="#filter=.news">topics</a></li>
+        <li><a class="reveal-bg-three" href="#filter=.trending">trending</a></li>
+        <li><a class="reveal-bg-nine" href="#filter=.about">about</a></li>
       </ul>
     </div>
 
@@ -62,36 +58,72 @@
 <section class="container">
   <section id="container" class="clearfix">
 
-    <article class="element clearfix one-full home">
-      <!-- <div class="reveal-bg-eleven">
-        <div class="thumb pad pad-bottom-minus"> -->
-          <div id="treemap">
-
-            <!-- D3 treemap gets appended here -->
-
-          </div>
-        <!-- </div>
-      </div> -->
+    <article class="element  home clearfix one-full welcome">
+      <div class="one-third reveal-bg-one">
+        <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
+        <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus"><span>Hi,</span>This is Newsflash</h2>
+        <p class="pad pad-top-minus pad-bottom-minus">A visual news tracker.</p>
+        <div class="pad pad-top-minus">
+        <a class="btn btn-reveal add-top-half" href="#filter=.trending">Let's get started.</a>
+        </div>
+      </div>
+      <div class="two-third overflow">
+        <div class="images">
+          <h1 class="tweet-count"></h1>
+        </div>
+      </div>
     </article>
 
+    <article class="element fx-slide-up clearfix one-full about">
+      <div class="reveal-bg-nine">
+        <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
+        <h2 class="pad pad-top-minus pad-bottom-minus">Newsflash <i class="fa fa-bolt fa-6"></i>is a visual news tracker</h2>
+         <p class="pad pad-top-minus">Newsflash pulls breaking news from the <strong><em>The New York Times</em></strong> <a href="http://nyti.ms/PkaWYK">newswire</a> and translates each into keywords with <a href="http://www.alchemyapi.com/"><strong><em>AlchemyAPI</a></strong></em>. Each entity is compared to the <a href="https://dev.twitter.com/"><strong><em>Twitter</strong></em> stream</a>. When Newsflash finds a tweet with an entity, it uses <a href="http://socket.io/"><strong><em>socket.io</strong></em></a> to populate a <a href="http://d3js.org/"><strong><em>D3</strong></em></a> treemap with the tweet's hashtags.</p>
+      </div>
+    </article>
 
+    <article class="element  clearfix one-full news">
+      <div class="reveal-bg-two">
+        <% if (masterlist) { %>
+        <br>
+        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 25 articles.</h2>
+        <p class='pad pad-top-minus pad-bottom-minus'>
+          <ul class='inline'>
+          <% masterlist.children.forEach(function(entity) { %>
+            <li style="list-style: none"><%= entity.name %></li>&#9;
+          <% }); %>
+          </ul>
+        <% } %>
+        <br>
+      </div>
+    </article>
+
+    <article class="element  clearfix one-full trending">
+      <div class="reveal-bg-nine">
+      <div id="trending">
+        <!-- insert treemap here -->
+      </div>
+    </div>
+    </article>
 
   </section>
 </section>
+
 <footer id="mastfoot">
   <section class="container-fluid">
     <div class="row-fluid">
           <article class="span6 mob-center">
-            <h2>Newsflash</h2>
+            <br>
+            <h2 style="margin-left: 20px">Newsflash</h2>
             <p class="slogan">A visual representation of the news cycle.</p>
           </article>
           <article class="span6 text-right">
             <ul id="foot-icons" class="clearfix">
-              <li><a href="http://www.jdrur.com" target="_blank"><img title="proxim" alt="proxim" src="images/social/footer_rss.png"/></a></li>
-              <li><a href="http://www.linkedin.com/in/jdrury86/" target="_blank"><img title="proxim" alt="proxim" src="images/social/footer_linkedin.png"/></a></li>
-              <li><a href="https://github.com/jamesdrury/newsflash" target="_blank"><img title="proxim" alt="proxim" src="images/social/footer_github.png"/></a></li>
+              <li><a href="http://www.jdrur.com" target="_blank"><img title="Personal Blog" alt="Personal Blog" src="images/social/footer_post.png"/></a></li>
+              <li><a href="http://www.linkedin.com/in/jdrury86/" target="_blank"><img title="LinkedIn Account" alt="LinkedIn Account" src="images/social/footer_linkedin.png"/></a></li>
+              <li><a href="https://github.com/jamesdrury/newsflash" target="_blank"><img title="Github Account" alt="Github Account" src="images/social/footer_github.png"/></a></li>
             </ul>
-            <p class="copyright">Fullstack Academy &#9829; 2014</p>
+            <p class="copyright" href="http://www.fullstackacademy.com">Fullstack Academy &#9829; 2014</a></p>
           </article>
     </div>
   </section>
@@ -100,8 +132,6 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
-<script src="/javascripts/treemap.js" type="text/javascript"></script>
-
 <script src="javascripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="javascripts/jquery.easing.1.3.js" type="text/javascript"></script>
 <script src="javascripts/modernizr.js" type="text/javascript"></script>
@@ -132,7 +162,6 @@
 <script src="javascripts/jquery.fitvids.js"></script>
 <script src="javascripts/soundcloud.player.api.js"></script>
 <script src="javascripts/sc-player.js"></script>
-<script src="javascripts/responsive-nav.js" type="text/javascript" ></script>
 <script src="javascripts/script.js" type="text/javascript"></script>
 
 <script>
@@ -142,7 +171,7 @@ var containerWidth = $(window).innerWidth();
 var containerHeight = $(window).innerHeight();
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = containerWidth - (containerHeight * .43),
+    width = containerWidth - (containerWidth * .40),
     height = containerHeight - (containerHeight * .36);
 
 var color = d3.scale.category20c();
@@ -152,7 +181,7 @@ var treemap = d3.layout.treemap()
   .sticky(false)
   .value(function(d) { return d.size; });
 
-var div = d3.select("#treemap").append("div")
+var div = d3.select("#trending").append("div")
   .style("position", "relative")
   .style("width", (width + margin.left + margin.right) + "px")
   .style("height", (height + margin.top + margin.bottom) + "px")
@@ -160,9 +189,18 @@ var div = d3.select("#treemap").append("div")
   .style("top", margin.top + "px");
 
 var root;
+var startDate = new Date();
 
 socket.on('update', function(stream) {
 console.log('tweets')
+
+$('#tweet-count').text(tweets)
+
+var now = new Date();
+if( (now - startDate) < 2000 ) {
+  return;
+}
+startDate = new Date();
 
 div.datum(root).selectAll(".node").remove();
 
@@ -199,18 +237,18 @@ this.style("left", function(d) { return d.x + "px"; })
 
 
 <script>
-    var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
-      animate: true, // Boolean: Use CSS3 transitions, true or false
-      transition: 400, // Integer: Speed of the transition, in milliseconds
-      label: "Menu", // String: Label for the navigation toggle
-      insert: "after", // String: Insert the toggle before or after the navigation
-      customToggle: "", // Selector: Specify the ID of a custom toggle
-      openPos: "relative", // String: Position of the opened nav, relative or static
-      jsClass: "js", // String: 'JS enabled' class which is added to <html> el
-      init: function(){}, // Function: Init callback
-      open: function(){}, // Function: Open callback
-      close: function(){} // Function: Close callback
-    });
+  var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+    animate: true, // Boolean: Use CSS3 transitions, true or false
+    transition: 400, // Integer: Speed of the transition, in milliseconds
+    label: "Menu", // String: Label for the navigation toggle
+    insert: "after", // String: Insert the toggle before or after the navigation
+    customToggle: "", // Selector: Specify the ID of a custom toggle
+    openPos: "relative", // String: Position of the opened nav, relative or static
+    jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+    init: function(){}, // Function: Init callback
+    open: function(){}, // Function: Open callback
+    close: function(){} // Function: Close callback
+  });
 </script>
 
 
