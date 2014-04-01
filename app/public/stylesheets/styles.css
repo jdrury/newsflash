@@ -1471,7 +1471,8 @@ fieldset h1
 
 .node {
   border: solid 1px white;
-  font: 10px sans-serif;
+  font: 16px;
+  font-weight: bold;
   line-height: 12px;
   overflow: hidden;
   position: absolute;

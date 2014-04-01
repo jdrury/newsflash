@@ -8,7 +8,7 @@ var alchemyapi = new AlchemyAPI();
 // masterlist is an object to store D3 Treemap data
 var masterlist = {
     "children": []
-  , "name" : "newsfeed"
+  , "name": "newsfeed"
   , "watchEntities": []
 };
 
@@ -26,6 +26,7 @@ exports.fetch = function() {
         // use Alchemy API to get the entities out of each NYT abstract
         alchemyapi.entities('text', item, {}, function(response) {
           // add each entity returned by Alchemy to masterlist object
+          console.log(response);
           response.entities.forEach(function(entity) {
             masterlist.watchEntities.push(entity.text);
           });

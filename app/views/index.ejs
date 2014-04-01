@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>NEWSFLASH</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Newsflash - a visual representation of the news-cycle">
+<meta name="description" content="Newsflash - the visual news tracker">
 <meta name="author" content="James Drury">
 
 <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -17,9 +17,8 @@
 <link href="stylesheets/jquery.tweet.css" rel="stylesheet"/>
 <link href="stylesheets/responsive-nav.css" rel="stylesheet">
 <link href="stylesheets/styles.css" rel="stylesheet" type="text/css" media="screen" />
-
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
-
 
 
 <body>
@@ -58,27 +57,43 @@
 <section class="container">
   <section id="container" class="clearfix">
 
-    <article class="element  home clearfix one-full welcome">
+    <article class="element  fx-slide-up home clearfix one-full welcome">
       <div class="one-third reveal-bg-one">
         <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
-        <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus"><span>Hi,</span>This is Newsflash</h2>
-        <p class="pad pad-top-minus pad-bottom-minus">A visual news tracker.</p>
+        <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus"><span>Hi,</span>I'm Newsflash</h2>
+        <br>
+        <p class="pad pad-top-minus pad-bottom-minus">The visual news tracker.</p>
+        <br>
         <div class="pad pad-top-minus">
-        <a class="btn btn-reveal add-top-half" href="#filter=.trending">Let's get started.</a>
+        <a class="btn btn-reveal add-top-half" href="#filter=.trending">Let's get started <i class="fa fa-bolt"></i></a>
         </div>
       </div>
       <div class="two-third overflow">
-        <div class="images">
-          <h1 class="tweet-count"></h1>
-        </div>
+        <div class="images"><img src="images/content/01.jpg" alt="" /></div>
       </div>
+      <!-- dynamically update tweet count here -->
     </article>
 
-    <article class="element fx-slide-up clearfix one-full about">
+    <article class="element  clearfix one-full about">
       <div class="reveal-bg-nine">
-        <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Newsflash <i class="fa fa-bolt fa-6"></i>is a visual news tracker</h2>
-         <p class="pad pad-top-minus">Newsflash pulls breaking news from the <strong><em>The New York Times</em></strong> <a href="http://nyti.ms/PkaWYK">newswire</a> and translates each into keywords with <a href="http://www.alchemyapi.com/"><strong><em>AlchemyAPI</a></strong></em>. Each entity is compared to the <a href="https://dev.twitter.com/"><strong><em>Twitter</strong></em> stream</a>. When Newsflash finds a tweet with an entity, it uses <a href="http://socket.io/"><strong><em>socket.io</strong></em></a> to populate a <a href="http://d3js.org/"><strong><em>D3</strong></em></a> treemap with the tweet's hashtags.</p>
+        <div class="thumb pad pad-bottom-minus"></div>
+        <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus">Newsflash is a visual news tracker</h2>
+        <p class="pad pad-top-minus pad-bottom-minus">How it works:</p>
+        <ul>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> pulls breaking news from the <strong><em>The New York Times</em></strong> <a href="http://nyti.ms/PkaWYK">newswire</a></p></li>
+          <br>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> translates each article into keywords using AlchemyAPI's artificial intelligence</p></li>
+          <br>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> each article yields 2-3 keywords, and each keyword is assigned to the D3 treemap</p></li>
+          <br>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> newsflash consults the list of keywords as it sifts through the Twitter stream</p></li>
+          <br>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> when a tweet contains a keyword, it populates the D3 treemap with hashtags taken from the matching tweet</p></li>
+          <br>
+          <li><p class='pad pad-top-minus pad-bottom-minus'><i class="fa fa-bolt fa-6"></i> socket.io populates the treemap in real-time</p></li>
+          <br>
+        </ul>
+        <br>
       </div>
     </article>
 
@@ -86,12 +101,12 @@
       <div class="reveal-bg-two">
         <% if (masterlist) { %>
         <br>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 25 articles.</h2>
+        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 30 articles.</h2>
         <p class='pad pad-top-minus pad-bottom-minus'>
           <ul class='inline'>
-          <% masterlist.children.forEach(function(entity) { %>
-            <li style="list-style: none"><%= entity.name %></li>&#9;
-          <% }); %>
+            <% masterlist.children.forEach(function(entity) { %>
+              <li style="list-style: none"><h4><%= entity.name %></h4></li>&#9;
+            <% }); %>
           </ul>
         <% } %>
         <br>
@@ -193,8 +208,6 @@ var startDate = new Date();
 
 socket.on('update', function(stream) {
 console.log('tweets')
-
-$('#tweet-count').text(tweets)
 
 var now = new Date();
 if( (now - startDate) < 2000 ) {

@@ -20,9 +20,8 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  var tweets = 0;
   firehose.matchFinder(function(masterlist) {
-    res.render('index', {'masterlist': masterlist, 'tweets': tweets});
+    res.render('index', {'masterlist': masterlist});
   });
 });
 
@@ -40,7 +39,7 @@ io.configure(function() {
 });
 
 io.sockets.on('connection', function(socket) {
-  // console.log("client connected");
+  console.log("client connected");
 });
 
 firehose.matchFinder(function(masterlist) {
