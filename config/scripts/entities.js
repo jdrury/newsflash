@@ -41,11 +41,10 @@ exports.fetch = function() {
         } else {
           console.log('Alchemy returned ' + masterlist.watchEntities.length + ' entities...');
           // when all the iterations have returned, send the promise.
-          console.log('inside entities')
+
           resolve(masterlist);
         }
       };
-
     });
   });
 };

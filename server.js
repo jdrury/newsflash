@@ -38,8 +38,7 @@ io.configure(function() {
   io.set('polling duration', 10);
 });
 
-io.sockets.on('connection', function(socket) {
-  console.log("client connected");
+io.sockets.on('connection', function() {
 });
 
 firehose.matchFinder(function(masterlist) {

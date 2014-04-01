@@ -33,7 +33,6 @@ function descendingOrder(a,b) {
 exports.matchFinder = function(callback) {
   // initialize() returns a unique set of entities in D3 format
   bundler.initializeEntities().then(function(masterlist) {
-    console.log("inside firehose");
     // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){
 
@@ -43,8 +42,6 @@ exports.matchFinder = function(callback) {
           , hashtags  = [];
 
         masterlist.children.forEach(function(entity) {
-
-          console.log(entity.children)
           // if tweet contains an entity, increment entity and save hashtags
           if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
             entity.mentions += 1;
