@@ -1,4 +1,4 @@
 .DS_Store
 
-/config/keys/
+/config/keys/*
 /node_modules

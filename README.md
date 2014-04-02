@@ -46,13 +46,13 @@ Newsflash pulls breaking news from the *The New York Times* [newswire](http://ny
 + The treemap now has transition animation, but it needs smoother transitions.
 + The treemap now has three layers: root, parent and child.
 
-#####v0.8.0 Article references added
+#####v0.8.0 CSS Styling
++  Add custom CSS styling and fonts
+
+#####v0.9.0 Article references added
 + Smoother transitions added for D3 treemap.
 + Each news item on the treemap now has a concomitant headline, abstract and link.
 + newsFlash pings NYTimes newswire every two (2) minutes to see if there is a new story.
 + New stories are added to the pre-existing list and announced in a banner message.
-+ Child nodes are now filtered for profanity hashtags.
-
-#####v1.0.0 CSS Styling
-+  Add custom CSS styling and fonts
++ Child nodes are now filtered for profanity.
 

@@ -56,7 +56,7 @@ exports.matchFinder = function(callback) {
               entity.children.dupeBuster(hashtags)
 
             } else {
-              // otherwise, sort and trim existing children
+              // if no hashtags, sort and trim existing children
               entity.children = entity.children.sort(descendingOrder).slice(0,3);
             }
 

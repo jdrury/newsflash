@@ -16,15 +16,10 @@ app.use(express.errorHandler());
 app.use(express.urlencoded());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-// app.use(app.router);
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  // firehose.matchFinder(function(masterlist) {
-    res.render('index', {'masterlist': masterlist});
-  // });
-     // res.render('index');
-
+  res.render('index', {'masterlist': masterlist});
 });
 
 server.listen(app.get('port'), function() {
