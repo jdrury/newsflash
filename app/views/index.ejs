@@ -34,9 +34,9 @@
     <div id="nav">
       <ul>
         <li><a href="#filter=.welcome" class="selected">Newsflash</a></li>
-        <li><a href="#filter=.news">Topics</a></li>
+        <li><a href="#filter=.keywords">Keywords</a></li>
         <li><a href="#filter=.trending">Trending</a></li>
-        <li><a ref="#filter=.about">About</a></li>
+        <li><a href="#filter=.about">About</a></li>
       </ul>
     </div>
 </header>
@@ -46,7 +46,7 @@
     <div id="options" class="clearfix visible-desktop">
       <ul id="filters" class="option-set clearfix" data-option-key="filter">
         <li><a class="reveal-bg-one selected" href="#filter=.welcome">Newsflash</a></li>
-        <li><a class="reveal-bg-three" href="#filter=.topics">Topics</a></li>
+        <li><a class="reveal-bg-three" href="#filter=.keywords">Keywords</a></li>
         <li><a class="reveal-bg-two" href="#filter=.trending">Trending</a></li>
         <li><a class="reveal-bg-four" href="#filter=.about">About</a></li>
       </ul>
@@ -74,21 +74,27 @@
       <!-- dynamically update tweet count here -->
     </article>
 
-    <article class="element  clearfix one-full topics">
+    <article class="element  clearfix one-full keywords">
       <div class="reveal-bg-two">
+        <div class="thumb pad pad-bottom-minus"></div>
         <% if (masterlist) { %>
-        <br>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 30 articles.</h2>
-        <p class='pad pad-top-minus pad-bottom-minus'>
-          <ul class='inline'>
-            <% masterlist.children.forEach(function(entity) { %>
-              <li style="list-style: none"><h4><%= entity.name %></h4></li>&#9;
-            <% }); %>
-          </ul>
+        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 25 articles.</h2>
         <% } %>
-        <br>
+        <div class="thumb pad pad-bottom-minus"></div>
       </div>
     </article>
+
+    <% masterlist.children.forEach(function(entity) { %>
+      <article class="element fx-slide-up clearfix one-third keywords">
+        <div class="images"><img src="images/content/07.jpg" alt="" /></div>
+        <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 10)]%>">
+          <div class="thumb pad pad-bottom-minus"><img alt="" title="AlchemyAPI" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
+          <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.name %></h2>
+          <br>
+          <p class="pad pad-top-minus">"<%= entity.metadata.headline %> <br/><br><br/>Abstract: <%= entity.metadata.abstract %> <a href="<%= entity.metadata.url %>">(source)</a> </p>
+        </div>
+      </article>
+    <% }); %>
 
     <article class="element  clearfix one-full trending">
       <div class="reveal-bg-nine">

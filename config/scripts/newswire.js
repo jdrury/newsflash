@@ -9,8 +9,11 @@ exports.pullAbstracts = function() {
     // establish connection with NYTimes API
     http.get(nytimesKey.options, function(res) {
       var data      = ""
-        , abstracts = []
-        , articles  = [];
+      var articles  = {
+            'abstracts': []
+          , 'headlines': []
+          , 'hyperlinks': []
+        };
 
       res.on('data', function(chunk) {
         data += chunk;
@@ -24,11 +27,13 @@ exports.pullAbstracts = function() {
         }
 
         newswire.forEach(function(article) {
-          abstracts.push(article.abstract);
+          articles.abstracts.push(article.abstract.trim());
+          articles.headlines.push(article.title.trim());
+          articles.hyperlinks.push(article.url);
         });
 
         console.log("Pulling down " + newswire.length + " articles from the NYTimes newswire...")
-        resolve(abstracts);
+        resolve(articles);
       });
     });
   });

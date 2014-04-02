@@ -10,20 +10,19 @@ exports.initializeEntities = function() {
 
       // sort watchEntities to save time in duplicate search
       masterlist.watchEntities.sort();
-      // empty masterlist.children in case this is a refresh
-      masterlist.children = [];
-      var i = masterlist.watchEntities.length;
 
+      var i = masterlist.watchEntities.length;
+      var temp = [];
       while (i--) {
-        // if entity is not equal to predecessor, add it to masterlist
-        if (masterlist.watchEntities[i] !== masterlist.watchEntities[i-1] && masterlist.watchEntities[i].length < 20) {
-          masterlist.children.push({"name": masterlist.watchEntities[i], "children": [], "mentions": 0});
-        } else {
-          // otherwise, entity is a duplicate -> remove it
-          masterlist.watchEntities.splice(i,1);
+        if (i > 1) {
+          // if entity is not equal to predecessor, add it to masterlist
+          if (masterlist.watchEntities[i][0] !== masterlist.watchEntities[i-1][0] && masterlist.watchEntities[i][0].length < 20) {
+            masterlist.children.push({"name": masterlist.watchEntities[i][0], "children": [], "mentions": 0, "metadata": masterlist.watchEntities[i][1]});
+            temp.push(masterlist.watchEntities[i][0])
+          }
         }
       };
-
+      masterlist.watchEntities = temp;
       resolve(masterlist);
     });
   });
