@@ -16,7 +16,7 @@ exports.initializeEntities = function() {
 
       while (i--) {
         // if entity is not equal to predecessor, add it to masterlist
-        if (masterlist.watchEntities[i] !== masterlist.watchEntities[i-1]) {
+        if (masterlist.watchEntities[i] !== masterlist.watchEntities[i-1] && masterlist.watchEntities[i].length < 20) {
           masterlist.children.push({"name": masterlist.watchEntities[i], "children": [], "mentions": 0});
         } else {
           // otherwise, entity is a duplicate -> remove it

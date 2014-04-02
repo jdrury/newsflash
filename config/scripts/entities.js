@@ -6,7 +6,7 @@ var AlchemyAPI = require('../keys/alchemyapi')
 var alchemyapi = new AlchemyAPI();
 
 // masterlist is an object to store D3 Treemap data
-var masterlist = {
+masterlist = {
     "children": []
   , "name": "newsfeed"
   , "watchEntities": []

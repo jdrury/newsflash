@@ -1,10 +1,10 @@
 var express  = require('express')
   , app      = express()
-  , CronJob = require('cron').CronJob
+  , CronJob  = require('cron').CronJob
   , path     = require('path')
   , server   = require('http').createServer(app)
   , io       = require('socket.io').listen(server)
-  , firehose = require('./config/scripts/firehose.js');
+  , firehose = require('./config/scripts/firehose');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
@@ -20,9 +20,11 @@ app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 app.get('/', function(req, res) {
-  firehose.matchFinder(function(masterlist) {
+  // firehose.matchFinder(function(masterlist) {
     res.render('index', {'masterlist': masterlist});
-  });
+  // });
+     // res.render('index');
+
 });
 
 server.listen(app.get('port'), function() {
