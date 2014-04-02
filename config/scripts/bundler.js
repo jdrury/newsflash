@@ -10,9 +10,10 @@ exports.initializeEntities = function() {
 
       // sort watchEntities to save time in duplicate search
       masterlist.watchEntities.sort();
-      console.log("before sort: " + masterlist.watchEntities);
+
       var i = masterlist.watchEntities.length;
       var temp = [];
+
       while (i--) {
         if (i > 1) {
           // if entity is not equal to predecessor, add it to masterlist

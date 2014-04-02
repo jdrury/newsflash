@@ -46,8 +46,8 @@
     <div id="options" class="clearfix visible-desktop">
       <ul id="filters" class="option-set clearfix" data-option-key="filter">
         <li><a class="reveal-bg-one selected" href="#filter=.welcome">Newsflash</a></li>
-        <li><a class="reveal-bg-three" href="#filter=.keywords">Keywords</a></li>
-        <li><a class="reveal-bg-two" href="#filter=.trending">Trending</a></li>
+        <li><a class="reveal-bg-two" href="#filter=.keywords">Keywords</a></li>
+        <li><a class="reveal-bg-three" href="#filter=.trending">Trending</a></li>
         <li><a class="reveal-bg-four" href="#filter=.about">About</a></li>
       </ul>
     </div>
@@ -203,11 +203,11 @@
 <script>
 var socket = io.connect();
 
-var containerWidth = $(window).innerWidth();
-var containerHeight = $(window).innerHeight();
+var containerWidth = $('.container').width();
+var containerHeight = $(window).height();
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
-    width = containerWidth - (containerWidth * .40),
+    width = containerWidth - 42,
     height = containerHeight - (containerHeight * .36);
 
 var color = d3.scale.category20c();

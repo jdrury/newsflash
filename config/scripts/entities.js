@@ -30,9 +30,7 @@ exports.fetch = function() {
 
           // add each entity returned by Alchemy to masterlist object
           response.entities.forEach(function(entity) {
-            console.log("inside entity: " + article[1]);
             masterlist.watchEntities.push([entity.text, {"name": entity.text, "headline": article[1], "abstract": article[0], "url": article[2]}]);
-            console.log({"name": entity.text, "headline": article[1], "abstract": article[0], "url": article[2]})
           });
 
           callback(null, masterlist);
