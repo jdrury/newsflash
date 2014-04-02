@@ -36,7 +36,7 @@ exports.matchFinder = function(callback) {
   bundler.initializeEntities().then(function(masterlist) {
 
     // enter twitter firehouse
-    console.log(masterlist.watchEntities);
+    console.log("watchEntities: " + masterlist.watchEntities);
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){
 
       // analyze each tweet for presence of entities

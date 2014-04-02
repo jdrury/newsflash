@@ -18,20 +18,21 @@ exports.fetch = function() {
 
     // pullAbstracts() returns a promise with the breaking news abstracts
     nytimes.pullAbstracts().then(function(articles) {
-      var index, headline, url;
+
       masterlist.watchEntities = [];
 
-      async.each(articles.abstracts, iterator, done);
+      async.each(articles, iterator, done);
 
-      function iterator(abstract, callback) {
-        index = articles.abstracts.indexOf(abstract)
-        headline = articles.headlines[index]
-        url = articles.hyperlinks[index]
+      function iterator(article, callback) {
+
         // use Alchemy API to get the entities out of each NYT abstract
-        alchemyapi.entities('text', abstract, {}, function(response) {
+        alchemyapi.entities('text', article[0], {}, function(response) {
+
           // add each entity returned by Alchemy to masterlist object
           response.entities.forEach(function(entity) {
-            masterlist.watchEntities.push([entity.text, {"name": entity.text, "headline": headline, "abstract": abstract, "url": url}]);
+            console.log("inside entity: " + article[1]);
+            masterlist.watchEntities.push([entity.text, {"name": entity.text, "headline": article[1], "abstract": article[0], "url": article[2]}]);
+            console.log({"name": entity.text, "headline": article[1], "abstract": article[0], "url": article[2]})
           });
 
           callback(null, masterlist);

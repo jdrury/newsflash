@@ -87,11 +87,12 @@
     <% masterlist.children.forEach(function(entity) { %>
       <article class="element fx-slide-up clearfix one-third keywords">
         <div class="images"><img src="images/content/07.jpg" alt="" /></div>
-        <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 10)]%>">
+        <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
           <div class="thumb pad pad-bottom-minus"><img alt="" title="AlchemyAPI" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
-          <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.name %></h2>
+          <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.metadata.name %></h2>
           <br>
-          <p class="pad pad-top-minus">"<%= entity.metadata.headline %>" <br/><br><br/>Abstract: <%= entity.metadata.abstract %> <a href="<%= entity.metadata.url %>">(source)</a> </p>
+          <br>
+          <p class="pad pad-top-minus">"<%= entity.metadata.headline %>" <br><br/><br/>Abstract: <%= entity.metadata.abstract %><span style="float: right"><a style="color: white" target="_blank" href="<%= entity.metadata.url %>"><small><strong>[LINK]</strong></small></a></span></p>
         </div>
       </article>
     <% }); %>
@@ -116,7 +117,7 @@
       <div class="images"><img src="images/content/nyt_stock_small.png" alt="New York Times building" /></div>
       <div class="content-bottom content-bottom-alt reveal-bg-three">
         <div class="thumb pad pad-bottom-minus"><img alt='Newsflash defines news with The New York Times Breaking News API.' title="The New York Times Breaking News API" src="images/contact/02.png"/></div>
-        <h2 class="pad pad-top-minus pad-bottom-minus">New York Times</h2>
+        <h2 class="pad pad-top-minus pad-bottom-minus">The NY Times</h2>
         <br>
         <p class="pad pad-top-minus">Newsflash defines news with <em>The New York Times</em> Breaking News API. <br/><br/>Every 15 minutes, Newsflash parses 30 of the most recent headlines.</p>
       </div>
