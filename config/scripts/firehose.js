@@ -32,8 +32,11 @@ function descendingOrder(a,b) {
 // matchFinder() compares entities to tweets, counts every match
 exports.matchFinder = function(callback) {
 
-  // initialize() returns a unique set of entities in D3 format
+  // initializeEntities() returns an object ready to be added to a D3 treemap
   bundler.initializeEntities().then(function(masterlist) {
+
+    console.log('inside the firehose');
+    console.log(masterlist.children);
 
     // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){

@@ -238,6 +238,7 @@ var div = d3.select("#trending").append("div")
 var root;
 var startDate = new Date();
 var tweets = 0;
+
 socket.on('update', function(stream) {
   console.log('tweets')
   tweets += 1;

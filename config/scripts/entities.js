@@ -19,8 +19,8 @@ exports.fetch = function() {
     // pullAbstracts() returns a promise with the breaking news abstracts
     nytimes.pullAbstracts().then(function(articles) {
 
-      masterlist.watchEntities = [];
-
+      // iterate over every article with AlchemyAPI
+      // fire a promise once all the entities have been collected
       async.each(articles, iterator, done);
 
       function iterator(article, callback) {
@@ -49,6 +49,7 @@ exports.fetch = function() {
               masterlist.watchEntities.push([entity.text, metadata]);
             }
           });
+
           console.log('');
 
           callback(null, masterlist);
