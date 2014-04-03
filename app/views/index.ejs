@@ -69,6 +69,15 @@
         </div>
       </div>
       <div class="two-third overflow">
+        <div class="banner-canvas">
+          <div class="banner-feed">
+            <br><br><br><br><br><br><br>
+            <div><span id="article-counter">10</span> articles</div>
+            <br>
+            <div><span id="entity-counter"><%= masterlist.children.length %></span> keywords</div><br>
+            <div><span id="tweet-counter">0</span> tweets</div>
+            <br>
+          </div>
         <div class="images"><img src="images/content/01.jpg" alt="" /></div>
       </div>
       <!-- dynamically update tweet count here -->
@@ -78,7 +87,7 @@
       <div class="reveal-bg-two">
         <div class="thumb pad pad-bottom-minus"></div>
         <% if (masterlist) { %>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 20 articles.</h2>
+        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 10 articles.</h2>
         <% } %>
         <div class="thumb pad pad-bottom-minus"></div>
       </div>
@@ -88,11 +97,13 @@
       <article class="element fx-slide-up clearfix one-third keywords">
         <div class="images"><img src="images/content/07.jpg" alt="" /></div>
         <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
-          <div class="thumb pad pad-bottom-minus"><img alt="" title="AlchemyAPI" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
+          <div class="thumb pad pad-bottom-minus"><img alt="random service image" title="random service image" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
           <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.metadata.name %></h2>
-          <br>
-          <br>
-          <p class="pad pad-top-minus">"<%= entity.metadata.headline %>" <br><br/>Abstract: <%= entity.metadata.abstract %><span style="float: right"><a style="color: white" target="_blank" href="<%= entity.metadata.url %>"><small><strong>[LINK]</strong></small></a></span></p>
+          <p class="pad pad-top-minus">"<%= entity.metadata.headline %>"</p>
+          <p class="pad pad-top-minus"><%= entity.metadata.abstract %></p>
+          <p class="pad pad-top-minus" id="entity-link">
+            <a target="_blank" href="<%= entity.metadata.url %>"><small>source: <%= entity.metadata.url.substring(0,30) %>...</small></a>
+          </p>
         </div>
       </article>
     <% }); %>
@@ -119,7 +130,7 @@
         <div class="thumb pad pad-bottom-minus"><img alt='Newsflash defines news with The New York Times Breaking News API.' title="The New York Times Breaking News API" src="images/contact/02.png"/></div>
         <h2 class="pad pad-top-minus pad-bottom-minus">The NY Times</h2>
         <br>
-        <p class="pad pad-top-minus">Newsflash defines news with <em>The New York Times</em> Breaking News API. <br/><br/><br/>Every 15 minutes, Newsflash parses 20 of the most recent headlines.</p>
+        <p class="pad pad-top-minus">Newsflash defines news with <em>The New York Times</em> Breaking News API. <br/><br/><br/>Every 45 minutes, Newsflash pulls the 10 most recent headlines.</p>
       </div>
     </article>
 
@@ -226,15 +237,20 @@ var div = d3.select("#trending").append("div")
 
 var root;
 var startDate = new Date();
-
+var tweets = 0;
 socket.on('update', function(stream) {
   console.log('tweets')
+  tweets += 1;
 
   var now = new Date();
+
   if( (now - startDate) < 2000 ) {
     return;
   }
+
   startDate = new Date();
+
+  $('#tweet-counter').text(tweets);
 
   div.datum(root).selectAll(".node").remove();
 

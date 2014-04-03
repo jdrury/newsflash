@@ -1,4 +1,4 @@
-#Newsflash v0.9.0
+#Newsflash v0.9.1
 
 **[Newsflash](newsflash.herokuapp.com)** is a visual news tracker, defined by *The New York Times*, driven by Twitter.
 
@@ -7,9 +7,13 @@ Newsflash pulls breaking news from the *The New York Times* [newswire](http://ny
 
 Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.com/</a>
 
-#####v1.0.0 Filtering and cronJob
-+ Hashtags are now filtered for profanity
-+ cronJob resets masterlist every 30 minutes
+===========
+
+#####v0.9.1 Less articles, better UX
++ cronJob resets masterlist every 48 minutes
++ articles reduced to 10
++ less articles and faster reset makes treemap easier to read
++ new banner on welcome page shows number of articles, keywords, tweets
 
 #####v0.9.0 Article references added
 + Tracks 20 articles to match D3's 20 colors
@@ -61,4 +65,4 @@ Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.
 + Keywords are represented as squares that change color based on volume of tweets.
 + Squares refresh with each new tweet.
 
-<small>Newsflash - My individual capstone project at <a href="http://www.fullstackacademy.com">Fullstack Academy of Code</a>.</small>
+Newsflash - My individual capstone project at <a href="http://www.fullstackacademy.com">Fullstack Academy of Code</a>.

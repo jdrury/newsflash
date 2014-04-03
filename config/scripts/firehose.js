@@ -15,7 +15,7 @@ Array.prototype.dupeBuster = function(array) {
     }
   }
   array.filter(function(e) {
-    e ? self.push({"name": e, "size": 1}) : '';
+    e ? self.push({'name': e, 'size': 1}) : '';
   });
 }
 
@@ -40,8 +40,8 @@ exports.matchFinder = function(callback) {
 
       // analyze each tweet for presence of entities
       stream.on('data', function(tweet) {
-        var tweetText = tweet.text.toLowerCase()
-          , hashtags  = [];
+        var tweetText = tweet.text.toLowerCase();
+        var hashtags  = [];
 
         masterlist.children.forEach(function(entity) {
           // if tweet contains an entity, increment entity and save hashtags
@@ -52,7 +52,7 @@ exports.matchFinder = function(callback) {
             // if hashtags exist, compare new hashtags to entity's children
             if (hashtags) {
               // increment entity.child if match; insert hashtag if no match
-              entity.children.dupeBuster(hashtags)
+              entity.children.dupeBuster(hashtags);
 
             } else {
               // if no hashtags, sort and trim existing children
