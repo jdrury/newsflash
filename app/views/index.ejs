@@ -100,7 +100,11 @@
           <div class="thumb pad pad-bottom-minus"><img alt="random service image" title="random service image" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
           <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.metadata.name %></h2>
           <p class="pad pad-top-minus">"<%= entity.metadata.headline %>"</p>
+          <% if (entity.metadata.abstract.length > 190) { %>
+            <p class="pad pad-top-minus"><%= entity.metadata.abstract.substring(0,190) %>...</p>
+          <% } else { %>
           <p class="pad pad-top-minus"><%= entity.metadata.abstract %></p>
+          <% } %>
           <p class="pad pad-top-minus" id="entity-link">
             <a target="_blank" href="<%= entity.metadata.url %>"><small>source: <%= entity.metadata.url.substring(0,30) %>...</small></a>
           </p>
