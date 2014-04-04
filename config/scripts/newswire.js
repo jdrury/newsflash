@@ -3,9 +3,9 @@ var nytimesKey = require('../keys/nytimesapi');
 var Promise = require('bluebird');
 
 // pullArticles() returns a promise with breaking news articles
-exports.pullArticles = function(input) {
+exports.pullArticles = function() {
   return new Promise(function(resolve,reject) {
-    nytimesKey.query = input || 20;
+    // nytimesKey.query = input || 12;
 
     console.log('Pulling down ' + nytimesKey.query + ' articles from the NYTimes newswire...')
 
