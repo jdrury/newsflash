@@ -45,7 +45,7 @@
 
     <div id="options" class="clearfix visible-desktop">
       <ul id="filters" class="option-set clearfix" data-option-key="filter">
-        <li><a class="reveal-bg-one " href="#filter=.welcome">Newsflash</a></li>
+        <li><a class="reveal-bg-one selected" href="#filter=.home">Newsflash</a></li>
         <li><a class="reveal-bg-two" href="#filter=.trending">Trending</a></li>
         <li><a class="reveal-bg-three" href="#filter=.keywords">Keywords</a></li>
         <li><a class="reveal-bg-four" href="#filter=.about">About</a></li>
@@ -57,12 +57,12 @@
 <section class="container">
   <section id="container" class="clearfix">
 
-    <article class="element  fx-slide-up home clearfix one-full welcome">
+    <article class="element fx-slide-up home clearfix one-full welcome">
       <div class="one-third reveal-bg-one">
         <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
         <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus"><span>Hi,</span>I'm Newsflash</h2>
         <br>
-        <p class="pad pad-top-minus pad-bottom-minus">A visual news tracker.</p>
+        <p class="pad pad-top-minus pad-bottom-minus">The visual news tracker</p>
         <br>
         <div class="pad pad-top-minus">
         <a class="btn btn-reveal add-top-half" href="#filter=.trending">Get news <i class="fa fa-bolt"></i></a>
@@ -79,22 +79,34 @@
             <br>
           </div>
         <div class="images"><img src="images/content/01.jpg" alt="" /></div>
+          <!-- this needs to be refactored -->
       </div>
-      <!-- dynamically update tweet count here -->
     </article>
 
-    <article class="element  clearfix one-full keywords">
+    <article class="element clearfix home one-full">
+      <div class="reveal-bg-eight">
+        <h2 class="pad">Defined by The New York Times<br>
+                        <span style="margin-left: 40px">Driven by Twitter<span><br>
+                        <span style="margin-left: 80px">Displayed with D3.js</span></h2>
+      </div>
+    </article>
+
+    <article class="element clearfix home one-full trending">
+      <div class="reveal-bg-nine">
+        <div id="trending">
+          <!-- insert treemap here -->
+        </div>
+      </div>
+    </article>
+
+    <article class="element clearfix home one-full">
       <div class="reveal-bg-two">
-        <div class="thumb pad pad-bottom-minus"></div>
-        <% if (masterlist) { %>
-        <h2 class="pad pad-top-minus pad-bottom-minus">Tracking <%= masterlist.children.length %> entities across 10 articles.</h2>
-        <% } %>
-        <div class="thumb pad pad-bottom-minus"></div>
+        <h2 class="pad">Tracking <%= masterlist.children.length %> entities across 10 articles</h2>
       </div>
     </article>
 
     <% masterlist.children.forEach(function(entity) { %>
-      <article class="element fx-slide-up clearfix one-third keywords">
+      <article class="element fx-slide-up home clearfix one-third keywords">
         <div class="images"><img src="images/content/07.jpg" alt="" /></div>
         <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
           <div class="thumb pad pad-bottom-minus"><img alt="random service image" title="random service image" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
@@ -108,23 +120,13 @@
       </article>
     <% }); %>
 
-    <article class="element  clearfix one-full trending">
+    <article class="element clearfix home one-full about">
       <div class="reveal-bg-nine">
-        <div id="trending">
-          <!-- insert treemap here -->
-        </div>
+        <h2 class="pad">News defined by professionals, appraised by the masses</h2>
       </div>
     </article>
 
-    <article class="element  clearfix one-full about">
-      <div class="reveal-bg-nine">
-        <div class="thumb pad pad-bottom-minus"></div>
-        <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus">Defined by professionals, appraised by the masses</h2>
-        <div class="thumb pad pad-bottom-minus"></div>
-      </div>
-    </article>
-
-    <article class="element fx-slide-up clearfix one-third about">
+    <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/nyt_stock_small.png" alt="New York Times building" /></div>
       <div class="content-bottom content-bottom-alt reveal-bg-three">
         <div class="thumb pad pad-bottom-minus"><img alt='Newsflash defines news with The New York Times Breaking News API.' title="The New York Times Breaking News API" src="images/contact/02.png"/></div>
@@ -134,7 +136,7 @@
       </div>
     </article>
 
-    <article class="element fx-slide-up clearfix one-third about">
+    <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/alchemy_stock_small.png" alt="AlchemyAPI logo" style="border: 1px" /></div>
       <div class="content-bottom content-bottom-alt reveal-bg-one">
         <div class="thumb pad pad-bottom-minus"><img alt="AlchemyAPI's artificial intelligence helps Newsflash extract meaning from the NYT headlines" title="AlchemyAPI" src="images/services/01.png"/></div>
@@ -144,7 +146,7 @@
       </div>
     </article>
 
-    <article class="element fx-slide-up clearfix one-third about">
+    <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/twitter_stock_small.png" alt="@twitter feed" /></div>
       <div class="content-bottom content-bottom-alt reveal-bg-two">
         <div class="thumb pad pad-bottom-minus"><img alt="Once Newsflash has received all of the keywords, it inserts them into the Twitter stream." title="Twitter stream" src="images/contact/03.png"/></div>
@@ -162,7 +164,7 @@
           <article class="span6 mob-center">
             <br>
             <h2 style="margin-left: 20px">Newsflash</h2>
-            <p class="slogan">A visual representation of the news cycle.</p>
+            <p class="slogan">The visual news tracker</p>
           </article>
           <article class="span6 text-right">
             <ul id="foot-icons" class="clearfix">
@@ -242,7 +244,7 @@ var containerHeight = $(window).height();
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10},
     width = containerWidth - 42,
-    height = containerHeight - (containerHeight * .36);
+    height = containerHeight - (containerHeight * .20);
 
 var color = d3.scale.category20c();
 
