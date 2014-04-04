@@ -1,4 +1,4 @@
-var bundler = require('./bundler');
+var entities = require('./entities');
 var twitter = require('ntwitter');
 var twitterapi = require('../keys/twitterapi');
 
@@ -32,11 +32,17 @@ function descendingOrder(a,b) {
 // matchFinder() compares entities to tweets, counts every match
 exports.matchFinder = function(callback) {
 
-  // initializeEntities() returns an object ready to be added to a D3 treemap
-  bundler.initializeEntities().then(function(masterlist) {
+  // entities() returns an object ready to be added to a D3 treemap
+  entities.fetch().then(function(masterlist) {
 
-    console.log('inside the firehose');
+    console.log('* * * * * * *');
+    console.log('firehose.js');
+    console.log('* * * * * * *');
+    console.log('');
+    console.log(masterlist.watchEntities);
+    console.log('');
     console.log(masterlist.children);
+    console.log('');
 
     // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){
@@ -48,7 +54,7 @@ exports.matchFinder = function(callback) {
 
         // scan tweet for every entity in every article
         masterlist.children.forEach(function(article) {
-          article.forEach(function(entity) {
+          article.children.forEach(function(entity) {
             // if tweet contains an entity, increment entity and save hashtags
             if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
               masterlist.size += 1;

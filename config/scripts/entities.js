@@ -17,8 +17,14 @@ masterlist = {
 exports.fetch = function() {
   return new Promise(function(resolve, reject) {
 
-    // pullAbstracts() returns a promise with the breaking news abstracts
+    // pullArticles() returns a promise with breaking news articles
     nytimes.pullArticles().then(function(articles) {
+      var i, abstract, articleWrapper;
+
+      console.log('* * * * * * *');
+      console.log('entities.js');
+      console.log('* * * * * * *');
+      console.log('');
 
       // iterate over every article and send abstracts to AlchemyAPI
       // fire a promise once all the entities have been collected
@@ -26,29 +32,39 @@ exports.fetch = function() {
 
       function iterator(article, callback) {
 
-        // use Alchemy API to get the entities out of each NYT abstract
+        // use Alchemy API to get the entities for each NYT abstract
         alchemyapi.entities('text', article[1], {}, function(response) {
-          var metadata;
 
-          console.log('--Abstract ' + (articles.indexOf(article) + 1) + '--');
-          console.log(article[1]);
+          // console.log ============
+          console.log('--Article #' + (articles.indexOf(article) + 1) + '--');
+          console.log('HEADLINE: ' + article[0]);
+          console.log('ABSTRACT: ' + article[1]);
+          if (response.entities.length > 0) {
+            console.log(response.entities.length + ' RESPONSE(S): ');
+            console.log(response);
+          } else {
+            console.log('NO RESPONSE: ');
+            console.log(response);
+          }
+          // ========================
+          if (response.entities.length > 0) {
+            articleWrapper = {
+                              'headline': article[0],
+                              'abstract': article[1],
+                              'url': article[2],
+                              'size': 0,
+                              'children': []
+                            };
 
-          masterlist.children[i] = {
-                                  'name': article[0],
-                                  'abstract': article[1],
-                                  'url': article[2],
-                                  'size': 0,
-                                  'children': []
-                                };
-
+            masterlist.children.push(articleWrapper);
+            i = masterlist.children.indexOf(articleWrapper);
+          }
           // add each entity returned by Alchemy to masterlist object
           response.entities.forEach(function(entity) {
 
-            console.log('[' + entity.text + ']');
-
             // if the entity is not too long and it doesn't already exist, add it
-            if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1) {
-
+            if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1){
+              console.log('added "' + entity.text + '"');
                entityWrapper = {
                           'name': entity.text,
                           'size': 0,
@@ -57,13 +73,10 @@ exports.fetch = function() {
 
               masterlist.children[i].children.push(entityWrapper);
               masterlist.watchEntities.push(entity.text);
-
-              // piggyback meta data in masterlist.watchEntities
-              // masterlist.watchEntities gets rewritten in bundler.js
-              // masterlist.watchEntities.push(metadata);
             }
           });
 
+          console.log('');
           console.log('');
 
           callback(null, masterlist);
@@ -74,8 +87,8 @@ exports.fetch = function() {
         if (err) {
           console.log('ERROR: ', err);
         } else {
-          console.log('Alchemy returned ' + masterlist.watchEntities.length + ' entities...');
-
+          console.log('Alchemy found ' + masterlist.watchEntities.length + ' entities...');
+          console.log('');
           // when all the iterations have completed, send the promise.
           resolve(masterlist);
         }

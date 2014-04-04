@@ -3,17 +3,20 @@
 **[Newsflash](newsflash.herokuapp.com)** is a visual news tracker, defined by *The New York Times*, driven by Twitter.
 
 ##### How It Works
-Newsflash pulls breaking news from the *The New York Times* [newswire](http://nyti.ms/PkaWYK) and translates it into keywords with the help of [AlchemyAPI](http://www.alchemyapi.com/). Each keyword is compared to the [Twitter stream](https://dev.twitter.com/). When Newsflash finds a tweet that mentions a keyword, it uses [socket.io](http://socket.io/) to populate a [D3](http://d3js.org/) treemap with the tweet's hashtags.
+Newsflash pulls breaking news from the *The New York Times* [newswire](http://nyti.ms/PkaWYK) and translates it into entities with the help of [AlchemyAPI](http://www.alchemyapi.com/). Each entity is compared to the [Twitter stream](https://dev.twitter.com/). When Newsflash finds a tweet that mentions an entity, it uses [socket.io](http://socket.io/) to populate a [D3](http://d3js.org/) treemap with the tweet's hashtags.
 
 Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.com/</a>
 
 ===========
 
+#####v0.9.2 New layer added to masterlist object
++ Entities are now added as children to their respective article
+
 #####v0.9.1 Less articles, better UX
 + cronJob resets masterlist every 48 minutes
 + articles reduced to 10
 + less articles and faster reset makes treemap easier to read
-+ new banner on welcome page shows number of articles, keywords, tweets
++ new banner on welcome page shows number of articles, entities, tweets
 
 #####v0.9.0 Article references added
 + Tracks 20 articles to match D3's 20 colors
@@ -33,12 +36,12 @@ Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.
 
 #####v0.6.0 Visualization with D3
 + Squares and color scheme have been removed.
-+ Keywords are visually represented by a treemap which grows and shrinks.
-+ Alchemy API is now searching for entities, changed from keywords.
++ entities are visually represented by a treemap which grows and shrinks.
++ Alchemy API is now searching for entities, changed from entities.
 
-#####v0.5.0 Refined Keywords, Better Results
+#####v0.5.0 Refined entities, Better Results
 + Switched to EJS views for easier debugging.
-+ Wire up alchemy API to produce meaningful keywords out of the NYTimes abstracts.
++ Wire up alchemy API to produce meaningful entities out of the NYTimes abstracts.
 + Add logic to view to hide words that occur less than 10 times.
 + Total news items shown is capped at 75.
 
@@ -49,11 +52,11 @@ Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.
 + Display news items in a skeleton format.
 + Fix logic so the browser does not lockdown due to volume.
 
-#####v0.3.0 Dynamic Keywords
+#####v0.3.0 Dynamic entities
 + Connect NYT API to Twitter API.
 + Index all the words in all the articles of NYTimes Breaking Newswire API.
 + Index each keyword in the watchList object.
-+ Sift NYT Keywords through Twitter stream and capture matches.
++ Sift NYT entities through Twitter stream and capture matches.
 
 #####v0.2.0 NYT Breaking News
 + Wire up connection to NYT Breaking News API.
@@ -61,8 +64,8 @@ Live site: <a href="http://newsflash.herokuapp.com/">http://newsflash.herokuapp.
 #####v0.1.0 Twitter Firehouse
 + Wire up connection to Twitter firehose.
 + Initialize socket.io to emit an event with each new tweet.
-+ Filter Twitter firehose for built-in keywords.
-+ Keywords are represented as squares that change color based on volume of tweets.
++ Filter Twitter firehose for built-in entities.
++ entities are represented as squares that change color based on volume of tweets.
 + Squares refresh with each new tweet.
 
 Newsflash - My individual capstone project at <a href="http://www.fullstackacademy.com">Fullstack Academy of Code</a>.
