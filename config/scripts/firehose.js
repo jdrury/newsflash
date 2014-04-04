@@ -1,6 +1,6 @@
-var bundler    = require('./bundler')
-  , twitter    = require('ntwitter')
-  , twitterapi = require('../keys/twitterapi');
+var bundler = require('./bundler');
+var twitter = require('ntwitter');
+var twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
@@ -49,10 +49,10 @@ exports.matchFinder = function(callback) {
         masterlist.children.forEach(function(entity) {
           // if tweet contains an entity, increment entity and save hashtags
           if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
+            masterlist.mentions += 1;
             entity.mentions += 1;
             hashtags = tweetText.match(/#\S+/g);
 
-            // if hashtags exist, compare new hashtags to entity's children
             if (hashtags) {
               // increment entity.child if match; insert hashtag if no match
               entity.children.dupeBuster(hashtags);

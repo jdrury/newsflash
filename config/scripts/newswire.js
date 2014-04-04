@@ -1,12 +1,15 @@
-var http       = require('http')
-  , nytimesKey = require('../keys/nytimesapi')
-  , Promise    = require('bluebird');
+var http = require('http');
+var nytimesKey = require('../keys/nytimesapi');
+var Promise = require('bluebird');
 
-// pullAbstracts() returns a promise with breaking news articles
-exports.pullAbstracts = function() {
+// pullArticles() returns a promise with breaking news articles
+exports.pullArticles = function(input) {
   return new Promise(function(resolve,reject) {
+    nytimesKey.query = input || 20;
 
-    // establish connection with The New York Times breaking news API
+    console.log('Pulling down ' + nytimesKey.query + ' articles from the NYTimes newswire...')
+
+    // GET request to the The New York Times newswire
     http.get(nytimesKey.options, function(res) {
       var data = '';
       var articles  = [];
@@ -22,11 +25,18 @@ exports.pullAbstracts = function() {
           var newswire = pretty.results;
         }
 
+        console.log(newswire);
+
         newswire.forEach(function(article) {
           articles.push([article.title.trim(), article.abstract.trim(), article.url]);
         });
 
-        console.log('Pulling down ' + articles.length + ' articles from the NYTimes newswire...')
+        // if (input) {
+        //   // make sure late additions are not duplicates
+        //   articles.forEach(function(article) {
+        //     masterlist.children.
+        //   });
+        // }
 
         resolve(articles);
       });

@@ -1,0 +1,283 @@
+jdrur:newsflash [master] $ node server
+   info  - socket.io started
+Express server listening on port 8080
+Pulling down 10 articles from the NYTimes newswire...
+--Abstract 3--
+The Upper East Side of Manhattan’s gallery scene is largely hidden, inside tall office buildings and discreetly marked brownstones and townhouses.
+[Manhattan]
+
+--Abstract 2--
+A listing of cultural events for children, teenagers and families.
+
+--Abstract 5--
+A critical guide to exhibitions and installations in the New York area.
+[New York]
+
+--Abstract 4--
+The New York Times film critics on “The Unknown Known,” “Captain America: The Winter Soldier” and “Under the Skin.”
+[Captain America]
+[The New York Times]
+
+--Abstract 1--
+Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.
+[Fl]
+[Rossini]
+[La Cenerentola]
+[Diego]
+
+--Abstract 8--
+A selected guide to dance performances in New York City.
+[New York City]
+
+--Abstract 9--
+Chelsea has some of the largest commercial art spaces in town, possibly in the world, but also a handful of small galleries that show some of the best work.
+[Chelsea]
+
+--Abstract 6--
+Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.
+[Declan Lowney]
+[Alan Partridge]
+[Steve Coogan]
+
+--Abstract 10--
+The Lower East Side of Manhattan is now home to more than 100 art galleries, reflecting a plurastic mix of styles and attitudes.
+[Manhattan]
+
+--Abstract 7--
+Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”
+[Ms. Berry]
+[Geoffrey Sax]
+[Frankie]
+
+Alchemy returned 17 entities...
+17 entities before comparing [ [ 'Alan Partridge',
+    { name: 'Alan Partridge',
+      headline: 'Broadcast News: British Airhead Still Has a Platform',
+      abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+      url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' } ],
+  [ 'Captain America',
+    { name: 'Captain America',
+      headline: 'This Week’s Movies: April 4, 2014',
+      abstract: 'The New York Times film critics on “The Unknown Known,” “Captain America: The Winter Soldier” and “Under the Skin.”',
+      url: 'http://www.nytimes.com/video/movies/100000002806219/this-week8217s-movies-april-4-2014.html' } ],
+  [ 'Chelsea',
+    { name: 'Chelsea',
+      headline: 'Where Blue-Chip Brands Meet Brassy Outliers',
+      abstract: 'Chelsea has some of the largest commercial art spaces in town, possibly in the world, but also a handful of small galleries that show some of the best work.',
+      url: 'http://www.nytimes.com/2014/04/04/arts/design/from-hot-to-schlock-holland-cotter-tours-chelsea-galleries.html' } ],
+  [ 'Declan Lowney',
+    { name: 'Declan Lowney',
+      headline: 'Broadcast News: British Airhead Still Has a Platform',
+      abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+      url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' } ],
+  [ 'Diego',
+    { name: 'Diego',
+      headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+      abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+      url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' } ],
+  [ 'Fl',
+    { name: 'Fl',
+      headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+      abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+      url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' } ],
+  [ 'Frankie',
+    { name: 'Frankie',
+      headline: 'Halle Berry as a Woman of Many Faces',
+      abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+      url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' } ],
+  [ 'Geoffrey Sax',
+    { name: 'Geoffrey Sax',
+      headline: 'Halle Berry as a Woman of Many Faces',
+      abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+      url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' } ],
+  [ 'La Cenerentola',
+    { name: 'La Cenerentola',
+      headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+      abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+      url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' } ],
+  [ 'Manhattan',
+    { name: 'Manhattan',
+      headline: 'Pluralism, With Bug Zappers and Doll People',
+      abstract: 'The Lower East Side of Manhattan is now home to more than 100 art galleries, reflecting a plurastic mix of styles and attitudes.',
+      url: 'http://www.nytimes.com/2014/04/04/arts/design/a-critics-guide-to-the-best-of-the-lower-east-side.html' } ],
+  [ 'Manhattan',
+    { name: 'Manhattan',
+      headline: 'Upstairs and Behind Doors, Creative Passion',
+      abstract: 'The Upper East Side of Manhattan’s gallery scene is largely hidden, inside tall office buildings and discreetly marked brownstones and townhouses.',
+      url: 'http://www.nytimes.com/2014/04/04/arts/design/roberta-smiths-tour-of-the-sizzlers-on-the-upper-east-side.html' } ],
+  [ 'Ms. Berry',
+    { name: 'Ms. Berry',
+      headline: 'Halle Berry as a Woman of Many Faces',
+      abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+      url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' } ],
+  [ 'New York',
+    { name: 'New York',
+      headline: 'Museum & Gallery Listings for April 4-10',
+      abstract: 'A critical guide to exhibitions and installations in the New York area.',
+      url: 'http://www.nytimes.com/2014/04/04/arts/design/museum-gallery-listings-for-april-4-10.html' } ],
+  [ 'New York City',
+    { name: 'New York City',
+      headline: 'Dance Listings for April 4-10',
+      abstract: 'A selected guide to dance performances in New York City.',
+      url: 'http://www.nytimes.com/2014/04/04/arts/dance/dance-listings-for-april-4-10.html' } ],
+  [ 'Rossini',
+    { name: 'Rossini',
+      headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+      abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+      url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' } ],
+  [ 'Steve Coogan',
+    { name: 'Steve Coogan',
+      headline: 'Broadcast News: British Airhead Still Has a Platform',
+      abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+      url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' } ],
+  [ 'The New York Times',
+    { name: 'The New York Times',
+      headline: 'This Week’s Movies: April 4, 2014',
+      abstract: 'The New York Times film critics on “The Unknown Known,” “Captain America: The Winter Soldier” and “Under the Skin.”',
+      url: 'http://www.nytimes.com/video/movies/100000002806219/this-week8217s-movies-april-4-2014.html' } ] ]
+
+16 entities after comparing [ 'Alan Partridge',
+  'Captain America',
+  'Chelsea',
+  'Declan Lowney',
+  'Diego',
+  'Fl',
+  'Frankie',
+  'Geoffrey Sax',
+  'La Cenerentola',
+  'Manhattan',
+  'Ms. Berry',
+  'New York',
+  'New York City',
+  'Rossini',
+  'Steve Coogan',
+  'The New York Times' ]
+inside the firehose
+[ { name: 'The New York Times',
+    metadata:
+     { name: 'The New York Times',
+       headline: 'This Week’s Movies: April 4, 2014',
+       abstract: 'The New York Times film critics on “The Unknown Known,” “Captain America: The Winter Soldier” and “Under the Skin.”',
+       url: 'http://www.nytimes.com/video/movies/100000002806219/this-week8217s-movies-april-4-2014.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Steve Coogan',
+    metadata:
+     { name: 'Steve Coogan',
+       headline: 'Broadcast News: British Airhead Still Has a Platform',
+       abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+       url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Rossini',
+    metadata:
+     { name: 'Rossini',
+       headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+       abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+       url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' },
+    children: [],
+    mentions: 0 },
+  { name: 'New York City',
+    metadata:
+     { name: 'New York City',
+       headline: 'Dance Listings for April 4-10',
+       abstract: 'A selected guide to dance performances in New York City.',
+       url: 'http://www.nytimes.com/2014/04/04/arts/dance/dance-listings-for-april-4-10.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'New York',
+    metadata:
+     { name: 'New York',
+       headline: 'Museum & Gallery Listings for April 4-10',
+       abstract: 'A critical guide to exhibitions and installations in the New York area.',
+       url: 'http://www.nytimes.com/2014/04/04/arts/design/museum-gallery-listings-for-april-4-10.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Ms. Berry',
+    metadata:
+     { name: 'Ms. Berry',
+       headline: 'Halle Berry as a Woman of Many Faces',
+       abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+       url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Manhattan',
+    metadata:
+     { name: 'Manhattan',
+       headline: 'Pluralism, With Bug Zappers and Doll People',
+       abstract: 'The Lower East Side of Manhattan is now home to more than 100 art galleries, reflecting a plurastic mix of styles and attitudes.',
+       url: 'http://www.nytimes.com/2014/04/04/arts/design/a-critics-guide-to-the-best-of-the-lower-east-side.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'La Cenerentola',
+    metadata:
+     { name: 'La Cenerentola',
+       headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+       abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+       url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' },
+    children: [],
+    mentions: 0 },
+  { name: 'Geoffrey Sax',
+    metadata:
+     { name: 'Geoffrey Sax',
+       headline: 'Halle Berry as a Woman of Many Faces',
+       abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+       url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Frankie',
+    metadata:
+     { name: 'Frankie',
+       headline: 'Halle Berry as a Woman of Many Faces',
+       abstract: 'Ms. Berry is an exotic dancer who has mysterious blackouts in the Geoffrey Sax film “Frankie & Alice.”',
+       url: 'http://www.nytimes.com/2014/04/04/movies/frankie-alice-released-briefly-in-2010-returns.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Fl',
+    metadata:
+     { name: 'Fl',
+       headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+       abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+       url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' },
+    children: [],
+    mentions: 0 },
+  { name: 'Diego',
+    metadata:
+     { name: 'Diego',
+       headline: 'Fl&oacute;rez Withdraws From 3 Performances at the Met',
+       abstract: 'Juan Diego Fl&#243;rez, the bel canto tenor, is withdrawing from the first three performances of Rossini&#8217;s &#8220;La Cenerentola&#8221; at the Metropolitan Opera later this month citing illness, the opera house announced on Thursday.',
+       url: 'http://artsbeat.blogs.nytimes.com/2014/04/03/florez-withdraws-from-3-performances-at-the-met/' },
+    children: [],
+    mentions: 0 },
+  { name: 'Declan Lowney',
+    metadata:
+     { name: 'Declan Lowney',
+       headline: 'Broadcast News: British Airhead Still Has a Platform',
+       abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+       url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Chelsea',
+    metadata:
+     { name: 'Chelsea',
+       headline: 'Where Blue-Chip Brands Meet Brassy Outliers',
+       abstract: 'Chelsea has some of the largest commercial art spaces in town, possibly in the world, but also a handful of small galleries that show some of the best work.',
+       url: 'http://www.nytimes.com/2014/04/04/arts/design/from-hot-to-schlock-holland-cotter-tours-chelsea-galleries.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Captain America',
+    metadata:
+     { name: 'Captain America',
+       headline: 'This Week’s Movies: April 4, 2014',
+       abstract: 'The New York Times film critics on “The Unknown Known,” “Captain America: The Winter Soldier” and “Under the Skin.”',
+       url: 'http://www.nytimes.com/video/movies/100000002806219/this-week8217s-movies-april-4-2014.html' },
+    children: [],
+    mentions: 0 },
+  { name: 'Alan Partridge',
+    metadata:
+     { name: 'Alan Partridge',
+       headline: 'Broadcast News: British Airhead Still Has a Platform',
+       abstract: 'Directed by Declan Lowney, “Alan Partridge” is the first feature film about the title character, a vapid, self-absorbed broadcaster long played by the British actor Steve Coogan.',
+       url: 'http://www.nytimes.com/2014/04/04/movies/alan-partridge-starring-steve-coogan.html' },
+    children: [],
+    mentions: 0 } ]

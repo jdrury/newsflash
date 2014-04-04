@@ -35,52 +35,53 @@ exports = module.exports = AlchemyAPI;
   * OUTPUT:
   * none
 */
-if (require.main === module) {
-	//file was called directly from command line to set the key
-	if (process.argv[2]) {
-		console.log('Args: ' + process.argv[2]);
-		fs.writeFile(__dirname + '/api_key.txt',process.argv[2], function(err) {
-			if (err) {
-				console.log('Error, unable to write key file: ' + err);
-				process.exit(1);
-			} else {
-				console.log('AlchemyAPI key: ' + process.argv[2] + ' successfully written to api_key.txt');
-				console.log('You are now ready to start using AlchemyAPI. For an example, run: node app.js');
-				process.exit(0);
-			}
-		});
-	} else {
-		console.log('Are you trying to set the key? Make sure to use: node alchemyapi.js YOUR_KEY_HERE');
-		process.exit(1);
-	}
-}
+// if (require.main === module) {
+// 	//file was called directly from command line to set the key
+// 	if (process.argv[2]) {
+// 		console.log('Args: ' + process.argv[2]);
+// 		fs.writeFile(__dirname + '/api_key.txt',process.argv[2], function(err) {
+// 			if (err) {
+// 				console.log('Error, unable to write key file: ' + err);
+// 				process.exit(1);
+// 			} else {
+// 				console.log('AlchemyAPI key: ' + process.argv[2] + ' successfully written to api_key.txt');
+// 				console.log('You are now ready to start using AlchemyAPI. For an example, run: node app.js');
+// 				process.exit(0);
+// 			}
+// 		});
+// 	} else {
+// 		console.log('Are you trying to set the key? Make sure to use: node alchemyapi.js YOUR_KEY_HERE');
+// 		process.exit(1);
+// 	}
+// }
 
 
 
 function AlchemyAPI() {
 
-	//Load the key from api_key.txt
-	try {
-		key = fs.readFileSync(__dirname + '/api_key.txt').toString().trim();
-	}
-	catch(err) {
-		//Create the file
-		fs.openSync(__dirname + '/api_key.txt', 'w');
-		console.log('API key not detected in api_key.txt, please run: node alchemyapi.js YOUR_KEY_HERE');
-		console.log('If you do not have a key, register for one at: http://www.alchemyapi.com/api/register.html');
-		process.exit(1);
-	}
+	// //Load the key from api_key.txt
+	// try {
+	// 	key = fs.readFileSync(__dirname + '/api_key.txt').toString().trim();
+	// }
+	// catch(err) {
+	// 	//Create the file
+	// 	fs.openSync(__dirname + '/api_key.txt', 'w');
+	// 	console.log('API key not detected in api_key.txt, please run: node alchemyapi.js YOUR_KEY_HERE');
+	// 	console.log('If you do not have a key, register for one at: http://www.alchemyapi.com/api/register.html');
+	// 	process.exit(1);
+	// }
 
-	//Make sure the key formating looks good
-	if (key.length != 40) {
-		console.log('The API key in api_key.txt does not appear to be valid. Make sure to run: node alchemyapi.js YOUR_KEY_HERE');
-		console.log('If you do not have a key, register for one at: http://www.alchemyapi.com/api/register.html');
-		process.exit(1);
-	}
+	// //Make sure the key formating looks good
+	// if (key.length != 40) {
+	// 	console.log('The API key in api_key.txt does not appear to be valid. Make sure to run: node alchemyapi.js YOUR_KEY_HERE');
+	// 	console.log('If you do not have a key, register for one at: http://www.alchemyapi.com/api/register.html');
+	// 	process.exit(1);
+	// }
 
-	//Set the key
-	this.apikey = key;
+	// // Set the key
+	// this.apikey = key;
 
+  this.apikey = 'e5094e2141d9a1e26cad2874ef2b020ac9cdb69b';
 
 	/**
 	  *	HTTP Request wrapper that is called by the endpoint functions. This function is not intended to be called through an external interface.

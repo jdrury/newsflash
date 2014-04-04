@@ -1,5 +1,5 @@
-var entities = require('./entities')
-  , Promise  = require('bluebird');
+var entities = require('./entities');
+var Promise = require('bluebird');
 
 function alphabetize(a,b) {
   if (a[0] < b[0]) {
@@ -30,18 +30,20 @@ exports.initializeEntities = function() {
       while (i--) {
 
         entity = {
-                    'name': masterlist.watchEntities[i][0]
-                  , 'metadata': masterlist.watchEntities[i][1]
-                  , 'children': []
-                  , 'mentions': 0
+                  'name': masterlist.watchEntities[i].name,
+                  'headline': masterlist.watchEntities[i].headline,
+                  'abstract': masterlist.watchEntities[i].abstract,
+                  'url': masterlist.watchEntities[i].url,
+                  'children': [],
+                  'mentions': 0
                 };
 
         if (i === 0) {
-          // if it's the last item, auto add without comparing
+          // if it's the last item, add the entity without comparing
           masterlist.children.push(entity);
           entitylist.push(entity.name);
 
-        } else if (masterlist.watchEntities[i][0] !== masterlist.watchEntities[i-1][0]) {
+        } else if (masterlist.watchEntities[i].name !== masterlist.watchEntities[i-1].name) {
           // if entity is not equal to predecessor, add it to masterlist
           masterlist.children.push(entity);
           entitylist.push(entity.name);
@@ -50,10 +52,10 @@ exports.initializeEntities = function() {
 
       };
 
-      // resave watchEntities as a sorted, unique, one-dimensional list for Twitter tracking
+      // save watchEntities as a sorted, unique, one-dimensional list for Twitter tracking
       masterlist.watchEntities = entitylist.sort();
 
-      console.log(masterlist.watchEntities.length + ' entities after comparing', masterlist.watchEntities)
+      console.log(masterlist.watchEntities.length + ' entities after comparing', masterlist.watchEntities);
 
       resolve(masterlist);
     });

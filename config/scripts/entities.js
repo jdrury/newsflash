@@ -1,15 +1,16 @@
-var AlchemyAPI = require('../keys/alchemyapi')
-  , async      = require('async')
-  , nytimes    = require('./newswire')
-  , Promise    = require('bluebird');
+var AlchemyAPI = require('../keys/alchemyapi');
+var async = require('async');
+var nytimes = require('./newswire');
+var Promise = require('bluebird');
 
 var alchemyapi = new AlchemyAPI();
 
-// masterlist is an object to store D3 Treemap data
+// masterlist is a global datastore for the D3 treemap
 masterlist = {
-    'name': 'newsfeed'
-  , 'children': []
-  , 'watchEntities': []
+  'name': 'newsfeed',
+  'children': [],
+  'mentions': 0,
+  'watchEntities': []
 };
 
 // fetch turns NYT abstracts into entities (similar to keywords)
@@ -17,9 +18,9 @@ exports.fetch = function() {
   return new Promise(function(resolve, reject) {
 
     // pullAbstracts() returns a promise with the breaking news abstracts
-    nytimes.pullAbstracts().then(function(articles) {
+    nytimes.pullArticles().then(function(articles) {
 
-      // iterate over every article with AlchemyAPI
+      // iterate over every article and send abstracts to AlchemyAPI
       // fire a promise once all the entities have been collected
       async.each(articles, iterator, done);
 
@@ -39,14 +40,15 @@ exports.fetch = function() {
 
             if (entity.text.length < 31) {
               metadata = {
-                            'name': entity.text
-                          , 'headline': article[0]
-                          , 'abstract': article[1]
-                          , 'url': article[2]
+                          'name': entity.text,
+                          'headline': article[0],
+                          'abstract': article[1],
+                          'url': article[2]
                         };
 
-              // collect each entity for twitter tracking and temporarily store metadata
-              masterlist.watchEntities.push([entity.text, metadata]);
+              // piggyback meta data in masterlist.watchEntities
+              // masterlist.watchEntities gets rewritten in bundler.js
+              masterlist.watchEntities.push(metadata);
             }
           });
 
@@ -62,7 +64,7 @@ exports.fetch = function() {
         } else {
           console.log('Alchemy returned ' + masterlist.watchEntities.length + ' entities...');
 
-          // when all the iterations have returned, send the promise.
+          // when all the iterations have completed, send the promise.
           resolve(masterlist);
         }
       };

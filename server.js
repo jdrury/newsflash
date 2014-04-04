@@ -1,10 +1,10 @@
-var express  = require('express')
-  , app      = express()
-  , CronJob  = require('cron').CronJob
-  , path     = require('path')
-  , server   = require('http').createServer(app)
-  , io       = require('socket.io').listen(server)
-  , firehose = require('./config/scripts/firehose');
+var express = require('express');
+var app = express();
+var CronJob = require('cron').CronJob;
+var path = require('path');
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+var firehose = require('./config/scripts/firehose');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');
@@ -46,12 +46,34 @@ firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
 
-// reset every 48 mins
-var job = new CronJob('0 */48 * * * *', function(){
-  firehose.matchFinder(function(masterlist) {
-    io.sockets.emit('update', {'masterlist': masterlist});
-  });
-  start: false;
-});
+// // reset every 5 minutes
+// var job = new CronJob('0 */5 * * * *', function(){
 
-job.start();
+//   masterlist.children.forEach(function(entity,key) {
+//     var killEntities = [];
+//     var replacements;
+
+//     if (entity.mentions / masterlist.mentions < 0.03) {
+//       // identify entities with less than 3% of total mentions
+//       killEntities.push(key);
+//     }
+
+//     // number of new articles to add
+//     replacements = killEntities.length;
+
+//     // remove entities
+//     killEntities.forEach(function(i) {
+//       masterlist.children.splice(i,1);
+//     });
+
+//     articles = nytimes.pullArticles(replacements);
+
+//   }
+
+//   firehose.matchFinder(function(masterlist) {
+//     io.sockets.emit('update', {'masterlist': masterlist});
+//   });
+//   start: false;
+// });
+
+// job.start();
