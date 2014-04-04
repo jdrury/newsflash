@@ -109,10 +109,8 @@
     <% masterlist.children.forEach(function(article) { %>
       <article class="element clearfix home one-full">
         <div class="reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
-          <h2 class="pad">"<%= article.headline %>"</h2>
-          <h3 class="pad pad-top-minus"><%= article.abstract %></h3>
-          <p class="pad pad-top-minus" id="article-link">
-              <a target="_blank" href="<%= article.url %>"><small>source: <%= article.url %></small></a></p>
+          <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link" style="float: right"><small><a target="_blank" href="<%= article.url %>">[LINK]</a></small></span></h2>
+          <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
         </div>
       </article>
 

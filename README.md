@@ -1,4 +1,4 @@
-#Newsflash v0.9.1
+#Newsflash v0.9.2
 
 **[Newsflash](newsflash.herokuapp.com)** is a visual news tracker, defined by *The New York Times*, driven by Twitter.
 
