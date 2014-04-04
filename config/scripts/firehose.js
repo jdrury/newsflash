@@ -46,24 +46,28 @@ exports.matchFinder = function(callback) {
         var tweetText = tweet.text.toLowerCase();
         var hashtags  = [];
 
-        masterlist.children.forEach(function(entity) {
-          // if tweet contains an entity, increment entity and save hashtags
-          if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
-            masterlist.mentions += 1;
-            entity.mentions += 1;
-            hashtags = tweetText.match(/#\S+/g);
+        // scan tweet for every entity in every article
+        masterlist.children.forEach(function(article) {
+          article.forEach(function(entity) {
+            // if tweet contains an entity, increment entity and save hashtags
+            if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
+              masterlist.size += 1;
+              article.size += 1;
+              entity.size += 1;
+              hashtags = tweetText.match(/#\S+/g);
 
-            if (hashtags) {
-              // increment entity.child if match; insert hashtag if no match
-              entity.children.dupeBuster(hashtags);
+              if (hashtags) {
+                // increment entity.child if match; insert hashtag if no match
+                entity.children.dupeBuster(hashtags);
 
-            } else {
-              // if no hashtags, sort and trim existing children
-              entity.children = entity.children.sort(descendingOrder).slice(0,3);
+              } else {
+                // if no hashtags, sort and trim existing children
+                entity.children = entity.children.sort(descendingOrder).slice(0,3);
+              }
+
+              callback(masterlist);
             }
-
-            callback(masterlist);
-          }
+          });
         });
       });
     });

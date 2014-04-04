@@ -16,46 +16,46 @@ exports.initializeEntities = function() {
 
     // fetch() gets entities for each abstract
     entities.fetch().then(function(masterlist) {
-      var i = masterlist.watchEntities.length;
-      var entitylist = [];
-      var entity = {};
+      // var i = masterlist.watchEntities.length;
+      // var entitylist = [];
+      // var entity = {};
 
-      // sort entities in preparation for comparison
-      masterlist.watchEntities.sort(alphabetize);
+      // // sort entities in preparation for comparison
+      // masterlist.watchEntities.sort(alphabetize);
 
-      console.log(i + ' entities before comparing', masterlist.watchEntities);
-      console.log('');
+      // console.log(i + ' entities before comparing', masterlist.watchEntities);
+      // console.log('');
 
-      // check for duplicates - compare each entity to the entity before it
-      while (i--) {
+      // // check for duplicates - compare each entity to the entity before it
+      // while (i--) {
 
-        entity = {
-                  'name': masterlist.watchEntities[i].name,
-                  'headline': masterlist.watchEntities[i].headline,
-                  'abstract': masterlist.watchEntities[i].abstract,
-                  'url': masterlist.watchEntities[i].url,
-                  'children': [],
-                  'mentions': 0
-                };
+      //   entity = {
+      //             'name': masterlist.watchEntities[i].name,
+      //             'headline': masterlist.watchEntities[i].headline,
+      //             'abstract': masterlist.watchEntities[i].abstract,
+      //             'url': masterlist.watchEntities[i].url,
+      //             'children': [],
+      //             'mentions': 0
+      //           };
 
-        if (i === 0) {
-          // if it's the last item, add the entity without comparing
-          masterlist.children.push(entity);
-          entitylist.push(entity.name);
+      //   if (i === 0) {
+      //     // if it's the last item, add the entity without comparing
+      //     masterlist.children.push(entity);
+      //     entitylist.push(entity.name);
 
-        } else if (masterlist.watchEntities[i].name !== masterlist.watchEntities[i-1].name) {
-          // if entity is not equal to predecessor, add it to masterlist
-          masterlist.children.push(entity);
-          entitylist.push(entity.name);
+      //   } else if (masterlist.watchEntities[i].name !== masterlist.watchEntities[i-1].name) {
+      //     // if entity is not equal to predecessor, add it to masterlist
+      //     masterlist.children.push(entity);
+      //     entitylist.push(entity.name);
 
-        }
+      //   }
 
-      };
+      // };
 
-      // save watchEntities as a sorted, unique, one-dimensional list for Twitter tracking
-      masterlist.watchEntities = entitylist.sort();
+      // // save watchEntities as a sorted, unique, one-dimensional list for Twitter tracking
+      // masterlist.watchEntities = entitylist.sort();
 
-      console.log(masterlist.watchEntities.length + ' entities after comparing', masterlist.watchEntities);
+      // console.log(masterlist.watchEntities.length + ' entities after comparing', masterlist.watchEntities);
 
       resolve(masterlist);
     });

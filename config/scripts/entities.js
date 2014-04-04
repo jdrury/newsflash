@@ -9,7 +9,7 @@ var alchemyapi = new AlchemyAPI();
 masterlist = {
   'name': 'newsfeed',
   'children': [],
-  'mentions': 0,
+  'size': 0,
   'watchEntities': []
 };
 
@@ -33,22 +33,34 @@ exports.fetch = function() {
           console.log('--Abstract ' + (articles.indexOf(article) + 1) + '--');
           console.log(article[1]);
 
+          masterlist.children[i] = {
+                                  'name': article[0],
+                                  'abstract': article[1],
+                                  'url': article[2],
+                                  'size': 0,
+                                  'children': []
+                                };
+
           // add each entity returned by Alchemy to masterlist object
           response.entities.forEach(function(entity) {
 
             console.log('[' + entity.text + ']');
 
-            if (entity.text.length < 31) {
-              metadata = {
+            // if the entity is not too long and it doesn't already exist, add it
+            if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1) {
+
+               entityWrapper = {
                           'name': entity.text,
-                          'headline': article[0],
-                          'abstract': article[1],
-                          'url': article[2]
+                          'size': 0,
+                          'children': []
                         };
+
+              masterlist.children[i].children.push(entityWrapper);
+              masterlist.watchEntities.push(entity.text);
 
               // piggyback meta data in masterlist.watchEntities
               // masterlist.watchEntities gets rewritten in bundler.js
-              masterlist.watchEntities.push(metadata);
+              // masterlist.watchEntities.push(metadata);
             }
           });
 
