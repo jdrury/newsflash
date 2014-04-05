@@ -47,7 +47,8 @@
       <ul id="filters" class="option-set clearfix" data-option-key="filter">
         <li><a class="reveal-bg-one selected" href="#filter=.home">Newsflash</a></li>
         <li><a class="reveal-bg-two" href="#filter=.trending">Trending</a></li>
-        <li><a class="reveal-bg-three" href="#filter=.keywords">Keywords</a></li>
+        <li><a class="reveal-bg-three" href="#filter=.articles">Articles</a></li>
+        <li><a class="reveal-bg-six" href="#filter=.keywords">Keywords</a></li>
         <li><a class="reveal-bg-four" href="#filter=.about">About</a></li>
       </ul>
     </div>
@@ -100,14 +101,14 @@
       </div>
     </article>
 
-    <article class="element clearfix home one-full">
+    <article class="element clearfix home one-full trending articles keywords">
       <div class="reveal-bg-three">
         <h2 class="pad">Tracking <%= masterlist.watchEntities.length %> keywords across <%= masterlist.children.length %> articles</h2>
       </div>
     </article>
 
     <% masterlist.children.forEach(function(article) { %>
-      <article class="element clearfix home one-full">
+      <article class="element clearfix home one-full articles">
         <div class="reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
           <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i class="fa fa-link"></i></a></span></h2>
           <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
@@ -120,6 +121,9 @@
           <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
             <div class="thumb pad pad-bottom-minus"><img alt="random service image" title="random service image" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
             <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.name %></h2>
+            <p class="pad"></p>
+            <p class="pad"></p>
+            <p class="pad pad-top-minus"><a href="<%= article.url %>">"<%= article.headline %>"</a></p>
           </div>
         </article>
        <% }); %>

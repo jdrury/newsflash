@@ -57,14 +57,14 @@ a img  {
 
 p  {
     font-size: 14px;
-	line-height: 21px;
-	color: #fff;
+    line-height: 21px;
+    color: #fff;
     font-family:"Open_Sans_R";
  }
 
 
 a  {
-     color: white;
+     color: #8d8d8d;
      text-decoration: none;
  }
 
@@ -1492,14 +1492,12 @@ fieldset h1
 
 #article-link {
   float: right;
-  color: white;
 }
-#article-link:a {
-  color: white;
 
+#article-link a {
+  color: white;
 }
 
 #article-link:hover {
-  color: white;
-
+  color: black;
 }
