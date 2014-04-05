@@ -1490,8 +1490,9 @@ fieldset h1
   font-weight: bolder;
 }
 
-span #article-link {
+#article-link {
   color: white;
+  float: right;
 }
 
 #article-link:hover {

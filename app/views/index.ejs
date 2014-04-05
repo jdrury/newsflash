@@ -109,12 +109,12 @@
     <% masterlist.children.forEach(function(article) { %>
       <article class="element clearfix home one-full">
         <div class="reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
-          <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link" style="float: right"><small><a target="_blank" href="<%= article.url %>">[LINK]</a></small></span></h2>
+          <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i class="fa fa-link"></i></a></span></h2>
           <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
         </div>
       </article>
 
-        <% article.children.forEach(function(entity) { %>
+      <% article.children.forEach(function(entity) { %>
         <article class="element fx-slide-up home clearfix one-third keywords">
           <div class="images"><img src="images/content/07.jpg" alt="" /></div>
           <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
