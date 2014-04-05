@@ -64,7 +64,7 @@ p  {
 
 
 a  {
-     color: #8d8d8d;
+     color: white;
      text-decoration: none;
  }
 
@@ -1491,10 +1491,15 @@ fieldset h1
 }
 
 #article-link {
-  color: white;
   float: right;
+  color: white;
+}
+#article-link:a {
+  color: white;
+
 }
 
 #article-link:hover {
-  color: black;
+  color: white;
+
 }
