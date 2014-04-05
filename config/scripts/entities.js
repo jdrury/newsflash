@@ -5,14 +5,6 @@ var Promise = require('bluebird');
 
 var alchemyapi = new AlchemyAPI();
 
-// masterlist is a global datastore for the D3 treemap
-masterlist = {
-  'name': 'newsfeed',
-  'children': [],
-  'size': 0,
-  'watchEntities': []
-};
-
 // fetch turns NYT abstracts into entities (similar to keywords)
 exports.fetch = function() {
   return new Promise(function(resolve, reject) {
@@ -20,6 +12,14 @@ exports.fetch = function() {
     // pullArticles() returns a promise with breaking news articles
     nytimes.pullArticles().then(function(articles) {
       var i, articleWrapper;
+
+      // masterlist is a global datastore for the D3 treemap
+      masterlist = {
+        'name': 'newsfeed',
+        'children': [],
+        'size': 0,
+        'watchEntities': []
+      };
 
       console.log('* * * * * * *');
       console.log('entities.js');
