@@ -19,7 +19,7 @@ exports.fetch = function() {
 
     // pullArticles() returns a promise with breaking news articles
     nytimes.pullArticles().then(function(articles) {
-      var i, abstract, articleWrapper;
+      var i, articleWrapper;
 
       console.log('* * * * * * *');
       console.log('entities.js');
@@ -47,6 +47,7 @@ exports.fetch = function() {
             console.log(response);
           }
           // ========================
+
           if (response.entities.length > 0) {
             articleWrapper = {
                               'headline': article[0],
@@ -59,13 +60,14 @@ exports.fetch = function() {
             masterlist.children.push(articleWrapper);
             i = masterlist.children.indexOf(articleWrapper);
           }
+
           // add each entity returned by Alchemy to masterlist object
           response.entities.forEach(function(entity) {
 
             // if the entity is not too long and it doesn't already exist, add it
             if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1){
               console.log('added "' + entity.text + '"');
-               entityWrapper = {
+              entityWrapper = {
                           'name': entity.text,
                           'size': 0,
                           'children': []

@@ -1498,6 +1498,6 @@ fieldset h1
   color: white;
 }
 
-#article-link:hover {
+#article-link a:hover {
   color: black;
 }
