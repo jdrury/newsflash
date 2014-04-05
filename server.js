@@ -46,6 +46,16 @@ firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
 
+// reset every 5 minutes
+var job = new CronJob('0 */100 * * * *', function(){
+  firehose.matchFinder(function(masterlist) {
+    io.sockets.emit('update', {'masterlist': masterlist});
+  });
+  start: false;
+});
+
+job.start();
+
 // // reset every 5 minutes
 // var job = new CronJob('0 */5 * * * *', function(){
 
