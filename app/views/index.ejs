@@ -58,6 +58,7 @@
 <section class="container">
   <section id="container" class="clearfix">
 
+
     <article class="element fx-slide-up home clearfix one-full welcome">
       <div class="one-third reveal-bg-one">
         <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/home.png"/></div>
@@ -84,6 +85,7 @@
       </div>
     </article>
 
+
     <article class="element clearfix home one-full">
       <div class="reveal-bg-two">
         <h2 class="pad">Defined by The New York Times<br>
@@ -93,6 +95,7 @@
       </div>
     </article>
 
+
     <article class="element clearfix home one-full trending">
       <div class="reveal-bg-nine">
         <div id="trending">
@@ -101,40 +104,50 @@
       </div>
     </article>
 
+
     <article class="element clearfix home one-full trending articles keywords">
       <div class="reveal-bg-three">
         <h2 class="pad">Tracking <%= masterlist.watchEntities.length %> keywords across <%= masterlist.children.length %> articles</h2>
       </div>
     </article>
 
-    <% masterlist.children.forEach(function(article) { %>
-      <article class="element clearfix home one-full articles">
-        <div class="reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
+
+    <% masterlist.children.forEach(function(article, i) { %>
+      <% var number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
+      <% article.children.forEach(function(entity) { %>
+        <article class="element fx-slide-up home clearfix one-third keywords">
+          <div class="images"><img src="images/content/07-nyt.jpg" alt="" /></div>
+
+          <div class="content-bottom content-bottom-alt reveal-bg-<%= number[i] %>">
+            <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/services/0<%=[1,2,3,4,5,6][Math.floor(Math.random() * 6)]%>.png"/></div>
+
+            <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus">"<%= entity.name %>"</h2>
+            <span style="text-align: right"><p class="pad">Holding <%= Math.round((entity.size / masterlist.size)*100) %>%</p></span>
+            <br>
+
+            <h6 class="pad"><a style="color: white" target="_blank" href="<%= article.url %>">"<%= article.headline %>"</a><h6>
+          </div>
+        </article>
+      <% }) %>
+    <% }) %>
+
+
+    <% masterlist.children.forEach(function(article,i) { %>
+      <% var number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
+      <article class="element clearfix one-full articles">
+        <div class="reveal-bg-<%= number[i] %>">
           <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i class="fa fa-link"></i></a></span></h2>
           <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
         </div>
       </article>
-
-      <% article.children.forEach(function(entity) { %>
-        <article class="element fx-slide-up home clearfix one-third keywords">
-          <div class="images"><img src="images/content/07.jpg" alt="" /></div>
-          <div class="content-bottom content-bottom-alt reveal-bg-<%=['one','two','three','four','five','six','seven','eight','nine'][Math.floor(Math.random() * 9)]%>">
-            <div class="thumb pad pad-bottom-minus"><img alt="random service image" title="random service image" src="images/services/0<%=Math.ceil(Math.random() * 6)%>.png"/></div>
-            <h2 class="pad pad-top-minus pad-bottom-minus"><%= entity.name %></h2>
-            <p class="pad"></p>
-            <p class="pad"></p>
-            <p class="pad pad-top-minus"><a href="<%= article.url %>">"<%= article.headline %>"</a></p>
-          </div>
-        </article>
-       <% }); %>
-
-    <% }); %>
+    <% }) %>
 
     <article class="element clearfix home one-full about">
       <div class="reveal-bg-four">
         <h2 class="pad">Defined by professionals, appraised by the masses</h2>
       </div>
     </article>
+
 
     <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/nyt_stock_small.png" alt="New York Times building" /></div>
@@ -146,6 +159,7 @@
       </div>
     </article>
 
+
     <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/alchemy_stock_small.png" alt="AlchemyAPI logo" style="border: 1px" /></div>
       <div class="content-bottom content-bottom-alt reveal-bg-one">
@@ -155,6 +169,7 @@
         <p class="pad pad-top-minus">AlchemyAPI's artificial intelligence helps Newsflash extract meaning from the NYT headlines. <br/><br/>Each headline yields 2-3 keywords. Keywords are topics that people are talking about.</p>
       </div>
     </article>
+
 
     <article class="element fx-slide-up clearfix home one-third about">
       <div class="images"><img src="images/content/twitter_stock_small.png" alt="@twitter feed" /></div>
@@ -167,6 +182,7 @@
     </article>
   </section>
 </section>
+
 
 <footer id="mastfoot">
   <section class="container-fluid">
@@ -281,6 +297,7 @@ socket.on('update', function(stream) {
 
   // update banner
   $('#tweet-counter').text(masterlist.size);
+  masterlist.children.sort(descendingOrder);
 
   div.datum(root).selectAll(".node").remove();
 

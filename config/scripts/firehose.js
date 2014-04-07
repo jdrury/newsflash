@@ -4,17 +4,19 @@ var twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
-Array.prototype.dupeBuster = function(array) {
+Array.prototype.dupeBuster = function(hashtags) {
   var self = this;
   for (var i = 0; i < this.length; i++) {
-    for (var j = 0; j < array.length; j++) {
-      if (this[i].name === array[j]) {
+    for (var j = 0; j < hashtags.length; j++) {
+      if (hashtags[j] === 'pussy' || hashtags[j] === 'nigger' || hashtags[j] === 'nigga' || hashtags[j] === 'fuck' || hashtags[j] === 'bitch' || hashtags[j] === 'cunt') {
+        hashtags[j] = null;
+      } else if (this[i].name === hashtags[j]) {
         this[i].size += 1;
-        array[j] = null;
+        hashtags[j] = null;
       }
     }
   }
-  array.filter(function(e) {
+  hashtags.filter(function(e) {
     e ? self.push({'name': e, 'size': 1}) : '';
   });
 }
