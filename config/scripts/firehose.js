@@ -4,7 +4,7 @@ var twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
-Array.prototype.dupeBuster = function(hashtags) {
+Array.prototype.reducer = function(hashtags) {
   var self = this;
   for (var i = 0; i < this.length; i++) {
     for (var j = 0; j < hashtags.length; j++) {
@@ -66,7 +66,7 @@ exports.matchFinder = function(callback) {
 
               if (hashtags) {
                 // increment entity.child if match; insert hashtag if no match
-                entity.children.dupeBuster(hashtags);
+                entity.children.reducer(hashtags);
 
               } else {
                 // if no hashtags, sort and trim existing children

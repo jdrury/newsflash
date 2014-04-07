@@ -48,7 +48,9 @@ exports.fetch = function() {
           }
           // ========================
 
-          if (response.entities.length > 0) {
+          // if entities were returned and we don't already have more than 20
+          if (response.entities.length > 0 && masterlist.watchEntities.length < 21) {
+
             articleWrapper = {
                               'headline': article[0],
                               'abstract': article[1],
@@ -59,24 +61,24 @@ exports.fetch = function() {
 
             masterlist.children.push(articleWrapper);
             i = masterlist.children.indexOf(articleWrapper);
+
+            // add each entity returned by Alchemy to masterlist object
+            response.entities.forEach(function(entity) {
+
+              // if the entity is not too long and it doesn't already exist, add it
+              if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1){
+                console.log('added "' + entity.text + '"');
+                entityWrapper = {
+                            'name': entity.text,
+                            'size': 0,
+                            'children': []
+                          };
+
+                masterlist.children[i].children.push(entityWrapper);
+                masterlist.watchEntities.push(entity.text);
+              }
+            });
           }
-
-          // add each entity returned by Alchemy to masterlist object
-          response.entities.forEach(function(entity) {
-
-            // if the entity is not too long and it doesn't already exist, add it
-            if (entity.text.length < 31 && masterlist.watchEntities.indexOf(entity.text) === -1){
-              console.log('added "' + entity.text + '"');
-              entityWrapper = {
-                          'name': entity.text,
-                          'size': 0,
-                          'children': []
-                        };
-
-              masterlist.children[i].children.push(entityWrapper);
-              masterlist.watchEntities.push(entity.text);
-            }
-          });
 
           console.log('');
           console.log('');
