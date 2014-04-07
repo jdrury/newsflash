@@ -113,19 +113,23 @@
 
 
     <% masterlist.children.forEach(function(article, i) { %>
-      <% var number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
+      <% var color = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
       <% article.children.forEach(function(entity) { %>
         <article class="element fx-slide-up home clearfix one-third keywords">
           <div class="images"><img src="images/content/07-nyt.jpg" alt="" /></div>
 
-          <div class="content-bottom content-bottom-alt reveal-bg-<%= number[i] %>">
-            <div class="thumb pad pad-bottom-minus"><img alt="reveal" title="reveal" src="images/services/0<%=[1,2,3,4,5,6][Math.floor(Math.random() * 6)]%>.png"/></div>
+          <div class="content-bottom content-bottom-alt reveal-bg-<%= color[i] %>">
+            <div class="thumb pad pad-bottom-minus">
+              <h2 class="pad pad-top-minus pad-bottom-minus">"<%= entity.name %>"</h2>
+            </div>
+            <% if (entity.children.length > 0) { %>
+              <p class="pad"><%= entity.children[0].name %> is popular.</p>
+            <% } else { %>
+              <p class="pad">Nothing trending.
+            <% } %>
 
-            <h2 class="welcome-heading pad pad-top-minus pad-bottom-minus">"<%= entity.name %>"</h2>
-            <span style="text-align: right"><p class="pad">Holding <%= Math.round((entity.size / masterlist.size)*100) %>%</p></span>
-            <br>
-
-            <h6 class="pad"><a style="color: white" target="_blank" href="<%= article.url %>">"<%= article.headline %>"</a><h6>
+            <div class="pad"></div>
+            <h6 style="color:white" class="pad article-link">SOURCE:<br><a target="_blank" href="<%= article.url %>">"<%= article.headline %>"</a><h6>
           </div>
         </article>
       <% }) %>
@@ -133,9 +137,9 @@
 
 
     <% masterlist.children.forEach(function(article,i) { %>
-      <% var number = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
+      <% var color = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
       <article class="element clearfix one-full articles">
-        <div class="reveal-bg-<%= number[i] %>">
+        <div class="reveal-bg-<%= color[i] %>">
           <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i class="fa fa-link"></i></a></span></h2>
           <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
         </div>

@@ -64,13 +64,13 @@ p  {
 
 
 a  {
-     color: #8d8d8d;
+     color: white;
      text-decoration: none;
  }
 
 a:hover  {
-     text-decoration: none;
-     color: #555;
+     color: white;
+     text-decoration: underline;
  }
 
  p > a{
@@ -1488,16 +1488,4 @@ fieldset h1
   margin-left: 100px;
   font-size: 30px;
   font-weight: bolder;
-}
-
-#article-link {
-  float: right;
-}
-
-#article-link a {
-  color: white;
-}
-
-#article-link a:hover {
-  color: black;
 }
