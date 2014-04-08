@@ -80,15 +80,15 @@ exports.matchFinder = function(callback) {
                 // increment existing if hashtags match; add hashtags if no match
                 temp.children.dupeBuster(hashtags);
                 // publish top 3 hashtags, save the rest in temp array
-                entity.children = temp.children.sort(descendingOrder).slice(0,2)
+                entity.children = temp.children.sort(descendingOrder).slice(0,2);
 
               } else {
                 // every 100+ matches, save top 3 hashtags and delete remainder
                 temp.children.dupeBuster(hashtags);
                 entity.children = temp.children.sort(descendingOrder).slice(0,2);
+
                 // reset to give new hashtags a chance to climb the rankings
                 temp.children = entity.children;
-                entity.children[0].size = entity.children[1].size = entity.children[2].size = 3;
                 count = 0;
               }
 
