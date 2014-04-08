@@ -29,6 +29,7 @@ exports.pullArticles = function() {
           var pretty = JSON.parse(data);
           var newswire = pretty.results;
         }
+
         console.log('pretty')
         console.log(newswire);
 

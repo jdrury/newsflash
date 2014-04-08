@@ -58,12 +58,11 @@ exports.matchFinder = function(callback) {
         var temp = {
           children: []
         };
-        round += 1;
 
         // scan tweet for every entity in every article
         masterlist.children.forEach(function(article) {
           article.children.forEach(function(entity) {
-            count += 1;
+            round += 1;
             // if tweet contains an entity, increment entity and save hashtags
             if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
               masterlist.size += 1;
@@ -75,8 +74,8 @@ exports.matchFinder = function(callback) {
                 return;
               }
 
-              // this IF statement allows us to count unpopular hashtags
-              if (count < 100) {
+              // allow unpopular hashtags to persist, but without publication to treemap
+              if (round < 100) {
                 // increment existing if hashtags match; add hashtags if no match
                 temp.children.dupeBuster(hashtags);
                 // publish top 3 hashtags, save the rest in temp array
@@ -89,7 +88,7 @@ exports.matchFinder = function(callback) {
 
                 // reset to give new hashtags a chance to climb the rankings
                 temp.children = entity.children;
-                count = 0;
+                round = 0;
               }
 
               callback(masterlist);

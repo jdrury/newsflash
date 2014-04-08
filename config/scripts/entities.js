@@ -48,8 +48,8 @@ exports.fetch = function() {
           }
           // ========================
 
-          // if entities were returned and we don't already have more than 20
-          if (response.entities.length > 0 && masterlist.watchEntities.length < 21) {
+          // if alchemy found entities and we don't have too many entities already
+          if (response.entities.length > 0 && masterlist.watchEntities.length < 19) {
 
             articleWrapper = {
                               'headline': article[0],
