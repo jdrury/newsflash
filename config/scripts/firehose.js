@@ -4,7 +4,7 @@ var twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
 
-Array.prototype.reducer = function(hashtags) {
+Array.prototype.dupeBuster = function(hashtags) {
   var self = this;
   for (var i = 0; i < this.length; i++) {
     for (var j = 0; j < hashtags.length; j++) {
@@ -48,15 +48,22 @@ exports.matchFinder = function(callback) {
 
     // enter twitter firehouse
     t.stream('statuses/filter', { track: masterlist.watchEntities, language: 'en' }, function(stream){
+      var round = 0;
 
       // analyze each tweet for presence of entities
       stream.on('data', function(tweet) {
         var tweetText = tweet.text.toLowerCase();
         var hashtags  = [];
+        var count = 0;
+        var temp = {
+          children: []
+        };
+        round += 1;
 
         // scan tweet for every entity in every article
         masterlist.children.forEach(function(article) {
           article.children.forEach(function(entity) {
+            count += 1;
             // if tweet contains an entity, increment entity and save hashtags
             if (tweetText.indexOf(entity.name.toLowerCase()) !== -1) {
               masterlist.size += 1;
@@ -64,13 +71,25 @@ exports.matchFinder = function(callback) {
               entity.size += 1;
               hashtags = tweetText.match(/#\S+/g);
 
-              if (hashtags) {
-                // increment entity.child if match; insert hashtag if no match
-                entity.children.reducer(hashtags);
+              if (!hashtags) {
+                return;
+              }
+
+              // this IF statement allows us to count unpopular hashtags
+              if (count < 100) {
+                // increment existing if hashtags match; add hashtags if no match
+                temp.children.dupeBuster(hashtags);
+                // publish top 3 hashtags, save the rest in temp array
+                entity.children = temp.children.sort(descendingOrder).slice(0,2)
 
               } else {
-                // if no hashtags, sort and trim existing children
-                entity.children = entity.children.sort(descendingOrder).slice(0,3);
+                // every 100+ matches, save top 3 hashtags and delete remainder
+                temp.children.dupeBuster(hashtags);
+                entity.children = temp.children.sort(descendingOrder).slice(0,2);
+                // reset to give new hashtags a chance to climb the rankings
+                temp.children = entity.children;
+                entity.children[0].size = entity.children[1].size = entity.children[2].size = 3;
+                count = 0;
               }
 
               callback(masterlist);
