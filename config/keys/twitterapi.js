@@ -1,8 +1,8 @@
 // twitter api
 
 exports.keys = {
-    consumer_key        : 'djsET78GAcb6SemgYT6Xw'
-  , consumer_secret     : 'AWfNIZbUkcToO8ZVsKt5xeNFmKwjGmLHfLAqLiOqUg'
-  , access_token_key    : '322965911-17Rkt0lWekPQCQBiQYIpIS3SC63MqGZR2SSnXm3g'
-  , access_token_secret : 'jvaf1cFPx1AFsmLdATVGl8zd7dTcsXVCR5mPuk4UoNR9u'
+    consumer_key        : 'iosaEMUgJnYEIirRXNJ3C7mhd'
+  , consumer_secret     : 'B54IeozXze2U18J41YVwZnOPdZjLxY98prkyhIwo960iryNANS'
+  , access_token_key    : '322965911-alX4bYqLQmWMJZYyVtvd9FZkB2QR20xaokytFR8t'
+  , access_token_secret : '7anxO8GcIiD2hEse4pJbXR057KmJ6kNcdsl4wj0xDwrbM'
 };

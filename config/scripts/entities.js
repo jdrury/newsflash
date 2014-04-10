@@ -13,7 +13,7 @@ exports.fetch = function() {
     nytimes.pullArticles().then(function(articles) {
       var i, articleWrapper;
 
-      // masterlist is a global datastore for the D3 treemap
+      // masterlist is a global json for the D3 treemap
       masterlist = {
         'name': 'newsfeed',
         'children': [],
@@ -26,8 +26,8 @@ exports.fetch = function() {
       console.log('* * * * * * *');
       console.log('');
 
-      // iterate over every article and send abstracts to AlchemyAPI
-      // fire a promise once all the entities have been collected
+      // iterate over every article and send each abstract to AlchemyAPI
+      // fire a promise once all the abstracts have returned entities
       async.each(articles, iterator, done);
 
       function iterator(article, callback) {
