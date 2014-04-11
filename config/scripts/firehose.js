@@ -3,7 +3,7 @@ var twitter = require('ntwitter');
 var twitterapi = require('../keys/twitterapi');
 
 var t = new twitter(twitterapi.keys);
-console.log(twitterapi.keys)
+
 Array.prototype.dupeBuster = function(hashtags) {
   var self = this;
   for (var i = 0; i < this.length; i++) {

@@ -1489,3 +1489,7 @@ fieldset h1
   font-size: 30px;
   font-weight: bolder;
 }
+
+#article-link {
+  float: right;
+}

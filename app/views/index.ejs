@@ -122,12 +122,7 @@
             <div class="thumb pad pad-bottom-minus">
               <h2 class="pad pad-top-minus pad-bottom-minus">"<%= entity.name %>"</h2>
             </div>
-            <% if (entity.children.length > 0) { %>
-              <p class="pad"><%= entity.children[0].name %> is popular.</p>
-            <% } else { %>
-              <p class="pad">Nothing trending.
-            <% } %>
-
+            <p class="pad"></p>
             <div class="pad"></div>
             <h6 style="color:white" class="pad article-link">SOURCE:<br><a target="_blank" href="<%= article.url %>">"<%= article.headline %>"</a><h6>
           </div>
@@ -140,7 +135,7 @@
       <% var color = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine','one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'] %>
       <article class="element clearfix one-full articles">
         <div class="reveal-bg-<%= color[i] %>">
-          <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i class="fa fa-link"></i></a></span></h2>
+          <h2 class="pad pad-bottom-minus">"<%= article.headline %>"<span id="article-link"><a target="_blank" href="<%= article.url %>"><i style="float: right" class="fa fa-link"></i></a></span></h2>
           <h4 class="pad pad-top-minus"><%= article.abstract %></h4>
         </div>
       </article>
