@@ -122,8 +122,14 @@
             <div class="thumb pad pad-bottom-minus">
               <h2 class="pad pad-top-minus pad-bottom-minus">"<%= entity.name %>"</h2>
             </div>
+            <p class="pad" id="hashtags">
+              <% if (entity.children.length > 0) { %>
+                <%= entity.children[0].name %> is popular.
+              <% } else { %>
+                Nothing trending.
+              <% } %>
+            </p>
             <p class="pad"></p>
-            <div class="pad"></div>
             <h6 style="color:white" class="pad article-link">SOURCE:<br><a target="_blank" href="<%= article.url %>">"<%= article.headline %>"</a><h6>
           </div>
         </article>
@@ -281,10 +287,6 @@ socket.on('update', function(stream) {
   masterlist = stream.masterlist;
   console.log('tweets')
 
-  // sort articles from largest to smallest
-  // masterlist.children.sort(descendingOrder);
-  // how to populate the view?
-
   now = new Date();
 
   // if less than 2 seconds have elapsed, do nothing
@@ -296,7 +298,6 @@ socket.on('update', function(stream) {
 
   // update banner
   $('#tweet-counter').text(masterlist.size);
-  masterlist.children.sort(descendingOrder);
 
   div.datum(root).selectAll(".node").remove();
 

@@ -48,7 +48,7 @@ exports.fetch = function() {
           }
           // ========================
 
-          // if alchemy found entities and we don't have too many entities already
+          // if alchemy returned entities and we don't have too many entities already
           if (response.entities.length > 0 && masterlist.watchEntities.length < 19) {
 
             articleWrapper = {

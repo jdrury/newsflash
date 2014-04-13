@@ -74,7 +74,7 @@ exports.matchFinder = function(callback) {
                 return;
               }
 
-              // allow unpopular hashtags to persist, but without publication to treemap
+              // allow unpopular hashtags to persist 100 rounds, but don't publish to treemap
               if (round < 100) {
                 // increment existing if hashtags match; add hashtags if no match
                 temp.children.dupeBuster(hashtags);
