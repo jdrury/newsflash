@@ -1,14 +1,14 @@
 var entities = require('./entities');
 var twitter = require('ntwitter');
 var twitterapi = require('../keys/twitterapi');
-
+var curse = require('../keys/curses')
 var t = new twitter(twitterapi.keys);
 
 Array.prototype.dupeBuster = function(hashtags) {
   var self = this;
   for (var i = 0; i < this.length; i++) {
     for (var j = 0; j < hashtags.length; j++) {
-      if (hashtags[j] === 'pussy' || hashtags[j] === 'nigger' || hashtags[j] === 'nigga' || hashtags[j] === 'fuck' || hashtags[j] === 'bitch' || hashtags[j] === 'cunt') {
+      if (hashtags[j] === curse.one || hashtags[j] === curse.two || hashtags[j] === curse.three || hashtags[j] === curse.four || hashtags[j] === curse.five || hashtags[j] === curse.six) {
         hashtags[j] = null;
       } else if (this[i].name === hashtags[j]) {
         this[i].size += 1;
