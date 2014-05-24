@@ -1,6 +1,6 @@
 var entities = require('./entities');
 var twitter = require('ntwitter');
-var twitterapi = require('../config/twitterapi');
+var twitterapi = require('../config/twitter-api');
 var curse = require('../config/curse')
 var t = new twitter(twitterapi.keys);
 

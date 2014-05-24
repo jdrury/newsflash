@@ -1,7 +1,6 @@
-var keychain = require('./keychain');
 
 var querySize = 25;
-var key = '&api-key=' + process.env.NYTIMES_KEY
+var key = '&api-key=' + process.env.NYTIMES_KEY;
 
 exports.options = {
   host: 'api.nytimes.com',

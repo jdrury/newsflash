@@ -1,4 +1,4 @@
-var AlchemyAPI = require('../config/alchemyapi');
+var AlchemyAPI = require('../config/alchemy-api');
 var async = require('async');
 var nytimes = require('./newswire');
 var Promise = require('bluebird');

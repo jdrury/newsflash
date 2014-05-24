@@ -14,7 +14,6 @@
    limitations under the License.
 */
 
-var keychain = require('./keychain');
 var request = require('request');
 var fs = require('fs');
 
@@ -77,7 +76,7 @@ function AlchemyAPI() {
 	// }
 
 	// Set the key
-	this.apikey = keychain.alchemy_key;
+	this.apikey = process.env.ALCHEMY_KEY;
 
 	/**
 	  *	HTTP Request wrapper that is called by the endpoint functions. This function is not intended to be called through an external interface.

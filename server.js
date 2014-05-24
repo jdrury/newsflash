@@ -19,7 +19,7 @@ app.configure(function() {
   app.use(express.static(path.join(__dirname, 'app/public')));
 });
 
-if ('development' == app.get('env')) {
+if (!process.env.NODE_ENV) {
   var local = require('./config/secret');
   process.env.NYTIMES_KEY = local.nytimes;
   process.env.ALCHEMY_KEY = local.alchemy;
