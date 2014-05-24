@@ -1,4 +1,4 @@
 .DS_Store
 app/.DS_STORE
-/config/keychain.js
+/config/secret.js
 /node_modules/*
