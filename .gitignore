@@ -1,6 +1,5 @@
 .DS_Store
 
-/config/keys/alchemyapi.js
-/config/keys/nytimesapi.js
-/config/keys/twitterapi.js
-/node_modules
+/config/keys/*
+
+/node_modules/*
