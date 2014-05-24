@@ -17,7 +17,7 @@
 
 var request = require('request');
 var fs = require('fs');
-var keychain = require('./keychain.js')
+var keychain = require('./keychain')
 
 //Make the class available
 exports = module.exports = AlchemyAPI;

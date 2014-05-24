@@ -20,18 +20,7 @@ app.configure(function() {
   app.use(express.methodOverride());
   app.use(express.static(path.join(__dirname, 'app/public')));
 });
-
-console.log('process.env', process.env)
-if ('development' == app.get('env')) {
-  console.log('hello, development');
-  process.env.NODE_ENV = 'development';
-  app.use(express.errorHandler());
-}
-if ('production' == app.get('env')) {
-  console.log('hello, production')
-  process.env.NODE_ENV = 'production';
-}
-
+console.log('okay after configure')
 app.get('/', function(req, res) {
   res.render('index', {'masterlist': masterlist});
 });
@@ -66,35 +55,3 @@ var job = new CronJob('0 */48 * * * *', function(){
 });
 
 job.start();
-
-// // reset every 5 minutes
-// var job = new CronJob('0 */5 * * * *', function(){
-
-//   masterlist.children.forEach(function(entity,key) {
-//     var killEntities = [];
-//     var replacements;
-
-//     if (entity.mentions / masterlist.mentions < 0.03) {
-//       // identify entities with less than 3% of total mentions
-//       killEntities.push(key);
-//     }
-
-//     // number of new articles to add
-//     replacements = killEntities.length;
-
-//     // remove entities
-//     killEntities.forEach(function(i) {
-//       masterlist.children.splice(i,1);
-//     });
-
-//     articles = nytimes.pullArticles(replacements);
-
-//   }
-
-//   firehose.matchFinder(function(masterlist) {
-//     io.sockets.emit('update', {'masterlist': masterlist});
-//   });
-//   start: false;
-// });
-
-// job.start();
