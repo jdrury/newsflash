@@ -14,15 +14,12 @@
    limitations under the License.
 */
 
-
+var keychain = require('./keychain');
 var request = require('request');
 var fs = require('fs');
-var keychain = require('./keychain')
 
 //Make the class available
 exports = module.exports = AlchemyAPI;
-
-
 
 /**
   * Checks if file is called directly, and then writes the API key to api_key.txt if it's included in the args
