@@ -21,6 +21,17 @@ app.configure(function() {
   app.use(express.static(path.join(__dirname, 'app/public')));
 });
 
+console.log('process.env', process.env)
+if ('development' == app.get('env')) {
+  console.log('hello, development');
+  process.env.NODE_ENV = 'development';
+  app.use(express.errorHandler());
+}
+if ('production' == app.get('env')) {
+  console.log('hello, production')
+  process.env.NODE_ENV = 'production';
+}
+
 app.get('/', function(req, res) {
   res.render('index', {'masterlist': masterlist});
 });

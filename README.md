@@ -1,6 +1,6 @@
 #Newsflash v0.9.2
 
-**[Newsflash](newsflash.herokuapp.com)** is a visual news tracker, defined by *The New York Times*, driven by Twitter.
+**[Newsflash](newsflash.herokuapp.com)** is a crowdsourced news tracker, defined by *The New York Times*, driven by Twitter.
 
 ##### How It Works
 Newsflash pulls breaking news from the *The New York Times* [newswire](http://nyti.ms/PkaWYK) and translates it into entities with the help of [AlchemyAPI](http://www.alchemyapi.com/). Each entity is compared to the [Twitter stream](https://dev.twitter.com/). When Newsflash finds a tweet that mentions an entity, it uses [socket.io](http://socket.io/) to populate a [D3](http://d3js.org/) treemap with the tweet's hashtags.
