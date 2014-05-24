@@ -39,7 +39,8 @@ exports.fetch = function() {
           console.log('--Article #' + (articles.indexOf(article) + 1) + '--');
           console.log('HEADLINE: ' + article[0]);
           console.log('ABSTRACT: ' + article[1]);
-          if (response.entities.length > 0) {
+          console.log('RESPONSE.ENTITIES',response.entities);
+          if (response.entities && response.entities.length > 0) {
             console.log(response.entities.length + ' RESPONSE(S): ');
             console.log(response);
           } else {
@@ -49,7 +50,8 @@ exports.fetch = function() {
           // ========================
 
           // if alchemy returned entities and we don't have too many entities already
-          if (response.entities.length > 0 && masterlist.watchEntities.length < 19) {
+          if (response.entities && response.entities.length > 0 &&
+            masterlist.watchEntities.length < 19) {
 
             articleWrapper = {
                               'headline': article[0],
@@ -93,7 +95,7 @@ exports.fetch = function() {
         } else {
           console.log('Alchemy found ' + masterlist.watchEntities.length + ' entities...');
           console.log('');
-          // when all the iterations have completed, send the promise.
+          // when all the iterations have completed, fire the promise.
           resolve(masterlist);
         }
       };

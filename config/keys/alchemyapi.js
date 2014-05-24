@@ -81,7 +81,7 @@ function AlchemyAPI() {
 	// // Set the key
 	// this.apikey = key;
 
-  this.apikey = 'dee59ec2a406517f5aa173796d1b4d17d53b3fac';
+  this.apikey = '43c2a9df207553f44f3952d067577ca09752fd01';
 
 	/**
 	  *	HTTP Request wrapper that is called by the endpoint functions. This function is not intended to be called through an external interface.
