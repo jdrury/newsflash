@@ -1,5 +1,5 @@
 var http = require('http');
-var nytimesKey = require('../keys/nytimesapi');
+var nytimesKey = require('../config/nytimesapi');
 var Promise = require('bluebird');
 
 // pullArticles() returns a promise with breaking news articles

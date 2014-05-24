@@ -4,7 +4,7 @@ var CronJob = require('cron').CronJob;
 var path = require('path');
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-var firehose = require('./config/scripts/firehose');
+var firehose = require('./controllers/firehose');
 
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/app/views');

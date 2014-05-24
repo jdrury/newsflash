@@ -1,7 +1,7 @@
 var entities = require('./entities');
 var twitter = require('ntwitter');
-var twitterapi = require('../keys/twitterapi');
-var curse = require('../keys/curse')
+var twitterapi = require('../config/twitterapi');
+var curse = require('../config/curse')
 var t = new twitter(twitterapi.keys);
 
 Array.prototype.dupeBuster = function(hashtags) {
