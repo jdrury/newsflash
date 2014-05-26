@@ -59,12 +59,12 @@ firehose.matchFinder(function(masterlist) {
   io.sockets.emit('update', {'masterlist': masterlist});
 });
 
-// reset every 48 minutes
-var job = new CronJob('0 */48 * * * *', function(){
-  firehose.matchFinder(function(masterlist) {
-    io.sockets.emit('update', {'masterlist': masterlist});
-  });
-  start: false;
-});
+// // reset every 48 minutes
+// var job = new CronJob('0 */48 * * * *', function(){
+//   firehose.matchFinder(function(masterlist) {
+//     io.sockets.emit('update', {'masterlist': masterlist});
+//   });
+//   start: false;
+// });
 
-job.start();
+// job.start();

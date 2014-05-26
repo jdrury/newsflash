@@ -3,7 +3,7 @@ var async = require('async');
 var nytimes = require('./newswire');
 var Promise = require('bluebird');
 
-var alchemyapi = new AlchemyAPI();
+var alchemy = new AlchemyAPI();
 
 // fetch turns NYT abstracts into entities (similar to keywords)
 exports.fetch = function() {
@@ -33,13 +33,13 @@ exports.fetch = function() {
       function iterator(article, callback) {
 
         // use Alchemy API to get the entities for each NYT abstract
-        alchemyapi.entities('text', article[1], {}, function(response) {
+        alchemy.entities('text', article[1], {}, function(response) {
 
           // console.log ============
           console.log('--Article #' + (articles.indexOf(article) + 1) + '--');
-          console.log('HEADLINE: ' + article[0]);
-          console.log('ABSTRACT: ' + article[1]);
-          console.log('RESPONSE.ENTITIES',response.entities);
+          console.log('HEADLINE:', article[0]);
+          console.log('ABSTRACT:', article[1]);
+          console.log('RESPONSE.ENTITIES:', response.entities);
           if (response.entities && response.entities.length > 0) {
             console.log(response.entities.length + ' RESPONSE(S): ');
             console.log(response);
