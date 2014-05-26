@@ -73,21 +73,19 @@ exports.matchFinder = function(callback) {
               entity.size += 1;
               hashtags = tweetText.match(/#\S+/g);
 
-              if (!hashtags) {
-                return;
-              }
+              if (!hashtags) { return; }
 
               // allow unpopular hashtags to persist 100 rounds, but don't publish to treemap
               if (round < 100) {
                 // increment existing if hashtags match; add hashtags if no match
                 temp.children.dupeBuster(hashtags);
                 // publish top 3 hashtags, save the rest in temp array
-                entity.children = temp.children.sort(descendingOrder).slice(0,2);
+                entity.children = temp.children.sort(descendingOrder).slice(0,3);
 
               } else {
                 // every 100+ matches, save top 3 hashtags and delete remainder
                 temp.children.dupeBuster(hashtags);
-                entity.children = temp.children.sort(descendingOrder).slice(0,2);
+                entity.children = temp.children.sort(descendingOrder).slice(0,3);
 
                 // reset to give new hashtags a chance to climb the rankings
                 temp.children = entity.children;
